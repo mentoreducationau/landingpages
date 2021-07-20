@@ -1,26 +1,27 @@
 import React from "react"
-import styled from "styled-components"
-
+import { MainContainer, AvatarContainer, AvatarCard, Image } from "./WebinarInfo.css"
 import JL from "../../images/JL.png"
 import MS from "../../images/MS.png"
 import DO from "../../images/DO.png"
+
+
 const WebinarInfo = () => {
   return (
     <MainContainer>
       <h1>Join your hosts</h1>
       <AvatarContainer>
         <AvatarCard>
-          <IMG src={MS} alt="James Lynch" />
+          <Image src={MS} alt="James Lynch" />
           <h3>Mark Synclair</h3>
           <h5>Founder Mentor Education</h5>
         </AvatarCard>
         <AvatarCard>
-          <IMG src={JL} alt="James Lynch" />
+          <Image src={JL} alt="James Lynch" />
           <h3>James Lynch</h3>
           <h5>Special Projects Officer</h5>
         </AvatarCard>
         <AvatarCard>
-          <IMG src={DO} alt="James Lynch" />
+          <Image src={DO} alt="James Lynch" />
           <h3>Danielle O'neal</h3>
           <h5>Education Advice Team Leader</h5>
         </AvatarCard>
@@ -52,35 +53,3 @@ const WebinarInfo = () => {
 }
 
 export default WebinarInfo
-
-const MainContainer = styled.div`
-  width: 50vw;
-  height: 100%;
-  margin-top: 2rem;
-  padding-right: 2rem;
-
-  h3 {
-    margin: 1rem 0 0.75rem 0;
-  }
-  p {
-    padding-right: 1rem;
-  }
-`
-const AvatarContainer = styled.div`
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: space-around;
-`
-const AvatarCard = styled.div`
-height: 100%;
-width: 25%;
-h3 {
-    margin: 0;
-}
-`
-
-const IMG = styled.img`
-height: 10rem;
-width: 100%;
-`
