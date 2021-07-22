@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
+  border: 2px solid tomato;
   margin: 0 auto;
   padding: 0 1rem;
 

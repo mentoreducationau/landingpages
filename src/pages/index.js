@@ -3,10 +3,12 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout/Layout"
 import Seo from "../components/Seo/Seo"
+import { ButtonPrimary } from '../styles/ButtonStyles.css'
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
+    <ButtonPrimary>Hello Theme</ButtonPrimary>
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
