@@ -26,5 +26,6 @@ export const MainContainer = styled.div`
   width: 99vw;
   height: 100%;
   display: flex;
+  flex-wrap : wrap;
   justify-content: center;
 `

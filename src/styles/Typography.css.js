@@ -39,7 +39,8 @@ const Headline = styled.h1`
 
 const Title = styled.h2`
   font-size: 1.5em;
-  font-weight: 700;
+  font-weight:  ${props => props.weight ? props.weight : 700};
+  color: ${props => props.color ? props.color : "inherit"};
 `
 
 const Subtitle = styled.h3`

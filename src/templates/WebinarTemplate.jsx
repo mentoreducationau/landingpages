@@ -3,6 +3,7 @@ import {TitleBanner, TitleBGImage, CourseHeading, MainContainer } from "./Webina
 import bannerImg from "../images/bannerBg.jpeg"
 import Registar from "../components/Forms/Register/Register"
 import WebinarInfo from "../components/WebinarInfo/WebinarInfo"
+import CareerSkillSket from "../components/CareerSkillSket/CareerSkillSket"
 
 const WebinarTemplate = () => {
   return (
@@ -16,7 +17,9 @@ const WebinarTemplate = () => {
       <MainContainer>
         <WebinarInfo></WebinarInfo>
         <Registar />
+        <CareerSkillSket subtitle="dark" title="How you can further your career with this course" />
       </MainContainer>
+      
     </>
   )
 }

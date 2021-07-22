@@ -3,7 +3,7 @@ import { MainContainer, AvatarContainer, AvatarCard, Image } from "./WebinarInfo
 import JL from "../../images/JL.png"
 import MS from "../../images/MS.png"
 import DO from "../../images/DO.png"
-
+import Tab from "../Tab/Tab"
 
 const WebinarInfo = () => {
   return (
@@ -48,6 +48,9 @@ const WebinarInfo = () => {
         graduates since 2003, Mentor Education is Australia's largest privately
         owned accounting / bookkeeping, finance and business education provider.
       </p>
+      <Tab>
+
+      </Tab>
     </MainContainer>
   )
 }
