@@ -1,5 +1,15 @@
 import styled from 'styled-components'
 
+
+const SectionWrapper = styled.div`
+width: 99vw;
+overflow: hidden;
+padding: 0  10vw;
+display: flex;
+justify-content: ${props => props.justifyContent ? props.justifyContent : ''};
+margin-top: ${props => props.marginTop ? props.marginTop : ''};
+`
+
 const Container = styled.div`
   border: 2px solid tomato;
   margin: 0 auto;
@@ -114,4 +124,4 @@ const Container = styled.div`
   }
 `
 
-export { Container }
+export { Container, SectionWrapper }

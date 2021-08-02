@@ -1,31 +1,63 @@
-import React from "react"
+import React, { useEffect } from "react"
 import {
   TabButtonsWrapper,
   TabWrapper,
   TabButton,
   TabInfoWrapper,
+  TabContentContainer,
+  Display,
 } from "./Tab.css"
+import { courses } from "./testArray"
 
 const Tab = () => {
+  const [courseItems, setCourseItems] = React.useState([])
+  const [activeTab, setActiveTab] = React.useState()
+
+  useEffect(() => {
+    const newCourseItems = []
+    for (const [key, value] of Object.entries(courses[0])) {
+      newCourseItems.push(`${value}`)
+      setCourseItems(newCourseItems)
+      setActiveTab(Object.keys(courses[0])[0])
+    }
+  }, [courses])
+
+  const setTab = i => {
+    setActiveTab(i)
+  }
+ 
   return (
     <TabWrapper>
       <TabButtonsWrapper>
-        <TabButton className="active">Tab</TabButton>
-        <TabButton>Tab</TabButton>
-        <TabButton>Tab</TabButton>
-        <TabButton>Tab</TabButton>
-        <TabButton>Tab</TabButton>
+        {Object.keys(courses[0]).map((name, i) => {
+          return (
+            <TabButton
+              id={i + 1}
+              key={i}
+              onClick={() => setTab(name)}
+              className={
+                activeTab === Object.keys(courses[0])[i] ? "active" : ""
+              }
+            >
+              {name
+                .replace(/([A-Z])/g, " $1")
+                .trim()
+                .trim()}
+            </TabButton>
+          )
+        })}
       </TabButtonsWrapper>
       <TabInfoWrapper>
-        <b>Lorem Ipsum is simply dummy text of th</b>e printing and typesetting
-        industry. Lorem Ipsum has been the industry’s standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        <a> essentially unchanged. It</a> was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
+        {courses &&
+          courseItems.map((course, i) => (
+            <Display
+              activeTab={activeTab}
+              id={Object.keys(courses[0])[i]}
+              key={i}
+            >
+              {course}
+            </Display>
+          ))}
       </TabInfoWrapper>
     </TabWrapper>
   )

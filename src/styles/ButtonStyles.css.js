@@ -22,4 +22,4 @@ const ButtonGhost = styled(Button)`
   font-size: 1.8rem;
 `
 
-export { ButtonPrimary, ButtonGhost }
+export { ButtonPrimary, ButtonGhost, Button }

@@ -39,6 +39,8 @@ const Headline = styled.h1`
 
 const Title = styled.h2`
   font-size: 1.5em;
+  margin: 0;
+  margin-top:  ${props => props.marginTop ? props.marginTop : 0};
   font-weight:  ${props => props.weight ? props.weight : 700};
   color: ${props => props.color ? props.color : "inherit"};
 `
@@ -46,12 +48,14 @@ const Title = styled.h2`
 const Subtitle = styled.h3`
   font-size: 1em;
   font-weight: 400;
-  text-transofrm: uppercase;
+  text-transform: uppercase;
 `
 
 const Paragraph = styled.p`
+ font-family: FuturePT;
   font-size: 0.8em;
   font-weight: 400;
+  margin-top:  ${props => props.marginTop ? props.marginTop : 0};
 `
 
 export { Typography, Headline, Title, Subtitle, Paragraph }

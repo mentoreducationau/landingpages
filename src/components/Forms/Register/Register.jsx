@@ -1,6 +1,7 @@
 import React from "react"
 import { RegisterContainer, RegisterForm, Input, Button } from "./register.css"
 import Testimonials from "../../Testimonial/Testimonial"
+import CourseGuide from "../Register copy/CourseGuide"
 
 const Registar = () => {
   return (
@@ -12,7 +13,7 @@ const Registar = () => {
         <Input type="text" placeholder="Email" />
         <Button action="submit"> REGISTER</Button>
       </RegisterForm>
-      <Testimonials />
+      <CourseGuide/>
     </RegisterContainer>
   )
 }

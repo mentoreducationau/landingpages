@@ -7,7 +7,7 @@ import {
   Image,
 } from "./Careerskillset.css"
 import { Title } from "../../styles/Typography.css"
-import JL from "../../images/hpy.jpeg"
+import career from "../../images/career.jpg"
 
 const CareerSkillSket = ({title , subtitle}) => {
   return (
@@ -17,7 +17,7 @@ const CareerSkillSket = ({title , subtitle}) => {
       </Title>
       <CareerSkillSketcontainer>
         <CareerSkillImage>
-          <Image src={JL} />
+          <Image src={career} />
         </CareerSkillImage>
         <CareerInfo title={subtitle}>
           <h4>Career Skillsets</h4>

@@ -36,7 +36,7 @@ p {
 }
 `
 export const TitleBGImage = styled.img`
-width: 100vw;
+width: 99vw;
 height: 250%;
 object-fit: cover;
 opacity: 0.9;

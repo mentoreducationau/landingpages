@@ -27,7 +27,7 @@ const Testimonials = () => {
 
       <TestimonialCarousel>
         {testimonials.map((testimonial, i) => (
-          <TestimonialCard order={`${i * 100}%`}>
+          <TestimonialCard order={`${i * 100}%`} key={i}>
             <TitleBGImage src={JL} alt="" />
             <p>{testimonial.testimonial}</p>
             <span

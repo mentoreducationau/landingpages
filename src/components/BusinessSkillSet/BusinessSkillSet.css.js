@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const CareerSkillSketWrapper = styled.div`
+export const BusinessSkillSetWrapper = styled.div`
   margin: 4rem 2rem;
   max-width: 99vw;
 
@@ -10,12 +10,12 @@ export const CareerSkillSketWrapper = styled.div`
   }
 
 `
-export const CareerSkillSketcontainer = styled.div`
+export const BusinessSkillSetcontainer = styled.div`
   display: flex;
   padding: 0 81px;
   justify-content: center
 `
-export const CareerInfo = styled.div`
+export const BusinessInfo = styled.div`
 
 padding-left: 30px;
  max-width: 420px;
@@ -48,6 +48,6 @@ p.dark {
 export const Image = styled.img`
   max-width:100%;
 `
-export const CareerSkillImage = styled.div`
+export const BusinessSkillImage = styled.div`
   width: 50%;
 `

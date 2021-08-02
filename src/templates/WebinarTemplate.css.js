@@ -10,7 +10,7 @@ export const TitleBanner = styled.div`
   align-items: center;
 `
 export const TitleBGImage = styled.img`
-  width: 100vw;
+  width: 99vw;
   object-fit: cover;
   opacity: 0.4;
 `
