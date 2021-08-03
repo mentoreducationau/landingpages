@@ -1,23 +1,12 @@
 import styled from "styled-components"
 
 
-export const TestimonialContainer = styled.div`
-height: 50rem;
-width: 100%;
-overflow: hidden;
-position: relative;
-`
-export const TestimonialCarousel = styled.div`
-height: 10rem;
-width: 20rem;
-
-flex-wrap: nowrap;
-`
 export const TestimonialCarouselBG = styled.img`
 height: 100%;
 opacity: 1;
 position: absolute;
 `
+
 export const TestimonialCard = styled.div`
 height: 10rem;
 position: absolute;

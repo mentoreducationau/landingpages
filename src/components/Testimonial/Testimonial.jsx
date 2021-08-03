@@ -1,48 +1,48 @@
-import React from "react"
-import { TestimonialCard, TestimonialCarousel, TestimonialContainer, TitleBGImage } from "./testimonial.css"
-import JL from "../../images/happy.png"
+import React , { useState } from "react"
+import TestimonialSlide from "../TestimonialSlide/TestimonialSlide"
+import { testimonialarray }  from '../../utils/slider';
+
+
+console.log(testimonialarray);
+
 
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "Ali M",
-      testimonial:
-        "Mentor staff and Miler have helped me to complete my assessments and course in time. Appreciate your time and support. Warm Regards, Ali",
-    },
-    {
-      name: "Praful D",
-      testimonial:
-        "Excellent experience working with the team. They are very understanding and useful. ... ",
-    },
-    {
-      name: "Nick",
-      testimonial:
-        "Very great team and supportive team. The best staff and the best assessors I have dealt with. Very helpful and so understanding. They live and breathe assistance. ",
-    },
-  ]
-  return (
-    <TestimonialContainer>
-      <h3>What our previous students say</h3>
+  
+  console.log(testimonialarray)
 
-      <TestimonialCarousel>
-        {testimonials.map((testimonial, i) => (
-          <TestimonialCard order={`${i * 100}%`} key={i}>
-            <TitleBGImage src={JL} alt="" />
-            <p>{testimonial.testimonial}</p>
-            <span
-              style={{
-                fontStyle: "italic",
-                fontWeight: `bold`,
-                float: `right`,
-              }}
-            >
-              {testimonial.name}
-            </span>
-          </TestimonialCard>
-        ))}
-      </TestimonialCarousel>
-    </TestimonialContainer>
+  const [ activeSlide , setActiveSlide] = useState(0)
+
+  console.log(activeSlide)
+
+  const nextSlide = () => {
+
+    if(activeSlide == testimonialarray.length - 1) return;
+
+    setActiveSlide((prev) => prev + 1)
+  }
+  
+  const prevSlide = () => {
+    if(activeSlide == 0) return;
+
+    setActiveSlide((prev) => prev - 1)
+  }
+
+  return (
+    <>
+        {
+          testimonialarray && testimonialarray.map((item , index) => {
+            
+            if( index == activeSlide ) {
+             return <TestimonialSlide active={true} nextSlide={nextSlide} prevSlide={prevSlide} data={item}  index={index}></TestimonialSlide>
+            }  
+            else {
+              return <TestimonialSlide active={false} nextSlide={nextSlide} prevSlide={prevSlide} data={item}  index={index}></TestimonialSlide>
+            }
+            
+          })
+        }
+    </>
   )
 }
 

@@ -30,6 +30,7 @@ const BusinessSkillSet = ({ title, subtitle }) => {
         </BusinessInfo>
       </BusinessSkillSetcontainer>
     </BusinessSkillSetWrapper>
+  
   )
 }
 

@@ -52,7 +52,7 @@ const Subtitle = styled.h3`
 `
 
 const Paragraph = styled.p`
- font-family: FuturePT;
+ font-family: FuturaPT;
   font-size: 0.8em;
   font-weight: 400;
   margin-top:  ${props => props.marginTop ? props.marginTop : 0};

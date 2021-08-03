@@ -13,6 +13,8 @@ const Tab = () => {
   const [courseItems, setCourseItems] = React.useState([])
   const [activeTab, setActiveTab] = React.useState()
 
+  
+
   useEffect(() => {
     const newCourseItems = []
     for (const [key, value] of Object.entries(courses[0])) {
@@ -47,6 +49,7 @@ const Tab = () => {
           )
         })}
       </TabButtonsWrapper>
+      
       <TabInfoWrapper>
         {courses &&
           courseItems.map((course, i) => (
