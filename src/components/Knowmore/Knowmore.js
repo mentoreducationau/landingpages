@@ -1,6 +1,6 @@
 import React , { useState , useEffect } from "react"
 import { Title } from "../../styles/Typography.css"
-import { KnowmoreContainer, KnowmoreBoxes, KnowmoreBox, Button } from "./Knowmore.css"
+import { KnowmoreContainer, KnowmoreBoxes, KnowmoreBox } from "./Knowmore.css"
 
 const Knowmore = () => {
 
@@ -11,6 +11,7 @@ const Knowmore = () => {
         if (countup < 91) {
           setTimeout(() => setCountup(countup + 1), 100);
         } else {
+            console.log('setting')
             setCountup(92);
         }
 

@@ -14,7 +14,8 @@ import JobOutcomes from "../components/JobOutcomes/JobOutcomes"
 import BusinessSkillSet from "../components/BusinessSkillSet/BusinessSkillSet"
 import AcademicPathways from "../components/BusinessSkillSet/AcademicPathway/AcademicPathways"
 import Knowmore from "../components/Knowmore/Knowmore"
-import CourseGuide from "../components/Forms/Register copy/CourseGuide"
+import Nosubsitute from "../components/Nosubstitute/Nosubstitute"
+import FooterForm from '../components/FooterForm/FooterForm';
 
 const WebinarTemplate = () => {
   return (
@@ -38,6 +39,8 @@ const WebinarTemplate = () => {
         <AcademicPathways/> 
         <Testimonials/>
         <Knowmore></Knowmore>
+        <Nosubsitute />
+        <FooterForm/>
       </MainContainer>
     </>
   )
