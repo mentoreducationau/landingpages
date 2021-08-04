@@ -17,13 +17,13 @@ const Testimonials = () => {
 
   const nextSlide = () => {
 
-    if(activeSlide == testimonialarray.length - 1) return;
+    if(activeSlide === testimonialarray.length - 1) return;
 
     setActiveSlide((prev) => prev + 1)
   }
   
   const prevSlide = () => {
-    if(activeSlide == 0) return;
+    if(activeSlide === 0) return;
 
     setActiveSlide((prev) => prev - 1)
   }
@@ -33,7 +33,7 @@ const Testimonials = () => {
         {
           testimonialarray && testimonialarray.map((item , index) => {
             
-            if( index == activeSlide ) {
+            if( index === activeSlide ) {
              return <TestimonialSlide active={true} nextSlide={nextSlide} prevSlide={prevSlide} data={item}  index={index}></TestimonialSlide>
             }  
             else {

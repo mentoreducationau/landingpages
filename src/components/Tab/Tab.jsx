@@ -4,7 +4,6 @@ import {
   TabWrapper,
   TabButton,
   TabInfoWrapper,
-  TabContentContainer,
   Display,
 } from "./Tab.css"
 import { courses } from "./testArray"
@@ -13,11 +12,13 @@ const Tab = () => {
   const [courseItems, setCourseItems] = React.useState([])
   const [activeTab, setActiveTab] = React.useState()
 
-  
+  console.log(activeTab);
 
   useEffect(() => {
     const newCourseItems = []
     for (const [key, value] of Object.entries(courses[0])) {
+
+      console.log(key)
       newCourseItems.push(`${value}`)
       setCourseItems(newCourseItems)
       setActiveTab(Object.keys(courses[0])[0])
@@ -38,7 +39,7 @@ const Tab = () => {
               key={i}
               onClick={() => setTab(name)}
               className={
-                activeTab === Object.keys(courses[0])[i] ? "active" : ""
+                activeTab === name ? "active" : ""
               }
             >
               {name

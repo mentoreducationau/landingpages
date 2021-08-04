@@ -1,4 +1,3 @@
-import { resolve } from "q"
 import React from "react"
 import { jobRoles } from "./JobArray"
 import {

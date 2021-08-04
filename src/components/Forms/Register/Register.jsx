@@ -1,6 +1,5 @@
 import React from "react"
 import { RegisterContainer, RegisterForm, Input, Button } from "./register.css"
-import Testimonials from "../../Testimonial/Testimonial"
 import CourseGuide from "../Register copy/CourseGuide"
 
 const Registar = () => {

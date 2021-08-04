@@ -38,10 +38,11 @@ const Headline = styled.h1`
 `
 
 const Title = styled.h2`
-  font-size: 1.5em;
+  font: normal normal 900 1.5em/84px Futura;
+  letter-spacing: 0px;
   margin: 0;
   margin-top:  ${props => props.marginTop ? props.marginTop : 0};
-  font-weight:  ${props => props.weight ? props.weight : 700};
+  font-weight:  ${props => props.weight ? props.weight : 900};
   color: ${props => props.color ? props.color : "inherit"};
 `
 
