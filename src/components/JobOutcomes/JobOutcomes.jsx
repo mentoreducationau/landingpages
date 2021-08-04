@@ -9,7 +9,7 @@ import {
   JobRequiredCourse,
   QaulificationsList,
   QaulificationLink,
-  Title,
+  JobTitle,
 } from "./JobOutcomes.css"
 const JobOutcomes = () => {
   const [displayJob, setDisplayJob] = React.useState(0)
@@ -17,7 +17,7 @@ const JobOutcomes = () => {
   return (
     <JobOutcomesWrapper>
       <JobName>
-        <Title>Job Name</Title>
+        <JobTitle>Job Name</JobTitle>
         <QaulificationsList>
           {jobRoles.map((role, i) => (
             <JobListItem
@@ -36,7 +36,7 @@ const JobOutcomes = () => {
         </QaulificationsList>
       </JobName>
       <JobSallary>
-        <Title>Job Sallary</Title>
+        <JobTitle>Job Sallary</JobTitle>
         <QaulificationsList>
           {jobRoles.map((role, i) => (
             <JobListItem
@@ -55,7 +55,7 @@ const JobOutcomes = () => {
         </QaulificationsList>
       </JobSallary>
       <JobRequiredCourse>
-        <Title>Required Qaulifications</Title>
+        <JobTitle>Required Qaulifications</JobTitle>
 
         {jobRoles.map((role, i) => (
           <QaulificationsList key={i} displayJob={displayJob} id={i}>

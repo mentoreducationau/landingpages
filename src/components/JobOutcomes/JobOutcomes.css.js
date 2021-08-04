@@ -1,5 +1,5 @@
 import styled, {keyframes} from 'styled-components'
-
+import {Title} from '../../styles/Typography.css'
 const JobOutcomesWrapper = styled.div`
 margin: 4rem 2rem;
 width: 99vw;
@@ -15,7 +15,9 @@ width: 22%;
 flex-direction: column;
 flex-wrap: wrap;
 `
-const Title = styled.h4``
+const JobTitle = styled(Title)`
+text-decoration: overline;
+`
 
 
 const fade = keyframes`
@@ -58,6 +60,7 @@ width: 42%;
 const QaulificationsUL = styled.ul`
 opacity: ${props => props.displayJob === props.id ? 1 : 0};
 display: ${props => props.displayJob === props.id ? 'inline' : 'none '};
+line-height: 2rem;
 margin: 0;
 `
 
@@ -77,11 +80,12 @@ const QaulificationLink = styled.a`
 color: black;
 text-decoration: none;
 display: block;
+line-height: inherit;
 `
 
 export {
     JobOutcomesWrapper,
-    Title,
+    JobTitle,
     JobName,
     Arrow,
     JobListItem,
