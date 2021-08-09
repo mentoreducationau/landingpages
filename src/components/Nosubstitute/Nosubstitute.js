@@ -26,6 +26,7 @@ const Nosubsitute = () => {
           PROFESSIONALS
           <QuoteSvg right />
         </QuotedPara>
+        <FounderImage src="/mark-sinclair.jpg" alt="mark-sinclair" />
         <FounderDetails>
           <h3>Mark Sinclair</h3>
           <span>Founder of Mentor Education PTY LTD</span>
@@ -46,9 +47,6 @@ const Nosubsitute = () => {
             accounting and business services career.
           </p>
         </FounderDetails>
-        <FounderImage>
-          <img src="/mark-sinclair.jpg" alt="mark-sinclair" />
-        </FounderImage>
       </FoundersDetailGrid>
     </NosubstituteContainer>
   )

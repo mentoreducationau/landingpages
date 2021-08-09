@@ -17,6 +17,11 @@ export const FoundersDetailGrid = styled.div`
   padding: 27px 81px;
   column-gap: 25px;
   row-gap: 41px;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    padding: 27px 0;
+  }
 `
 export const QuotedPara = styled(Paragraph)`
   font-family: Futura Medium;
@@ -27,9 +32,15 @@ export const QuotedPara = styled(Paragraph)`
   color: #535353;
   margin: auto;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    margin-bottom: 21px;
+  }
 `
 
 export const FounderDetails = styled.div`
+  grid-column: 1 / 2;
+  grid-row: 2;
   color: #535353;
 
   h3 {
@@ -49,13 +60,27 @@ export const FounderDetails = styled.div`
     letter-spacing: 0px;
     margin-top: 17px;
   }
+
+  @media (max-width: 768px) {
+    margin: 10px;
+    h3, span {
+      text-align: center;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+  }
 `
 
-export const FounderImage = styled.div`
-  img {
+export const FounderImage = styled.img`
     width: 100%;
     height: 100%;
     margin: 0;
-  }
+    grid-column: 2 / 3;
+
+    @media (max-width: 768px) {
+      width: 50%;
+      float: left;
+      margin: 10px;
+    }
 `
 
