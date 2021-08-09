@@ -1,16 +1,6 @@
-import styled, { keyframes } from 'styled-components'
-
-const counterKeyframes = keyframes`
-    from {
-        transform: matrix(0);
-    }
-    to {
-        transform: matrix(1);
-    }
-`
+import styled from 'styled-components'
 
 export const CounterText = styled.h2`
-  animation: ${counterKeyframes} 100ms ease-in-out;
   padding: 0;
   margin: 0;
   width: fit-content;
