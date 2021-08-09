@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Paragraph } from '../../styles/Typography.css'
 
 export const NosubstituteContainer = styled.div`
   width: 100%;
@@ -9,57 +10,52 @@ export const NosubstituteContainer = styled.div`
     text-align: center;
   }
 `
-export const QuotedPara = styled.p`
-  margin-top : 40px;
-  font: normal normal 500 36px/45px Futura;
+
+export const FoundersDetailGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 27px 81px;
+  column-gap: 25px;
+  row-gap: 41px;
+`
+export const QuotedPara = styled(Paragraph)`
+  font-family: Futura Medium;
+  grid-column: 1 / 3;
+  font-size: 27px;
+  line-height: 34px;
   letter-spacing: 0px;
   color: #535353;
-  max-width: 90%;
   margin: auto;
-  margin-top: 40px;
+  text-transform: uppercase;
 `
 
-export const QuotedBox = styled.div`
-  display : flex;
-  margin-top : 40px;
-  padding: 0 81px;
-  justify-content: center;
-
-  @media screen and (max-width: 1440px) {
-    align-items: center;
-  }
-`
-
-export const QuotedBoxLeft = styled.div`
-  width: 50%;
+export const FounderDetails = styled.div`
   color: #535353;
-  padding-right: 20px;
 
   h3 {
-    font: normal normal bold 40px/32px Futura;
+    font: normal normal bold 30px/24px Futura;
     letter-spacing: 0px;
     margin-bottom: 3px;
+    margin-top: 0;
   }
 
   span {
-    font: oblique normal 500 31px/32px Futura;
+    font: oblique normal 500 23px/24px Futura Medium;
     letter-spacing: 0px;
-
   }
 
   p {
-    font: normal normal 500 28px/29px Futura;
+    font: normal normal 500 21px/21px Futura Medium;
     letter-spacing: 0px;
     margin-top: 17px;
-    
   }
 `
 
-export const QuotedBoxRight = styled.div`
-  width: 50%;
-
+export const FounderImage = styled.div`
   img {
     width: 100%;
+    height: 100%;
+    margin: 0;
   }
 `
 
