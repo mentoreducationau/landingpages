@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "../Header/Header"
 import "./layout.css"
-
+import Footer from '../Footer/footer'
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -25,15 +25,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-            background: `darkgrey`,
-            height: `5rem`
-          }}
-        >
-   
-        </footer>
+        <Footer/>
       </div>
     </>
   )

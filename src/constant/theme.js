@@ -1,12 +1,12 @@
 const theme = {
     mobile: {
-        buttonPrimary: '#FF0000',
+        buttonPrimary: '#CC4A28',
         buttonFade: '#CC4A28',
         buttonGhost: 'transparent',
         textLight: '#ffffff',
     },
     desktop: {
-        buttonPrimary: 'purple',
+        buttonPrimary: '#CC4A28',
         buttonFade: '#CC4A28',
         buttonGhost: 'transparent',
         textLight: '#ffffff',
