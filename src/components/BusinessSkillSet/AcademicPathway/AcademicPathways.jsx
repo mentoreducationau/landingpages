@@ -1,36 +1,34 @@
 import React from "react"
 
-import {courses} from "../courses"
+import { courses } from "../courses"
 
 import { SectionWrapper } from "../../../styles/ContainerStyles.css"
-import { TitleWrapper, CardsWrapper } from "./AcademicPathway.css"
+import { TitleWrapper } from "./AcademicPathway.css"
 import { Title } from "../../../styles/Typography.css"
-import CourseCard from "./CourseCard"
-import SingleQaulifications from "./Courses/SingleQaulifications"
-import DualQaulifications from "./Courses/DualQaulifications"
+import SingleQualification from "./Courses/SingleQualifications"
+import DualQualifications from "./Courses/DualQualifications"
 
 const AcademicPathways = () => {
   const [cards, setCards] = React.useState("single")
 
-
   return (
     <>
-      <SectionWrapper justifyContent="center" marginTop="-3rem">
+      <SectionWrapper justifyContent="center" marginTop="-3rem" style={{ padding: 0 }}>
         <TitleWrapper>
           <Title onClick={() => setCards("single")}>
-            Single Qaulification Study
+            Single Qualification Study
           </Title>
           <Title onClick={() => setCards("dual")}>
-            Dual Qaulification Study
+            Dual Qualification Study
           </Title>
         </TitleWrapper>
       </SectionWrapper>
-      <SectionWrapper justifyContent="center" marginTop="2rem">
+      <SectionWrapper justifyContent="center" marginTop="2rem" style={{ overflow: `visible`}}>
           {
               cards === 'single' ? (
-                  <SingleQaulifications courses={courses}/>
+                  <SingleQualification courses={courses} />
               ) : (
-                  <DualQaulifications  courses={courses} />
+                  <DualQualifications courses={courses} />
               )
           }
       </SectionWrapper>

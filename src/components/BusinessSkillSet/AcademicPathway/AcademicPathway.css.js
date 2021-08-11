@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components"
-import Title from "../../../styles/Typography.css"
 import { ButtonPrimary } from "../../../styles/ButtonStyles.css"
 
 const fade = keyframes`
@@ -19,13 +18,31 @@ const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   width: 70%;
+
+  h2 {
+    font: 42px/54px Futura Heavy;
+    margin: 0 1rem;
+    color: #707070;
+  }
 `
 
 const CardsWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
+  --repeat: auto-fit;
+
+  @media (min-width: calc(250px * 5)) {
+    --repeat: 4;
+  }
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(
+    var(--repeat, auto-fit),
+    minmax(calc(250px * 1), 1fr)
+  );
+  grid-template-rows: auto;
+  gap: 25px;
+  /* justify-content: space-around; */
   width: 100%;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 `
 
 // Course Card
@@ -35,9 +52,10 @@ const CourseCardWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 17.5rem;
-  height: 30rem;
-  margin: 15px 20px 50px 20px;
+  width: 100%;
+  height: 100%;
+  font-family: Futura Heavy;
+  /* margin: 15px 20px 50px 20px; */
   padding: 2rem;
   border-radius: 22px;
   border: 1px solid rgba(0, 0, 0, 7%);
@@ -54,20 +72,31 @@ const CourseCardImg = styled.img`
   width: 70%;
   background: slateblue;
 `
-const CourseCardTitle = styled.h3`
-  text-align: center;
+const CourseCardTitle = styled.div`
+  /* text-align: center; */
   margin: 0;
   margin-bottom: 0.5rem;
+  font-size: 18px;
+
+  h4 {
+    font-size: 23px;
+    margin: 0;
+  }
 `
 
 const CourseCardButtonContainer = styled.div`
+  width: 100%;
   height: auto;
   margin-top: 0.5rem;
 `
 const CourseCardButton = styled(ButtonPrimary)`
+  font-family: Futura Heavy;
+  font-size: 26px;
   padding: 0.75rem;
   width: 100%;
   margin: 0.1rem;
+  background-color: #CC4A28;
+  border-radius: 10px;
 `
 
 const CourseCardModalWrapper = styled.div`
@@ -92,7 +121,7 @@ const CourseCardModalCard= styled.div`
   width: 80%;
 
   opacity: ${props => props.display === props.id ? 1 : 0};
-display: ${props => props.display === props.id ? 'inline' : 'none '};
+  display: ${props => props.display === props.id ? 'inline' : 'none '};
   background: white;
   border-radius: 20px;
   position: relative;
