@@ -54,8 +54,8 @@ export const courses = [
     image: "",
   },
   {
-    courseName: "DUal in bl bla and bla bla",
-    type: "dualQaulification",
+    courseName: "Dual in bl bla and bla bla",
+    type: "dualQualification",
     courseA: {
       courseName: "Certificate IV in Accounting and Bookkeeping",
       courseCode: "FNS40217",
@@ -72,7 +72,7 @@ export const courses = [
   },
   {
     courseName: "DUal in bl bla and bla bla",
-    type: "dualQaulification",
+    type: "dualQualification",
     courseA: {
       courseName: "Certificate IV in Accounting and Bookkeeping",
       courseCode: "FNS40217",
