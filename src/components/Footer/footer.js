@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import { Fragment } from "react"
 import {
@@ -39,6 +38,12 @@ const FormFieldComponent = ({
   )
 }
 
+const CustomLink = ({ children, to }) => {
+  return <a href={to} target="_blank" rel="noreferrer noopener">
+    {children}
+  </a>
+}
+
 const FooterComponent = () => {
   return (
     <FooterContainer>
@@ -51,9 +56,9 @@ const FooterComponent = () => {
               {i === 0 && (
                 <>
                   <FooterMenuLinks>
-                    {el.column_one.menu_links.map(({ id, name }) => (
+                    {el.column_one.menu_links.map(({ id, name, url }) => (
                       <li key={id}>
-                        <Link to="#">{name}</Link>
+                        <CustomLink to={url}>{name}</CustomLink>
                       </li>
                     ))}
                   </FooterMenuLinks>
@@ -100,19 +105,19 @@ const FooterComponent = () => {
 
               {i === 1 && (
                 <>
-                  <Link to="#">
+                  <CustomLink to="https://www.mentor.edu.au/school-of-accounting-and-finance/">
                     <h3>{"SCHOOL OF ACCOUNTING & FINANCE"}</h3>
-                  </Link>
+                  </CustomLink>
                   {el.column_two.course_heading.map(
-                    ({ id, title, course_list }) => (
+                    ({ id, title, titleUrl, course_list }) => (
                       <Fragment key={id}>
-                        <Link to="#">
+                        <CustomLink to={titleUrl}>
                           <h4>{title}</h4>
-                        </Link>
+                        </CustomLink>
                         <FooterCourseList>
-                          {course_list.map(({ id, name }) => (
+                          {course_list.map(({ id, name, courseUrl }) => (
                             <li key={id}>
-                              <Link to="#">{name}</Link>
+                              <CustomLink to={courseUrl}>{name}</CustomLink>
                             </li>
                           ))}
                         </FooterCourseList>
@@ -127,13 +132,19 @@ const FooterComponent = () => {
               {i === 2 && (
                 <>
                   {el.column_three.course_heading.map(
-                    ({ id, title, course_list }) => (
+                    ({ id, title, titleUrl, course_list }) => (
                       <Fragment key={id}>
-                        <h4>{title}</h4>
+                        {titleUrl ? (
+                          <CustomLink to={titleUrl}>
+                            <h4>{title}</h4>
+                          </CustomLink>
+                        ) : (
+                          <h4>{title}</h4>
+                        )}
                         <FooterCourseList>
-                          {course_list.map(({ id, name }) => (
+                          {course_list.map(({ id, name, courseUrl }) => (
                             <li key={id}>
-                              <Link to="#">{name}</Link>
+                              <CustomLink to={courseUrl}>{name}</CustomLink>
                             </li>
                           ))}
                         </FooterCourseList>
@@ -147,19 +158,19 @@ const FooterComponent = () => {
 
               {i === 3 && (
                 <>
-                  <Link to="#">
+                  <CustomLink to="https://www.mentor.edu.au/school-of-business-it-project-management/">
                     <h3>{"SCHOOL OF BUSINESS, IT & PROJECT MANAGEMENT"}</h3>
-                  </Link>
+                  </CustomLink>
                   {el.column_four.course_heading.map(
-                    ({ id, title, course_list }) => (
+                    ({ id, title, titleUrl, course_list }) => (
                       <Fragment key={id}>
-                        <Link to="#">
+                        <CustomLink to={titleUrl}>
                           <h4>{title}</h4>
-                        </Link>
+                        </CustomLink>
                         <FooterCourseList>
-                          {course_list.map(({ id, name }) => (
+                          {course_list.map(({ id, name, courseUrl }) => (
                             <li key={id}>
-                              <Link to="#">{name}</Link>
+                              <CustomLink to={courseUrl}>{name}</CustomLink>
                             </li>
                           ))}
                         </FooterCourseList>
@@ -177,25 +188,23 @@ const FooterComponent = () => {
             <h4>GET IN TOUCH WITH US</h4>
             <p>
               Current students:{" "}
-              <a href="mailto:service@mentor.edu.au">service@mentor.edu.au</a>
+              <CustomLink href="mailto:service@mentor.edu.au">
+                service@mentor.edu.au
+              </CustomLink>
               <br />
             </p>
             <p>
               New enquires:{" "}
-              <a href="mailto:courseconsultant@mentor.edu.au">
+              <CustomLink href="mailto:courseconsultant@mentor.edu.au">
                 courseconsultant@mentor.edu.au
-              </a>
+              </CustomLink>
             </p>
           </Connect>
           <AboutMentor>
             <br />
-            <a href="/">
-              <img
-                src={Logo}
-                alt="Mentor Education"
-                title="Mentor Education"
-              />
-            </a>
+            <CustomLink to="https://www.mentor.edu.au/">
+              <img src={Logo} alt="Mentor Education" title="Mentor Education" />
+            </CustomLink>
             <p>
               Established since 2003, Mentor Education is an Australian
               nationally recognised vocational education and training (VET)
@@ -208,27 +217,27 @@ const FooterComponent = () => {
               Qualifications Framework standard.
             </p>
             <p>
-              <a href="/">
+              <CustomLink to="https://www.mentor.edu.au/privacy-policy">
                 Privacy Policy
-              </a>
-              <a href="/">
+              </CustomLink>
+              <CustomLink to="https://www.mentor.edu.au/complaints-policy">
                 Complaints Policy
-              </a>
-              <a href="/">
+              </CustomLink>
+              <CustomLink to="https://www.mentor.edu.au/refund-policy">
                 Refund Policy
-              </a>
-              <a href="/">
+              </CustomLink>
+              <CustomLink to="https://www.mentor.edu.au/accessibility-statement">
                 Accessibility Statement
-              </a>
-              <a href="/inclusivity-statement">
+              </CustomLink>
+              <CustomLink to="https://www.mentor.edu.au/inclusivity-statement">
                 Inclusivity Statement
-              </a>
-              <a href="/">
+              </CustomLink>
+              <CustomLink to="https://www.mentor.edu.au/terms-and-conditions">
                 Terms &amp; Conditions
-              </a>
-              <a href="/">
+              </CustomLink>
+              <CustomLink to="https://www.mentor.edu.au/disclaimer">
                 Disclaimer
-              </a>
+              </CustomLink>
             </p>
             <p>
               Copyright © 2003 - 2021 Mentor Education Pty Ltd ABN 47 106 065
