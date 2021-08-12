@@ -16,6 +16,8 @@ import AcademicPathways from "../components/BusinessSkillSet/AcademicPathway/Aca
 import Knowmore from "../components/Knowmore/Knowmore"
 import Nosubsitute from "../components/Nosubstitute/Nosubstitute"
 import FooterForm from '../components/FooterForm/FooterForm';
+import StudentsWork from "../components/StudentsWork"
+import FooterComponent from "../components/Footer/footer"
 
 const WebinarTemplate = () => {
   return (
@@ -39,8 +41,12 @@ const WebinarTemplate = () => {
         <AcademicPathways/> 
         <Testimonials/>
         <Knowmore></Knowmore>
+        <StudentsWork/>
         <Nosubsitute />
+        
         <FooterForm/>
+       
+      
       </MainContainer>
     </>
   )
