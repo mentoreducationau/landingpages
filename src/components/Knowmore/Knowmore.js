@@ -21,7 +21,7 @@ const Knowmore = () => {
           setCountsecond(91);
         }
 
-      });
+      },[countup, countsecond]);
   return (
       <>
       <KnowmoreContainer>
