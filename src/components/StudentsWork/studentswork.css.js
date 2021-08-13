@@ -14,21 +14,14 @@ export const StudentsWorkContainer = styled.div`
 export const CompanyLogosWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 2rem 0;
+  margin: 2rem 0 0;
   overflow: hidden;
 
-  div {
+  a {
     flex: 1 0 12%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     margin: 0 1rem;
-    overflow: hidden;
-  }
-
-  a {
-    color: #666;
-    text-decoration: none;
   }
 `

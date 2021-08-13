@@ -54,10 +54,6 @@ export const FormDescription = styled.div`
   }
 `
 
-export const FormImage = styled.img`
-  width: 100%;
-`
-
 export const InputForm = styled.input`
   border: 3px solid #707070;
   height: 59px;

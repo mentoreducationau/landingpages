@@ -15,20 +15,15 @@ export const MainContainer = styled.div`
   }
 `
 export const AvatarContainer = styled.div`
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
 `
 export const AvatarCard = styled.div`
-height: 100%;
-width: 25%;
-h3 {
-    margin: 0;
-}
-`
-
-export const Image = styled.img`
-height: 10rem;
-width: 100%;
+  height: 100%;
+  width: 25%;
+  h3 {
+      margin: 0;
+  }
 `

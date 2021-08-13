@@ -22,6 +22,14 @@ export const FoundersDetailGrid = styled.div`
     display: block;
     padding: 27px 0;
   }
+
+  .gatsby-image-wrapper {
+    @media (max-width: 768px) {
+      width: 50%;
+      float: left;
+      margin: 10px;
+    }
+  }
 `
 export const QuotedPara = styled(Paragraph)`
   font-family: Futura Medium;
@@ -70,17 +78,3 @@ export const FounderDetails = styled.div`
     }
   }
 `
-
-export const FounderImage = styled.img`
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    grid-column: 2 / 3;
-
-    @media (max-width: 768px) {
-      width: 50%;
-      float: left;
-      margin: 10px;
-    }
-`
-
