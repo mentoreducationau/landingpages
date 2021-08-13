@@ -1,13 +1,12 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import {
   BusinessSkillSetcontainer,
   BusinessSkillSetWrapper,
   BusinessSkillImage,
   BusinessInfo,
-  Image,
 } from "./BusinessSkillSet.css"
 import { Title } from "../../styles/Typography.css"
-import bus from "../../images/bus.jpg"
 
 const BusinessSkillSet = ({ title, subtitle }) => {
   return (
@@ -17,7 +16,7 @@ const BusinessSkillSet = ({ title, subtitle }) => {
       </Title>
       <BusinessSkillSetcontainer>
         <BusinessSkillImage>
-          <Image src={bus} />
+          <StaticImage src="../../images/bus.jpg" alt="Education pathway" />
         </BusinessSkillImage>
         <BusinessInfo>
           <h4 dark>Business Qaulification Pathway</h4>

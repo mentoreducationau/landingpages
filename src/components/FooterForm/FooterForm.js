@@ -1,4 +1,6 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
+
 import {
   FooterformContainer,
   InputForm,
@@ -9,7 +11,6 @@ import {
   Textarea,
   FooterFormbutton,
   FooterFormbuttonWrapper,
-  FormImage,
   FormIntroContainer,
   FormDescription
 } from "./FooterForm.css"
@@ -24,7 +25,7 @@ const FooterForm = () => {
         talk to an expert?
       </Title>
       <FormIntroContainer>
-        <FormImage src="/footer-img.jpg" alt="form-image" />
+        <StaticImage src="../../../static/footer-img.jpg" alt="form-image" />
         <FormDescription>
           <h4>We understand</h4>
           <div>Help</div>

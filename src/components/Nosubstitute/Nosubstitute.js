@@ -1,10 +1,10 @@
 import React from "react"
+import { StaticImage } from 'gatsby-plugin-image'
 
 import {
   NosubstituteContainer,
   FoundersDetailGrid,
   QuotedPara,
-  FounderImage,
   FounderDetails
 } from "./Nosubstitute.css"
 
@@ -26,7 +26,7 @@ const Nosubsitute = () => {
           PROFESSIONALS
           <QuoteSvg right />
         </QuotedPara>
-        <FounderImage src="/mark-sinclair.jpg" alt="mark-sinclair" />
+        <StaticImage src="../../../static/mark-sinclair.jpg" alt="mark-sinclair" />
         <FounderDetails>
           <h3>Mark Sinclair</h3>
           <span>Founder of Mentor Education PTY LTD</span>

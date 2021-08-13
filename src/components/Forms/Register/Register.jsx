@@ -1,6 +1,6 @@
 import React from "react"
 import { RegisterContainer, RegisterForm, Input, Button } from "./register.css"
-import CourseGuide from "../Register copy/CourseGuide"
+import CourseGuide from "../CourseGuide/CourseGuide"
 
 const Registar = () => {
   return (

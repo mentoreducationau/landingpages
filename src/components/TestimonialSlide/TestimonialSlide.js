@@ -1,23 +1,46 @@
 import React from "react"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { useStaticQuery, graphql } from "gatsby"
+
 import {
   TestimonialSlideContainer,
   TestimonialSlideWrapper,
   TestimonialSlideImage,
   TestimonialSlideInfo,
-  Image,
   SliderArrowLeft,
-  SliderArrowRight
+  SliderArrowRight,
 } from "./TestimonialSlide.css"
 
-import { QuoteSvg } from '../../images/svg/quotations'
+import { QuoteSvg } from "../../images/svg/quotations"
 
-const TestimonialSlide = (props) => {
+const TestimonialSlide = props => {
+  const {
+    allFile: { nodes: images },
+  } = useStaticQuery(graphql`
+    query {
+      allFile {
+        nodes {
+          name
+          relativePath
+          publicURL
+          childImageSharp {
+            gatsbyImageData(transformOptions: { fit: COVER })
+          }
+        }
+      }
+    }
+  `)
+
+  const img = images.filter(image => image.relativePath === props.data.imageurl)
 
   return (
     <TestimonialSlideWrapper activeTab={props.active}>
       <TestimonialSlideContainer>
         <TestimonialSlideImage>
-          <Image src={props.data.imageurl} />
+          <GatsbyImage
+            image={img[0].childImageSharp.gatsbyImageData}
+            alt={img[0].name}
+          />
         </TestimonialSlideImage>
         <TestimonialSlideInfo>
           <h4 dark>{props.data.name}</h4>
@@ -28,7 +51,7 @@ const TestimonialSlide = (props) => {
             <QuoteSvg right />
           </p>
           <SliderArrowLeft onClick={() => props.prevSlide()} />
-          <SliderArrowRight  onClick={() => props.nextSlide()} />
+          <SliderArrowRight onClick={() => props.nextSlide()} />
         </TestimonialSlideInfo>
       </TestimonialSlideContainer>
     </TestimonialSlideWrapper>

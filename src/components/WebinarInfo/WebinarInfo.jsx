@@ -1,8 +1,6 @@
 import React from "react"
-import { MainContainer, AvatarContainer, AvatarCard, Image } from "./WebinarInfo.css"
-import JL from "../../images/JL.png"
-import MS from "../../images/MS.png"
-import DO from "../../images/DO.png"
+import { StaticImage } from 'gatsby-plugin-image'
+import { MainContainer, AvatarContainer, AvatarCard } from "./WebinarInfo.css"
 import Tab from "../Tab/Tab"
 
 const WebinarInfo = () => {
@@ -11,17 +9,26 @@ const WebinarInfo = () => {
       <h1>Join your hosts</h1>
       <AvatarContainer>
         <AvatarCard>
-          <Image src={MS} alt="James Lynch" />
+          <StaticImage
+            src="../../images/MS.png"
+            alt="mark-sinclair"
+          />
           <h3>Mark Synclair</h3>
           <h5>Founder Mentor Education</h5>
         </AvatarCard>
         <AvatarCard>
-          <Image src={JL} alt="James Lynch" />
+          <StaticImage
+            src="../../images/JL.png"
+            alt="james-lynch"
+          />
           <h3>James Lynch</h3>
           <h5>Special Projects Officer</h5>
         </AvatarCard>
         <AvatarCard>
-          <Image src={DO} alt="James Lynch" />
+          <StaticImage
+            src="../../images/DO.png"
+            alt="daniel-oneal"
+          />
           <h3>Danielle O'neal</h3>
           <h5>Education Advice Team Leader</h5>
         </AvatarCard>
@@ -48,9 +55,7 @@ const WebinarInfo = () => {
         graduates since 2003, Mentor Education is Australia's largest privately
         owned accounting / bookkeeping, finance and business education provider.
       </p>
-      <Tab>
-
-      </Tab>
+      <Tab></Tab>
     </MainContainer>
   )
 }
