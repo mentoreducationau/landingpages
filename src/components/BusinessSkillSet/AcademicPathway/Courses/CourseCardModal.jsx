@@ -2,7 +2,7 @@ import React from 'react'
 
 import eg from '../../../../images/card-imgs/photos/eg.png'
 import { Paragraph, Title } from '../../../../styles/Typography.css'
-import CourseGuide from '../../../Forms/Register copy/CourseGuide'
+import CourseGuide from '../../../Forms/CourseGuide/CourseGuide'
 import { CourseCardModalContainer, CourseCardModalWrapper, CloseButton,  LeftContainer,InnerWrapper,
     RightContainer, ModalImage, VisitCourseLink } from '../AcademicPathway.css'
 
