@@ -1,14 +1,15 @@
 import styled from "styled-components"
 
-export const FooterContainer = styled.div`
-  padding: 70px 0;
+export const FooterContainer = styled.footer`
+  background: #f1f1f1;
+  padding: 36px;
   clear: both;
 `
 
 export const Footer = styled.div`
+  
   line-height: 20px;
-  max-width: 1130px;
-  padding: 0 25px;
+  /* max-width: 1130px; */
   margin: auto;
   font-family: "Open Sans";
 
@@ -138,75 +139,6 @@ export const FooterCourseList = styled.ul`
   }
 `
 
-export const SubscribeForm = styled.form`
-  display: block;
-  position: relative;
-  text-align: left;
-  padding: 10px 0 10px 3%;
-`
-
-export const RequiredIndicator = styled.span`
-  color: #e85c41;
-  font-size: 150%;
-  font-weight: normal;
-  position: relative;
-  top: 5px;
-`
-
-export const FormField = styled.div`
-  clear: left;
-  position: relative;
-  width: 96%;
-  padding-bottom: 3%;
-  min-height: 50px;
-
-  label {
-    display: block;
-    margin-bottom: 3px;
-  }
-
-  input {
-    display: block;
-    width: 100%;
-    padding: 8px 0;
-    text-indent: 2%;
-    border: 1px solid #abb0b2;
-    border-radius: 3px;
-  }
-`
-
-export const RequiredIndicatorText = styled.div`
-  text-align: right;
-  font-size: 11px;
-  margin-right: 4%;
-`
-
-export const SubscribeButton = styled.input`
-  clear: both;
-  background-color: #aaa;
-  border: 0 none;
-  border-radius: 4px;
-  transition: all 0.23s ease-in-out 0s;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: normal;
-  height: 32px;
-  line-height: 32px;
-  margin: 0 5px 10px 0;
-  padding: 0 22px;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: top;
-  white-space: nowrap;
-  width: auto;
-
-  :hover {
-    background-color: #777;
-  }
-`
-
 export const RowTwo = styled.div`
   display: block;
   font-family: Futura Medium;
@@ -238,7 +170,7 @@ export const Connect = styled.div`
 export const AboutMentor = styled.div`
   width: 70%;
   margin-right: 5%;
-  float: left;
+  /* float: left; */
 
   a {
     margin-right: 15px;
