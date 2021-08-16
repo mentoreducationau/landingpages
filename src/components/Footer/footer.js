@@ -1,15 +1,11 @@
-import React from "react"
-import { Fragment } from "react"
+import React, { Fragment } from "react"
+import SubscribeForm from "../Forms/Subscribe/SubscribeForm"
+
 import {
   FooterContainer,
   Footer,
   RowOne,
   FooterColumns,
-  SubscribeForm,
-  SubscribeButton,
-  FormField,
-  RequiredIndicator,
-  RequiredIndicatorText,
   FooterCourseList,
   FooterMenuLinks,
   RowTwo,
@@ -20,23 +16,6 @@ import {
 import { footerData } from "./footer-data"
 
 import Logo from "../../images/mlogo.png"
-
-const FormFieldComponent = ({
-  children,
-  label,
-  name,
-  type,
-  required = false,
-}) => {
-  return (
-    <FormField>
-      <label for={name}>
-        {label} {children}
-      </label>
-      <input type={type} name={name} id={name} aria-required={required} />
-    </FormField>
-  )
-}
 
 const CustomLink = ({ children, to }) => {
   return <a href={to} target="_blank" rel="noreferrer noopener">
@@ -65,39 +44,7 @@ const FooterComponent = () => {
                   <br />
                   <br />
                   <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
-                  <div>
-                    <SubscribeForm action="">
-                      <div style={{ display: "block" }}>
-                        <FormFieldComponent
-                          label="Email Address"
-                          name="email"
-                          type="email"
-                          required={true}
-                        >
-                          <RequiredIndicator>*</RequiredIndicator>
-                        </FormFieldComponent>
-                        <FormFieldComponent
-                          label="First Name"
-                          name="firstname"
-                          type="text"
-                        />
-                        <FormFieldComponent
-                          label="Last Name"
-                          name="lastname"
-                          type="text"
-                        />
-                        <SubscribeButton
-                          value="Subscribe"
-                          type="submit"
-                          name="subscribe"
-                        />
-                      </div>
-                    </SubscribeForm>
-                  </div>
-                  <RequiredIndicatorText>
-                    <RequiredIndicator>*</RequiredIndicator>
-                    indicates required
-                  </RequiredIndicatorText>
+                  <SubscribeForm />
                 </>
               )}
 
