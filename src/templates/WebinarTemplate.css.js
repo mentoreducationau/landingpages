@@ -23,7 +23,7 @@ export const CourseHeading = styled.div`
   padding: 2rem;
 
   h1 {
-    font: 50px/64px "Futura Medium";
+    font: 60px/77px "Futura Medium";
     color: #464343;
     margin: 0;
     text-align: center;
@@ -32,6 +32,7 @@ export const CourseHeading = styled.div`
 export const MainContainer = styled.div`
   width: 99vw;
   height: 100%;
+  margin: 0 auto;
   display: flex;
   flex-wrap : wrap;
   justify-content: center;
