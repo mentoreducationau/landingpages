@@ -2,7 +2,6 @@ import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import {
-  FooterformContainer,
   InputForm,
   InputContainer,
   QuotedBoxRight,
@@ -16,11 +15,12 @@ import {
 } from "./FooterForm.css"
 
 import { Title } from '../../styles/Typography.css'
+import { Container } from "../../styles/ContainerStyles.css"
 
 const FooterForm = () => {
   return (
-    <FooterformContainer>
-      <Title weight={700} color="#707070">
+    <Container>
+      <Title>
         Need more <span style={{ color: "#FF1010" }}>assistance</span> or to
         talk to an expert?
       </Title>
@@ -58,7 +58,7 @@ const FooterForm = () => {
           <FooterFormbutton>REACH OUT</FooterFormbutton>
         </FooterFormbuttonWrapper>
       </InputContainer>
-    </FooterformContainer>
+    </Container>
   )
 }
 
