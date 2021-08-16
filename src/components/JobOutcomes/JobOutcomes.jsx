@@ -1,24 +1,28 @@
 import React from "react"
 import { jobRoles } from "./JobArray"
+
 import {
-  JobOutcomesWrapper,
-  JobName,
-  Arrow,
+  JobOutcomesContainer,
+  JobDetailWrapper,
+  JobTitleWrapper,
+  SeparatorLine,
   JobListItem,
-  JobSallary,
-  JobRequiredCourse,
-  QaulificationsList,
+  QualificationsList,
   QaulificationLink,
   JobTitle,
 } from "./JobOutcomes.css"
+
 const JobOutcomes = () => {
   const [displayJob, setDisplayJob] = React.useState(0)
 
   return (
-    <JobOutcomesWrapper>
-      <JobName>
-        <JobTitle>Job Name</JobTitle>
-        <QaulificationsList>
+    <JobOutcomesContainer>
+      <JobDetailWrapper>
+        <JobTitleWrapper>
+          <JobTitle>Job Role</JobTitle>
+          <SeparatorLine width="100%" />
+        </JobTitleWrapper>
+        <QualificationsList>
           {jobRoles.map((role, i) => (
             <JobListItem
               key={i}
@@ -26,18 +30,18 @@ const JobOutcomes = () => {
               displayJob={displayJob}
               onMouseEnter={() => setDisplayJob(i)}
             >
-              {role.role.charAt(0).toUpperCase() + role.role.slice(1)}
-              <Arrow
-                id={i}
-                displayJob={displayJob}
-              >-></Arrow>
+              <p>{role.role.charAt(0).toUpperCase() + role.role.slice(1)}</p>
+              <SeparatorLine width="70%" height="2px" id={i} displayJob={displayJob} />
             </JobListItem>
           ))}
-        </QaulificationsList>
-      </JobName>
-      <JobSallary>
-        <JobTitle>Job Sallary</JobTitle>
-        <QaulificationsList>
+        </QualificationsList>
+      </JobDetailWrapper>
+      <JobDetailWrapper>
+        <JobTitleWrapper>
+          <JobTitle>Avg. Salary</JobTitle>
+          <SeparatorLine width="50%" />
+        </JobTitleWrapper>
+        <QualificationsList>
           {jobRoles.map((role, i) => (
             <JobListItem
               key={i}
@@ -45,35 +49,32 @@ const JobOutcomes = () => {
               displayJob={displayJob}
               onMouseEnter={() => setDisplayJob(i)}
             >
-              ${role.salary}
-              <Arrow
-                id={i}
-                displayJob={displayJob}
-              >-></Arrow>
+              <p>${(role.salary - (role.salary % 1000)) / 1000}k per year</p>
+              <SeparatorLine width="30%" height="2px" id={i} displayJob={displayJob} />
             </JobListItem>
           ))}
-        </QaulificationsList>
-      </JobSallary>
-      <JobRequiredCourse>
-        <JobTitle>Required Qaulifications</JobTitle>
-
+        </QualificationsList>
+      </JobDetailWrapper>
+      <JobDetailWrapper last>
+        <JobTitleWrapper>
+          <JobTitle>Required Qualification/s</JobTitle>
+        </JobTitleWrapper>
         {jobRoles.map((role, i) => (
-          <QaulificationsList key={i} displayJob={displayJob} id={i}>
-            {role.requiredQaulifications.map((qaulification, i) => (
-              <JobListItem>
+          <QualificationsList key={i} displayJob={displayJob} id={i}>
+            {role.requiredQaulifications.map((qualification, i) => (
+              <JobListItem key={i}>
                 <QaulificationLink
-                  key={i}
-                  href={`https://www.mentor.edu.au/courses/${qaulification.link}`}
+                  href={`https://www.mentor.edu.au/courses/${qualification.link}`}
                   target="_blank"
                 >
-                  {qaulification.name}
+                  {qualification.name}
                 </QaulificationLink>
               </JobListItem>
             ))}
-          </QaulificationsList>
+          </QualificationsList>
         ))}
-      </JobRequiredCourse>
-    </JobOutcomesWrapper>
+      </JobDetailWrapper>
+    </JobOutcomesContainer>
   )
 }
 

@@ -1,10 +1,11 @@
 import React from 'react'
-import { studentsData } from './student-data'
-
-import { StudentsWorkContainer, CompanyLogosWrapper } from "./studentswork.css"
-import { Title } from '../../styles/Typography.css'
 import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { studentsData } from './student-data'
+
+import { CompanyLogosWrapper } from "./studentswork.css"
+import { Container } from '../../styles/ContainerStyles.css'
+import { Title } from '../../styles/Typography.css'
 
 const StudentsWork = () => {
     const {
@@ -16,17 +17,14 @@ const StudentsWork = () => {
             name
             relativePath
             childImageSharp {
-              gatsbyImageData(
-                layout: FIXED
-                width: 100
-              )
+              gatsbyImageData
             }
           }
         }
       }
     `)
     return (
-      <StudentsWorkContainer>
+      <Container>
         <Title>Where our graduates are now employed</Title>
         <CompanyLogosWrapper>
           {studentsData.map(({ id, companyName, link, imgSrc }) => {
@@ -43,7 +41,7 @@ const StudentsWork = () => {
             )
           })}
         </CompanyLogosWrapper>
-      </StudentsWorkContainer>
+      </Container>
     )
 }
 

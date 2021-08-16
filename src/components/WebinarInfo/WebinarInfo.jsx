@@ -2,42 +2,43 @@ import React from "react"
 import { StaticImage } from 'gatsby-plugin-image'
 import { MainContainer, AvatarContainer, AvatarCard } from "./WebinarInfo.css"
 import Tab from "../Tab/Tab"
+import { H4, H5, Headline, Paragraph } from "../../styles/Typography.css"
 
 const WebinarInfo = () => {
   return (
     <MainContainer>
-      <h1>Join your hosts</h1>
+      <Headline>Join your hosts</Headline>
       <AvatarContainer>
         <AvatarCard>
           <StaticImage
             src="../../images/MS.png"
             alt="mark-sinclair"
           />
-          <h3>Mark Synclair</h3>
-          <h5>Founder Mentor Education</h5>
+          <H4>Mark Synclair</H4>
+          <H5>Founder Mentor Education</H5>
         </AvatarCard>
         <AvatarCard>
           <StaticImage
             src="../../images/JL.png"
             alt="james-lynch"
           />
-          <h3>James Lynch</h3>
-          <h5>Special Projects Officer</h5>
+          <H4>James Lynch</H4>
+          <H5>Special Projects Officer</H5>
         </AvatarCard>
         <AvatarCard>
           <StaticImage
             src="../../images/DO.png"
             alt="daniel-oneal"
           />
-          <h3>Danielle O'neal</h3>
-          <h5>Education Advice Team Leader</h5>
+          <H4>Danielle O'neal</H4>
+          <H5>Education Advice Team Leader</H5>
         </AvatarCard>
       </AvatarContainer>
-      <h1>
+      <Headline>
         Launch or enhance your career with the FNS40217 Certificate IV in
         Accounting and Bookkeeping.
-      </h1>
-      <p>
+      </Headline>
+      <Paragraph>
         Mentor Education's nationally recognised FNS40217 Certificate IV in
         Accounting and Bookkeeping qualification is tailored to individuals
         either currently working in bookkeeping and accounting roles seeking
@@ -54,7 +55,7 @@ const WebinarInfo = () => {
         activity and instalment activity statements. With more than 20,000
         graduates since 2003, Mentor Education is Australia's largest privately
         owned accounting / bookkeeping, finance and business education provider.
-      </p>
+      </Paragraph>
       <Tab></Tab>
     </MainContainer>
   )

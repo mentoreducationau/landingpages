@@ -1,6 +1,7 @@
 import React , { useState, useEffect, useCallback } from "react"
 import TestimonialSlide from "../TestimonialSlide/TestimonialSlide"
 import { testimonialarray }  from '../../utils/slider';
+import { Container } from "../../styles/ContainerStyles.css";
 
 let interval
 
@@ -31,9 +32,10 @@ const Testimonials = () => {
   },[nextSlide])
 
   return (
-    <>
+    <Container>
         {testimonialarray && testimonialarray.map((item , index) => (     
           <TestimonialSlide
+            key={index}
             active={index === activeSlide} 
             nextSlide={nextSlide} 
             prevSlide={prevSlide} 
@@ -41,7 +43,7 @@ const Testimonials = () => {
             index={index}
           />
         ))}
-    </>
+    </Container>
   )
 }
 

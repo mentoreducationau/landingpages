@@ -12,6 +12,7 @@ import {
 } from "./TestimonialSlide.css"
 
 import { QuoteSvg } from "../../images/svg/quotations"
+import { Subtitle, SpanHeavy, ParagraphMedium } from "../../styles/Typography.css"
 
 const TestimonialSlide = props => {
   const {
@@ -43,13 +44,13 @@ const TestimonialSlide = props => {
           />
         </TestimonialSlideImage>
         <TestimonialSlideInfo>
-          <h4 dark>{props.data.name}</h4>
-          <span>{props.data.jobtitle}</span>
-          <p>
+          <Subtitle>{props.data.name}</Subtitle>
+          <SpanHeavy>{props.data.jobtitle}</SpanHeavy>
+          <ParagraphMedium>
             <QuoteSvg left />
             {props.data.info}
             <QuoteSvg right />
-          </p>
+          </ParagraphMedium>
           <SliderArrowLeft onClick={() => props.prevSlide()} />
           <SliderArrowRight onClick={() => props.nextSlide()} />
         </TestimonialSlideInfo>
