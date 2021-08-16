@@ -10,6 +10,7 @@ const DualQualifications = ({ courses }) => {
        
        courses && courses.map(course => {
            if (course.type === 'dualQualification') newCourses.unshift(course)
+           return null
        })
        setDualCourses(newCourses)
     },[courses])

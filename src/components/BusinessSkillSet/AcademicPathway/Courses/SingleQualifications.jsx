@@ -11,6 +11,7 @@ const SingleQualifications = ({ courses }) => {
     courses &&
       courses.map(course => {
         if (course.type !== "dualQualification") newSingleCourses.unshift(course)
+        return null
       })
     setSingleCourses(newSingleCourses)
   }, [courses])
