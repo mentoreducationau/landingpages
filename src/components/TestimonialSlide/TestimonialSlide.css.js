@@ -1,4 +1,4 @@
-import styled , {keyframes} from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 const rotate = keyframes`
   from {
@@ -9,25 +9,20 @@ const rotate = keyframes`
   to {
     display: inline;
     opacity: 1;
-    /* height: auto; */
   }
-`;
+`
 
-export const TestimonialSlideWrapper= styled.div`
-  width: 99vw;
-  margin: 4rem auto;
+export const TestimonialSlideWrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0 150px;
   overflow: hidden;
-  animation: ${rotate} .2s linear;
-  opacity: ${props => props.activeTab ? 1 : 0};
-  display: ${props => props.activeTab  ? 'inline' : 'none '};
-  transition: opacity .3s ease-out;
+  animation: ${rotate} 0.2s linear;
+  opacity: ${props => (props.activeTab ? 1 : 0)};
+  display: ${props => (props.activeTab ? "inline" : "none ")};
+  transition: opacity 0.3s ease-out;
 `
 
 export const TestimonialSlideContainer = styled.div`
-  /* display: flex; */
   display: grid;
   grid-template-columns: 33% 67%;
   justify-content: space-between;
@@ -52,8 +47,8 @@ export const SliderArrowLeft = styled(SliderArrow)`
 `
 
 export const SliderArrowRight = styled(SliderArrow)`
-  border-left: 42px solid #FF0000;
-  margin-left:20px;
+  border-left: 42px solid #ff0000;
+  margin-left: 20px;
 `
 
 export const TestimonialSlideInfo = styled.div`
@@ -67,32 +62,7 @@ export const TestimonialSlideInfo = styled.div`
     grid-row: 1;
   }
 
-  h4 {
-    margin-bottom: 10px;
-    font-weight: 900;
-    font-size: 43.5px;
-    letter-spacing: 0px;
-    text-align: left;
-    letter-spacing: 0px;
-    color: #707070;
-    opacity: 1;
-  }
-
-  span {
-    letter-spacing: 0px;
-    color: #f40000;
-    opacity: 1;
-    font-size: 27px;
-    font-weight: 900;
-    line-height: 33px;
-  }
-
   p {
-    line-height: 30px;
-    color: #535353;
-    letter-spacing: 0px;
-    font-weight: 500;
-    font-size: 24px;
     margin: 2rem 0;
   }
 `
@@ -117,4 +87,3 @@ export const TestimonialSlideImage = styled.div`
     }
   }
 `
-

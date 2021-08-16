@@ -17,12 +17,11 @@ const fade = keyframes`
 const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 70%;
 
   h2 {
-    font: 42px/54px Futura Heavy;
-    margin: 0 1rem;
-    color: #707070;
+    font-size: 36px;
+    line-height: 45px;
+    padding: 0 2rem;
   }
 `
 
@@ -32,17 +31,16 @@ const CardsWrapper = styled.div`
   @media (min-width: calc(250px * 5)) {
     --repeat: 4;
   }
-  /* display: flex; */
+
   display: grid;
   grid-template-columns: repeat(
     var(--repeat, auto-fit),
     minmax(calc(250px * 1), 1fr)
   );
   grid-template-rows: auto;
-  gap: 25px;
-  /* justify-content: space-around; */
+  row-gap: 27px;
+  column-gap: 74px;
   width: 100%;
-  /* flex-wrap: wrap; */
 `
 
 // Course Card
@@ -55,8 +53,7 @@ const CourseCardWrapper = styled.div`
   width: 100%;
   height: 100%;
   font-family: Futura Heavy;
-  /* margin: 15px 20px 50px 20px; */
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 22px;
   border: 1px solid rgba(0, 0, 0, 7%);
   -webkit-box-shadow: 10px 0px 13px -7px rgba(0, 0, 0, 5%),
@@ -69,17 +66,17 @@ const CourseCardWrapper = styled.div`
   }
 `
 const CourseCardImg = styled.img`
-  width: 70%;
+  width: 90%;
   background: slateblue;
 `
 const CourseCardTitle = styled.div`
-  /* text-align: center; */
-  margin: 0;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem;
   font-size: 18px;
+  line-height: 20px;
 
   h4 {
     font-size: 23px;
+    line-height: 30px;
     margin: 0;
   }
 `
@@ -90,11 +87,9 @@ const CourseCardButtonContainer = styled.div`
   margin-top: 0.5rem;
 `
 const CourseCardButton = styled(ButtonPrimary)`
-  font-family: Futura Heavy;
-  font-size: 26px;
-  padding: 0.75rem;
+  font: 26px/34px Futura Heavy; 
+  padding: 0.3rem 0;
   width: 100%;
-  margin: 0.1rem;
   background-color: #CC4A28;
   border-radius: 10px;
 `

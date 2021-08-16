@@ -1,96 +1,81 @@
-import styled, {keyframes} from 'styled-components'
-import {Title} from '../../styles/Typography.css'
-const JobOutcomesWrapper = styled.div`
-margin: 4rem 2rem;
-width: 99vw;
-padding: 0 4rem;
-display: flex;
-justify-content: center;
+import styled, { keyframes } from "styled-components"
+import { Container } from "../../styles/ContainerStyles.css"
+import { Subtitle } from "../../styles/Typography.css"
 
-`
-const JobName = styled.div`
-display: flex;
-justify-content: flex-start;
-width: 22%;
-flex-direction: column;
-flex-wrap: wrap;
-`
-const JobTitle = styled(Title)`
-text-decoration: overline;
-`
-
-
-const fade = keyframes`
+export const fade = keyframes`
   from {
     display: none;
     opacity: 0;
   }
 
   to {
-    display: inline;
+    display: initial;
     opacity: 1;
-    height: auto;
   }
-`;
-
-const DisplayArrow = styled.ul`
-opacity: ${props => props.displayJob === props.id ? 1 : 0};
-display: ${props => props.displayJob === props.id ? 'inline' : 'none '};
-margin: 0;
 `
 
-const Arrow = styled(DisplayArrow)`
-  animation: ${fade} .2s linear;
-`;
+export const JobOutcomesContainer = styled(Container)`
+  display: flex;
+  justify-content: center;
 
-
-const JobSallary = styled.div`
-display: flex;
-flex-direction: column;
-
-width: 22%;
+  font: 33px/40px Futura;
 `
 
-const JobRequiredCourse = styled.div`
-display: flex;
-flex-direction: column;
-width: 42%;
+export const JobDetailWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  width: ${props => props.last ? "33%" : "29%"};
+  flex-direction: column;
 `
 
-const QaulificationsUL = styled.ul`
-opacity: ${props => props.displayJob === props.id ? 1 : 0};
-display: ${props => props.displayJob === props.id ? 'inline' : 'none '};
-line-height: 2rem;
-margin: 0;
+export const JobTitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
 `
 
-const QaulificationsList = styled(QaulificationsUL)`
-  animation: ${fade} .2s linear;
-`;
-
-
-
-const JobListItem = styled.li`
-display: flex;
+export const JobTitle = styled(Subtitle)`
+  margin: 0;
+  width: 100%;
 `
 
-
-
-const QaulificationLink = styled.a`
-color: black;
-text-decoration: none;
-display: block;
-line-height: inherit;
+export const SeparatorLine = styled.div`
+  width: ${props => props.width};
+  height: ${props => props.height ? props.height : "4px"};
+  background: #707070;
+  margin: 0 2rem;
+  opacity: ${props => (props.displayJob === props.id ? 1 : 0)};
+  display: ${props => (props.displayJob === props.id ? "initial" : "none ")};
+  animation: ${fade} 0.2s linear;
 `
 
-export {
-    JobOutcomesWrapper,
-    JobTitle,
-    JobName,
-    Arrow,
-    JobListItem,
-    QaulificationsList,
-    QaulificationLink,
-    JobSallary,
-    JobRequiredCourse
-}
+const QualificationsUL = styled.ul`
+  opacity: ${props => (props.displayJob === props.id ? 1 : 0)};
+  display: ${props => (props.displayJob === props.id ? "inline" : "none ")};
+  line-height: 2rem;
+  margin-bottom: 0;
+  padding: 1rem 0;
+`
+
+export const QualificationsList = styled(QualificationsUL)`
+  animation: ${fade} 0.2s linear;
+`
+
+export const JobListItem = styled.li`
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  margin: 0;
+
+  p {
+    margin: 0;
+    width: 100%;
+  }
+`
+
+export const QaulificationLink = styled.a`
+  color: black;
+  text-decoration: none;
+  display: block;
+  line-height: inherit;
+`
