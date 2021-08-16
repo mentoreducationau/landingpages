@@ -1,11 +1,11 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from "styled-components"
 
-import fontLight from '../assets/fonts/FuturaPT-Light.ttf'
-import fontRegular from '../assets/fonts/FuturaPT-Book.ttf'
+import fontLight from "../assets/fonts/FuturaPT-Light.ttf"
+import fontRegular from "../assets/fonts/FuturaPT-Book.ttf"
 import FuturaMedium from "../assets/fonts/FuturaPTMedium.otf"
-import fontBold from '../assets/fonts/FuturaPT-Bold.ttf'
-import fontExtraBold from '../assets/fonts/FuturaPT-ExtraBold.ttf'
-import FuturaHeavy from '../assets/fonts/FuturaPTHeavy.otf'
+import fontBold from "../assets/fonts/FuturaPT-Bold.ttf"
+import fontExtraBold from "../assets/fonts/FuturaPT-ExtraBold.ttf"
+import FuturaHeavy from "../assets/fonts/FuturaPTHeavy.otf"
 
 const Typography = createGlobalStyle`
   @font-face {
@@ -53,30 +53,81 @@ const Typography = createGlobalStyle`
 `
 
 const Headline = styled.h1`
-  font-size: 3em;
-  font-weight: 700;
+  font: 36px/45px Futura Heavy;
 `
 
 const Title = styled.h2`
-  font: normal normal 900 49px/63px Futura Heavy;
+  font: 50px/60px Futura Heavy;
   letter-spacing: 0px;
-  margin: 0;
-  margin-top:  ${props => props.marginTop ? props.marginTop : 0};
-  font-weight:  ${props => props.weight ? props.weight : 900};
-  color: ${props => props.color ? props.color : "inherit"};
+  margin: 0 auto;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #707070;
 `
 
-const Subtitle = styled.h3`
-  font-size: 1em;
-  font-weight: 400;
-  text-transform: uppercase;
+const Subtitle = styled.h4`
+  font: 36px/45px Futura Heavy;
+  margin-bottom: 13px;
+  color: #707070;
+`
+
+const H3 = styled.h3`
+  font: 36px/45px Futura Heavy;
+  color: #707070;
+  margin: 0;
+`
+const H4 = styled.h4`
+  font: 24px/31px Futura Heavy;
+  margin: 0;
+`
+const H5 = styled.h5`
+  font-family: Futura Heavy;
+  margin: 0;
+  color: #707070;
 `
 
 const Paragraph = styled.p`
-  font-family: Futura Bold;
-  font-size: 0.8em;
-  font-weight: 400;
-  margin-top:  ${props => props.marginTop ? props.marginTop : 0};
+  font: 24px/31px "Futura Medium";
+  color: #707070;
 `
 
-export { Typography, Headline, Title, Subtitle, Paragraph }
+const ParagraphMedium = styled.p`
+  font: 32px/45px Futura Medium;
+  color: #535353;
+  letter-spacing: 0px;
+`
+
+const ParagraphHeavy = styled.p`
+  font: 315px/300px Futura Heavy;
+  letter-spacing: 0px;
+  color: #cc4a28;
+  opacity: 1;
+  margin: 0;
+`
+
+const DivHeavy = styled.div`
+  font: 32px/41px Futura Heavy;
+  letter-spacing: 0px;
+  color: #707070;
+`
+
+const SpanHeavy = styled.span`
+  font: 32px/41px Futura Heavy;
+  letter-spacing: 0px;
+  color: #cc4a28;
+`
+
+export {
+  Typography,
+  Headline,
+  Title,
+  H3,
+  H4,
+  H5,
+  Subtitle,
+  Paragraph,
+  ParagraphMedium,
+  ParagraphHeavy,
+  DivHeavy,
+  SpanHeavy,
+}
