@@ -2,19 +2,19 @@ import React from "react"
 import { StaticImage } from 'gatsby-plugin-image'
 
 import {
-  NosubstituteContainer,
   FoundersDetailGrid,
   QuotedPara,
   FounderDetails
 } from "./Nosubstitute.css"
 
+import { Container } from "../../styles/ContainerStyles.css"
+import { Paragraph, Title, H3 } from "../../styles/Typography.css"
 import { QuoteSvg } from '../../images/svg/quotations'
-import { Title } from "../../styles/Typography.css"
 
 const Nosubsitute = () => {
   return (
-    <NosubstituteContainer>
-      <Title weight={700} color="#707070">
+    <Container>
+      <Title>
         There is no substitute for{" "}
         <span style={{ color: "#FF1010" }}>quality</span> training
       </Title>
@@ -28,9 +28,9 @@ const Nosubsitute = () => {
         </QuotedPara>
         <StaticImage src="../../../static/mark-sinclair.jpg" alt="mark-sinclair" />
         <FounderDetails>
-          <h3>Mark Sinclair</h3>
+          <H3>Mark Sinclair</H3>
           <span>Founder of Mentor Education PTY LTD</span>
-          <p>
+          <Paragraph>
             We concentrate on what we do best. We believe our quality training
             will provide you with the outcomes you desire, be it a better job,
             an increased income, increased skills or gaining professional
@@ -45,10 +45,10 @@ const Nosubsitute = () => {
             equipped with the skill and knowledge gained from an
             industry-leading training course that will fast track your finance,
             accounting and business services career.
-          </p>
+          </Paragraph>
         </FounderDetails>
       </FoundersDetailGrid>
-    </NosubstituteContainer>
+    </Container>
   )
 }
 
