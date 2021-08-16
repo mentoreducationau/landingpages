@@ -33,19 +33,14 @@ const WebinarTemplate = () => {
       <MainContainer>
         <WebinarInfo></WebinarInfo>
         <Registar />
-
-        <CareerSkillSket
-          subtitle="dark"
-          title="How you can further your career with this course"
-        />
+        <CareerSkillSket title="How you can further your career with this course" />
         <JobOutcomes />
         <BusinessSkillSet />
         <AcademicPathways />
+        <Knowmore />
         <Testimonials />
-        <Knowmore></Knowmore>
         <StudentsWork />
         <Nosubsitute />
-
         <FooterForm />
       </MainContainer>
     </>
