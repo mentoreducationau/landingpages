@@ -1,42 +1,63 @@
-import React from 'react'
+import { StaticImage } from "gatsby-plugin-image"
+import React from "react"
 
-import eg from '../../../../images/card-imgs/photos/eg.png'
-import { Paragraph, Title } from '../../../../styles/Typography.css'
-import CourseGuide from '../../../Forms/CourseGuide/CourseGuide'
-import { CourseCardModalContainer, CourseCardModalWrapper, CloseButton,  LeftContainer,InnerWrapper,
-    RightContainer, ModalImage, VisitCourseLink } from '../AcademicPathway.css'
+import { H3, Paragraph } from "../../../../styles/Typography.css"
+import CourseGuide from "../../../Forms/CourseGuide/CourseGuide"
 
-const CourseCardModal = ({display, setDisplayModal, course}) => {
-    console.log(course.introduction)
-    return (
-        <CourseCardModalWrapper display={display}>
-            <CourseCardModalContainer>
-                <CloseButton
-                onClick={() => setDisplayModal(false)}
-                >X</CloseButton>
+import {
+  CourseCardModalContainer,
+  CourseCardModalWrapper,
+  CloseButton,
+  LeftContainer,
+  InnerWrapper,
+  RightContainer,
+} from "./courseCard.css"
 
-            <InnerWrapper>
-            <LeftContainer>
-            <ModalImage src={eg} />
-            <Title
-            marginTop="1.25rem"
-            >{course.courseCode} - {course.courseName}</Title>
-{course.introduction.includes('\n') ? (
-    <Paragraph    marginTop="1rem"> {course.introduction.substring(0, course.introduction.indexOf("\n"))}</Paragraph>
-) :
-<Paragraph>{course.introduction}</Paragraph>}
-            
-            </LeftContainer>
-            <RightContainer>
-                <CourseGuide/>
-                <Title>
-                    <VisitCourseLink href={`https://www.mentor.edu.au/courses/${course.link}`} target="_blank"> Visit Course Page </VisitCourseLink>
-                </Title>
-            </RightContainer>
-            </InnerWrapper>
-            </CourseCardModalContainer>
-        </CourseCardModalWrapper>
-    )
+const CourseCardModal = ({ display, setDisplayModal, course }) => {
+  //   console.log(course.introduction)
+  return (
+    <CourseCardModalWrapper display={display}>
+      <CourseCardModalContainer>
+        <CloseButton onClick={() => setDisplayModal(false)}>X</CloseButton>
+
+        <InnerWrapper>
+          <LeftContainer>
+            <StaticImage
+              src="../../../../images/card-imgs/photos/eg.png"
+              alt="course-modal-image"
+            />
+            <H3>
+              {course.courseCode} - {course.courseName}
+            </H3>
+            {course.introduction.includes("\n") ? (
+              <Paragraph>
+                {" "}
+                {course.introduction.substring(
+                  0,
+                  course.introduction.indexOf("\n")
+                )}
+              </Paragraph>
+            ) : (
+              <Paragraph>{course.introduction}</Paragraph>
+            )}
+          </LeftContainer>
+          <RightContainer>
+            <CourseGuide />
+            <H3>
+              <a
+                href={`https://www.mentor.edu.au/courses/${course.link}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {" "}
+                Visit Course Page{" "}
+              </a>
+            </H3>
+          </RightContainer>
+        </InnerWrapper>
+      </CourseCardModalContainer>
+    </CourseCardModalWrapper>
+  )
 }
 
 export default CourseCardModal
