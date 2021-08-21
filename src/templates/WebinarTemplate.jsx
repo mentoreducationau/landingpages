@@ -8,7 +8,6 @@ import {
 } from "./WebinarTemplate.css"
 
 import {
-  Registar,
   WebinarInfo,
   Testimonials,
   CareerSkillSket,
@@ -21,18 +20,19 @@ import {
   StudentsWork,
 } from '../components'
 
+import { BannerHeadline } from "../styles/Typography.css"
+
 const WebinarTemplate = () => {
   return (
     <>
       <TitleBanner>
         <StaticImage src="../images/course-title-bg.png" alt="title background image" />
         <CourseHeading>
-          <h1>FNS40217 Certificate IV in Accounting and Bookkeeping</h1>
+          <BannerHeadline>FNS40217 Certificate IV in Accounting and Bookkeeping</BannerHeadline>
         </CourseHeading>
       </TitleBanner>
       <MainContainer>
-        <WebinarInfo></WebinarInfo>
-        <Registar />
+        <WebinarInfo />
         <CareerSkillSket title="How you can further your career with this course" />
         <JobOutcomes />
         <BusinessSkillSet />
