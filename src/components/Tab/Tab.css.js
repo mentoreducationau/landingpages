@@ -1,64 +1,53 @@
-import styled, {keyframes} from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 export const TabWrapper = styled.div`
-position: relative;
-flex-wrap: wrap;
-align-items: stretch;
-justify-items: stretch;
-width: 100%;
-padding: 0px .2%;
-align-items: stretch;
-
-h3 {
-  margin: 1rem 0 0.75rem 0;
-}
-p {
-  padding-right: 1rem;
-}
+  position: relative;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-items: stretch;
+  width: 100%;
+  padding: 0px 0.2%;
+  align-items: stretch;
 `
 
 export const TabButtonsWrapper = styled.div`
-padding: 0px .2%;
-display: flex;
-justify-content: center;
-
-
-flex-wrap: wrap;
+  /* padding: 0px 0.2%; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* max-width: 90%; */
+  margin: 0 1rem;
 `
 
 export const TabButton = styled.div`
-display: flex;
-flex-grow: 1;
-align-items: center;
-justify-content: center;
-border-top: 2px solid;
-border-right: 2px solid;
-border-left: 2px solid;
-padding: 10px 5%;
-margin-bottom: 0;
-margin-left: -.1rem;
-color: #707070;
-font-family: inherit;
-font-size: 18px;
-font-weight: 900;
-cursor: pointer;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #707070;
+  margin-left: -4px;
+  margin-top: -4px;
+  /* border-top: 2px solid;
+  border-right: 2px solid;
+  border-left: 2px solid; */
+  padding: 10px 5%;
+  margin-bottom: 0;
+  color: #707070;
+  cursor: pointer;
 
-&:hover , &.active {
+  &:hover,
+  &.active {
     background: #707070;
     border: 2px solid #707070;
     color: #fff;
-}
+  }
 `
 
 export const TabInfoWrapper = styled.div`
-padding: 90px 35px;
-border: 4px solid #707070;
-
-a {
-    color:#F70000;
-    cursor: pointer;
-}
-
+  padding: 1.5rem;
+  border: 3px solid;
+  margin-top: -3px;
+  border-color: rgba(112,112,112,0.45);
 `
 const rotate = keyframes`
   from {
@@ -71,11 +60,11 @@ const rotate = keyframes`
     opacity: 1;
     height: auto;
   }
-`;
+`
 export const TabContentContainer = styled.div`
-opacity: ${props => props.activeTab === props.id ? 1 : 0};
-display: ${props => props.activeTab === props.id ? 'inline' : 'none '};
+  opacity: ${props => (props.activeTab === props.id ? 1 : 0)};
+  display: ${props => (props.activeTab === props.id ? "inline" : "none ")};
 `
 export const Display = styled(TabContentContainer)`
-  animation: ${rotate} .2s linear;
-`;
+  animation: ${rotate} 0.2s linear;
+`

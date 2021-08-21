@@ -1,4 +1,8 @@
 import React, { useEffect } from "react"
+import { courses } from "./testArray"
+
+import { Paragraph, TabTitle } from "../../styles/Typography.css"
+
 import {
   TabButtonsWrapper,
   TabWrapper,
@@ -6,7 +10,6 @@ import {
   TabInfoWrapper,
   Display,
 } from "./Tab.css"
-import { courses } from "./testArray"
 
 const Tab = () => {
   const [courseItems, setCourseItems] = React.useState([])
@@ -30,19 +33,19 @@ const Tab = () => {
               id={i + 1}
               key={i}
               onClick={() => setActiveTab(name)}
-              className={
-                activeTab === name ? "active" : ""
-              }
+              className={activeTab === name ? "active" : ""}
             >
-              {name
-                .replace(/([A-Z])/g, " $1")
-                .trim()
-                .trim()}
+              <TabTitle>
+                {name
+                  .replace(/([A-Z])/g, " $1")
+                  .trim()
+                  .trim()}
+              </TabTitle>
             </TabButton>
           )
         })}
       </TabButtonsWrapper>
-      
+
       <TabInfoWrapper>
         {courses &&
           courseItems.map((course, i) => (
@@ -51,7 +54,7 @@ const Tab = () => {
               id={Object.keys(courses[0])[i]}
               key={i}
             >
-              {course}
+              <Paragraph>{course}</Paragraph>
             </Display>
           ))}
       </TabInfoWrapper>
