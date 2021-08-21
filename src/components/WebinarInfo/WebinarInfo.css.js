@@ -27,7 +27,7 @@ export const AvatarContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 4rem 0;
+  margin: 2rem 0;
 `
 export const AvatarCard = styled.div`
   width: 25%;
