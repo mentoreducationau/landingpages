@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const TitleBanner = styled.div`
   position: relative;
-  height: 10rem;
+  /* height: 10rem; */
   background: black;
   overflow: hidden;
   display: flex;
@@ -21,13 +21,6 @@ export const CourseHeading = styled.div`
   width: 100%;
   height: 100%;
   padding: 2rem;
-
-  h1 {
-    font: 60px/77px "Futura Medium";
-    color: #464343;
-    margin: 0;
-    text-align: center;
-  }
 `
 export const MainContainer = styled.div`
   width: 99vw;
