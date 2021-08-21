@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useLayoutEffect, useCallback } from 'react'
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import { CounterText } from './counter.css'
 
 const easeOutSine = t => -(Math.cos(Math.PI * t) - 1) / 2; // from easings.net
@@ -32,7 +32,7 @@ const CountUp = ({ children, duration = 5000, offset = 300, ...props }) => {
 
         window.addEventListener('scroll', onScroll)
         return () => window.removeEventListener('scroll', onScroll)
-    },[])
+    },[offset])
 
     useEffect(() => {
         let frame = 0;
