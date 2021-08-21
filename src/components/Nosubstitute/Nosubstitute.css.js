@@ -41,14 +41,11 @@ export const FounderDetails = styled.div`
   grid-row: 2;
   color: #535353;
 
-  h3 {
-    margin-bottom: 3px;
-  }
-
   span {
-    font: 32px/41px Futura Heavy;
+    font: italic 32px/41px Futura Medium;
     color: #cc4a28;
     letter-spacing: 0px;
+    margin:0;
   }
 
   p {
