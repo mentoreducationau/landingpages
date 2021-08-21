@@ -3,6 +3,7 @@ import { GlobalFormField } from "../../styles/FormStyles.css"
 
 export const CustomFormStyled = styled.form`
   width: 100%;
+  margin: 0;
 `
 
 export const FormField = styled(GlobalFormField)`
