@@ -13,14 +13,16 @@ import {
   AboutMentor,
 } from "./footer.css"
 
-import { footerData } from "./footer-data"
+import { footerData, socialLinks } from "./footer-data"
 
 import Logo from "../../images/mlogo.png"
 
 const CustomLink = ({ children, to }) => {
-  return <a href={to} target="_blank" rel="noreferrer noopener">
-    {children}
-  </a>
+  return (
+    <a href={to} target="_blank" rel="noreferrer noopener">
+      {children}
+    </a>
+  )
 }
 
 const FooterComponent = () => {
@@ -141,11 +143,17 @@ const FooterComponent = () => {
               <br />
             </p>
             <p>
-              New enquires:{" "}
+              New enquires:
+              <br />
               <CustomLink href="mailto:courseconsultant@mentor.edu.au">
                 courseconsultant@mentor.edu.au
               </CustomLink>
             </p>
+            {socialLinks.map(({ id, name, link, svg }) => (
+              <a key={id} href={link} target="_blank" rel="noreferrer noopener">
+                <img src={svg} alt={name} width="24px" />
+              </a>
+            ))}
           </Connect>
           <AboutMentor>
             <br />

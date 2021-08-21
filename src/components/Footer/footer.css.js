@@ -165,6 +165,10 @@ export const Connect = styled.div`
     font-size: 14px;
     margin: 20px 0 0;
   }
+
+  img {
+    margin-right: 0.5rem;
+  }
 `
 
 export const AboutMentor = styled.div`
