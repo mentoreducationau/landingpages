@@ -11,7 +11,7 @@ const SectionWrapper = styled.div`
 const Container = styled.div`
   /* border: 2px solid tomato; */
   margin: 2rem auto;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
 
   width: 100%;
   max-width: 100%;
