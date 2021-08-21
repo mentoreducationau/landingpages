@@ -52,6 +52,13 @@ const Typography = createGlobalStyle`
   }
 `
 
+const BannerHeadline = styled.h1`
+  font: 60px/77px "Futura Medium";
+  color: #464343;
+  margin: 0;
+  text-align: center;
+`
+
 const Headline = styled.h1`
   font: 36px/45px Futura Heavy;
 `
@@ -69,6 +76,11 @@ const Subtitle = styled.h4`
   font: 36px/45px Futura Heavy;
   margin-bottom: 13px;
   color: #707070;
+`
+
+const TabTitle = styled.h3`
+  font: 30px/38px Futura Heavy;
+  margin: 0;
 `
 
 const H3 = styled.h3`
@@ -119,8 +131,10 @@ const SpanHeavy = styled.span`
 
 export {
   Typography,
+  BannerHeadline,
   Headline,
   Title,
+  TabTitle,
   H3,
   H4,
   H5,
