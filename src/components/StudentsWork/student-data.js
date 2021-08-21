@@ -55,18 +55,12 @@ export const studentsData = [
   },
   {
     id: 10,
-    companyName: "australian financial services",
-    link: "#",
-    imgSrc: "",
-  },
-  {
-    id: 11,
     companyName: "bt",
     link: "https://www.bt.com.au/",
     imgSrc: "bt-financial.png",
   },
   {
-    id: 12,
+    id: 11,
     companyName: "fxplus trading academy",
     link: "https://www.fxplus.com.au/",
     imgSrc: "fxplus.png",
