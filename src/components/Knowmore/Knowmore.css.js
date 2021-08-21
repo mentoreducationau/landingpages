@@ -18,9 +18,15 @@ export const KnowmoreBoxes = styled.div`
 export const KnowmoreBox = styled.div`
   width: 50%;
   text-align: center;
+  
+  div:first-child {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
 
-  div {
-    max-width: 85%;
+  div:last-child {
+    max-width: 75%;
     margin: auto;
     text-align: left;
   }
@@ -30,5 +36,6 @@ export const Percentage = styled(SpanHeavy)`
   font-size: 94px;
   line-height: 122px;
   opacity: 1;
-  vertical-align: super;
+  margin-top: 8%;
+  /* vertical-align: super; */
 `
