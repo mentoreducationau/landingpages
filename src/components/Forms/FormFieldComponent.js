@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CustomFormStyled, FormField, FormButton } from './formComponent.css'
+import { uniqueId } from 'lodash'
 
 export const FormFieldComponent = ({
   children,
@@ -8,12 +9,13 @@ export const FormFieldComponent = ({
   type,
   required = false,
 }) => {
+  const [id] = useState(() => uniqueId(`${name}-`))
   return (
       <>
-        <label htmlFor={name}>
+        <label htmlFor={id}>
             {label} {children}
         </label>
-        <input type={type} name={name} id={name} aria-required={required} />
+        <input type={type} name={name} id={id} aria-required={required} />
       </>
   )
 }
