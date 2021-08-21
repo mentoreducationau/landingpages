@@ -1,28 +1,35 @@
 import * as React from "react"
 import { TitleContainer, LeftSideContainer, BlurbLeft, BlurbRight } from "./header.css"
-import logo from "../../images/mlogo.png"
-
+import { StaticImage } from "gatsby-plugin-image"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      width: `99vw`,
-      height: `7rem`
-    }}
-  >
+  <header style={{ height: `7rem` }}>
     <TitleContainer>
       <LeftSideContainer>
         <a href="https://www.mentor.edu.au">
-          <img src={logo} alt="" />
+          <StaticImage
+            src="../../images/mlogo.png"
+            alt="logo"
+            placeholder="blurred"
+          />
         </a>{" "}
+        <span />
         <BlurbLeft>
-          Australia's largest privately owned finance; business and accounting
+          Australia's largest privately owned finance, business and accounting
           education provider
         </BlurbLeft>
       </LeftSideContainer>
       <BlurbRight>
-        Prefer to speak over the phone? Call us 1800 787 014 International: +61
-        3 91 085 491
+        <span>Prefer to speak over the phone? Call us</span>
+        <span>
+          <StaticImage
+            src="../../../static/phone.png"
+            alt="phone"
+            placeholder="blurred"
+          />
+          <a href="tel:1800787014">1800 787 014</a>
+        </span>
+        <span>International: +61 3 91 085 491</span>
       </BlurbRight>
     </TitleContainer>
   </header>
