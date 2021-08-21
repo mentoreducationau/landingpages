@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
-import { CardsWrapper } from "../AcademicPathway.css"
-import CourseCard from "../CourseCard"
+import { CardsWrapper } from "./courseCard.css"
+import CourseCard from "./CourseCard"
 
 const SingleQualifications = ({ courses }) => {
   const [singleCourses, setSingleCourses] = React.useState([])

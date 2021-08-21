@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { CardsWrapper } from '../AcademicPathway.css'
-import CourseCard from '../CourseCard'
+import { CardsWrapper } from './courseCard.css'
+import CourseCard from './CourseCard'
 
 const DualQualifications = ({ courses }) => {
     const [dualCourses, setDualCourses] = useState([])
