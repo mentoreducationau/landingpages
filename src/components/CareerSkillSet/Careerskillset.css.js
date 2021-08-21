@@ -7,4 +7,5 @@ export const CareerSkillSetcontainer = styled.div`
 export const CareerInfo = styled.div`
   padding: 0 0 0 35px;
   max-width: 36%;
+  margin: auto;
 `
