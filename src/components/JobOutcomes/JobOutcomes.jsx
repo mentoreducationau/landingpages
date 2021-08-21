@@ -26,12 +26,17 @@ const JobOutcomes = () => {
           {jobRoles.map((role, i) => (
             <JobListItem
               key={i}
-              id={i}
-              displayJob={displayJob}
+              className={displayJob === i ? "underline font-bold" : ""}
               onMouseEnter={() => setDisplayJob(i)}
             >
               <p>{role.role.charAt(0).toUpperCase() + role.role.slice(1)}</p>
-              <SeparatorLine width="70%" height="2px" id={i} displayJob={displayJob} />
+              <SeparatorLine
+                width="50%"
+                margin="0 1rem 0 0"
+                height="2px"
+                id={i}
+                displayJob={displayJob}
+              />
             </JobListItem>
           ))}
         </QualificationsList>
@@ -45,12 +50,17 @@ const JobOutcomes = () => {
           {jobRoles.map((role, i) => (
             <JobListItem
               key={i}
-              id={i}
-              displayJob={displayJob}
+              className={displayJob === i ? "font-bold" : ""}
               onMouseEnter={() => setDisplayJob(i)}
             >
               <p>${(role.salary - (role.salary % 1000)) / 1000}k per year</p>
-              <SeparatorLine width="30%" height="2px" id={i} displayJob={displayJob} />
+              <SeparatorLine
+                width="50%"
+                margin="0 2rem"
+                height="2px"
+                id={i}
+                displayJob={displayJob}
+              />
             </JobListItem>
           ))}
         </QualificationsList>
