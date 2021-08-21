@@ -14,12 +14,6 @@ export const FormDescription = styled.div`
 
   h4 {
     margin-bottom: 10px;
-    font: 36px/45px Futura Heavy;
-    letter-spacing: 0px;
-    text-align: left;
-    letter-spacing: 0px;
-    color: #707070;
-    opacity: 1;
   }
 
   p {
@@ -29,10 +23,7 @@ export const FormDescription = styled.div`
   }
 
   div {
-    font: 32px/41px Futura Heavy;
-    letter-spacing: 0px;
-    color: #cc4a28;
-    opacity: 1;
+    color: #fc0000;
     margin: 6px 0;
   }
 `
