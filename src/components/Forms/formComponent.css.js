@@ -3,7 +3,6 @@ import { GlobalFormField } from "../../styles/FormStyles.css"
 
 export const CustomFormStyled = styled.form`
   width: 100%;
-  margin-bottom: 4rem;
 `
 
 export const FormField = styled(GlobalFormField)`
@@ -16,7 +15,7 @@ export const FormField = styled(GlobalFormField)`
   }
 
   input {
-    border: 3px solid #707070;
+    border: 2px solid #707070;
   }
 `
 
@@ -29,4 +28,5 @@ export const FormButton = styled.button`
   width: 100%;
   text-transform: uppercase;
   margin: 3% auto 0;
+  cursor: pointer;
 `

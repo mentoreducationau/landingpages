@@ -1,15 +1,14 @@
 import React from "react"
-import { RegisterContainer} from "./register.css"
 import { CustomForm } from "../FormFieldComponent"
-import CourseGuide from "../CourseGuide/CourseGuide"
+import { RegisterContainer } from "./register.css"
+import { H3 } from "../../../styles/Typography.css"
 
 const Registar = () => {
   return (
     <RegisterContainer>
-      <h1>Register now</h1>
+      <H3>Register now</H3>
       {/* <h3>Fill out your details to register now!</h3> */}
       <CustomForm buttonText="Register" />
-      <CourseGuide/>
     </RegisterContainer>
   )
 }
