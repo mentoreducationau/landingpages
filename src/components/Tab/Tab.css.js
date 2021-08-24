@@ -24,12 +24,7 @@ export const TabButton = styled.div`
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  border: 4px solid #707070;
-  margin-left: -4px;
-  margin-top: -4px;
-  /* border-top: 2px solid;
-  border-right: 2px solid;
-  border-left: 2px solid; */
+  border: 1px solid #707070;
   padding: 10px 5%;
   margin-bottom: 0;
   color: #707070;
@@ -38,16 +33,30 @@ export const TabButton = styled.div`
   &:hover,
   &.active {
     background: #707070;
-    border: 2px solid #707070;
+    border: 1px solid #707070;
     color: #fff;
+  }
+
+  @media (min-width: 768px) {
+    border: 4px solid #707070;
+    margin-left: -4px;
+    margin-top: -4px;
+    &:hover,
+    &.active {
+      border: 2px solid #707070;
+    }
   }
 `
 
 export const TabInfoWrapper = styled.div`
   padding: 1.5rem;
-  border: 3px solid;
-  margin-top: -3px;
-  border-color: rgba(112,112,112,0.45);
+  border: 1px solid #707070;
+  
+  @media (min-width: 768px) {
+    margin-top: -3px;
+    border: 3px solid;
+    border-color: rgba(112, 112, 112, 0.45);
+  }
 `
 const rotate = keyframes`
   from {

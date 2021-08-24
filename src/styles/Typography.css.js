@@ -53,40 +53,95 @@ const Typography = createGlobalStyle`
 `
 
 const BannerHeadline = styled.h1`
-  font: 60px/77px "Futura Medium";
+  font-family: Futura Medium;
+  font-size: 30px;
+  line-height: 35px;
   color: #464343;
   margin: 0;
-  text-align: center;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    font-size: 60px;
+    line-height: 77px;
+    text-align: center;
+  }
 `
 
 const Headline = styled.h1`
-  font: 36px/45px Futura Heavy;
+  font-family: Futura Heavy;
+  font-size: 30px;
+  line-height: 35px;
+
+  @media (min-width: 768px) {
+    font-size: 36px;
+    line-height: 45px;
+  }
 `
 
 const Title = styled.h2`
-  font: 50px/60px Futura Heavy;
+  font-family: Futura Heavy;
+  font-size: 30px;
+  line-height: 35px;
   letter-spacing: 0px;
   margin: 0 auto;
   margin-bottom: 40px;
-  text-align: center;
   color: #707070;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 50px;
+    line-height: 60px;
+  }
 `
 
 const Subtitle = styled.h4`
-  font: 36px/45px Futura Heavy;
+  font-family: Futura Heavy;
+  font-size: 25px;
+  line-height: 30px;
   margin-bottom: 13px;
   color: #707070;
+
+  @media (min-width: 768px) {
+    font-size: 36px;
+    line-height: 45px;
+  }
+`
+const SubtitleBold = styled.h4`
+  font-family: Futura Bold;
+  font-size: 22px;
+  line-height: 30px;
+  color: #153e35;
+  
+  @media (min-width: 768px) {
+    font-size: 36px;
+    line-height: 45px;
+    margin-bottom: 13px;
+  }
 `
 
 const TabTitle = styled.h3`
-  font: 30px/38px Futura Heavy;
+  font-family: Futura Medium;
+  font-size: 11px;
+  line-height: 13px;
   margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 30px;
+    line-height: 38px;
+  }
 `
 
 const H3 = styled.h3`
-  font: 36px/45px Futura Heavy;
+  font-family: Futura Heavy;
+  font-size: 25px;
+  line-height: 30px;
   color: #707070;
   margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 36px;
+    line-height: 45px;
+  }
 `
 const H4 = styled.h4`
   font: 24px/31px Futura Heavy;
@@ -99,34 +154,70 @@ const H5 = styled.h5`
 `
 
 const Paragraph = styled.p`
-  font: 24px/31px "Futura Medium";
+  font-family: "Futura Medium";
+  font-size: 20px;
+  line-height: 26px;
   color: #707070;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+    line-height: 31px;
+  }
 `
 
 const ParagraphMedium = styled.p`
-  font: 32px/45px Futura Medium;
+  font-family: Futura Medium;
+  font-size: 22px;
+  line-height: 27px;
   color: #535353;
   letter-spacing: 0px;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+    line-height: 45px;
+  }
 `
 
 const ParagraphHeavy = styled.p`
-  font: 315px/300px Futura Heavy;
+  font-family: Futura Heavy;
+  font-size: 190px;
+  line-height: 0.8;
   letter-spacing: 0px;
   color: #cc4a28;
   opacity: 1;
   margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 315px;
+  }
 `
 
 const DivHeavy = styled.div`
-  font: 32px/41px Futura Heavy;
+  font-family: Futura Heavy;
+  font-size: 22px;
+  line-height: 27px;
   letter-spacing: 0px;
   color: #707070;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+    line-height: 41px;
+    text-align: left;
+  }
 `
 
 const SpanHeavy = styled.span`
-  font: 32px/41px Futura Heavy;
+  font-family: Futura Heavy;
+  font-size: 22px;
+  line-height: 27px;
   letter-spacing: 0px;
   color: #cc4a28;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+    line-height: 41px;
+  }
 `
 
 export {
@@ -139,6 +230,7 @@ export {
   H4,
   H5,
   Subtitle,
+  SubtitleBold,
   Paragraph,
   ParagraphMedium,
   ParagraphHeavy,

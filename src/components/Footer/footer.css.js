@@ -7,9 +7,7 @@ export const FooterContainer = styled.footer`
 `
 
 export const Footer = styled.div`
-  
   line-height: 20px;
-  /* max-width: 1130px; */
   margin: auto;
   font-family: "Open Sans";
 
@@ -62,30 +60,41 @@ export const Footer = styled.div`
 `
 export const RowOne = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `
 
 export const FooterColumns = styled.div`
-  /* border: 1px solid green; */
-  width: 24%;
+  width: 100%;
   float: left;
-  margin-left: 4%;
   margin-bottom: 20px;
 
   :nth-of-type(1) {
-    width: 16%;
+    width: 100%;
     margin-left: 0;
 
     a {
-        :hover {
-            text-decoration: underline #666;
-        }
+      :hover {
+        text-decoration: underline #666;
+      }
     }
   }
 
   h3 {
     margin-top: 10px;
+  }
+
+  @media (min-width: 768px) {
+    width: 24%;
+    margin-left: 4%;
+
+    :nth-of-type(1) {
+      width: 16%;
+    }
   }
 `
 
@@ -133,7 +142,7 @@ export const FooterCourseList = styled.ul`
       font-weight: 400;
 
       :hover {
-          text-decoration: underline #666;
+        text-decoration: underline #666;
       }
     }
   }
@@ -150,15 +159,15 @@ export const RowTwo = styled.div`
   }
 
   a {
-      :hover {
-          text-decoration: underline #666;
-      }
+    :hover {
+      text-decoration: underline #666;
+    }
   }
 `
 
 export const Connect = styled.div`
-  width: 24%;
-  float: right;
+  width: 100%;
+  float: bottom;
 
   h4 {
     color: #666;
@@ -169,14 +178,23 @@ export const Connect = styled.div`
   img {
     margin-right: 0.5rem;
   }
+
+  @media (min-width: 768px) {
+    width: 24%;
+    float: right;
+  }
 `
 
 export const AboutMentor = styled.div`
-  width: 70%;
-  margin-right: 5%;
+  width: 100%;
   /* float: left; */
 
   a {
     margin-right: 15px;
+  }
+
+  @media (min-width: 768px) {
+    width: 70%;
+    margin-right: 5%;
   }
 `

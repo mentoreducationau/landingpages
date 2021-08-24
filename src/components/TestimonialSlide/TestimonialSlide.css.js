@@ -38,52 +38,73 @@ export const TestimonialSlideContainer = styled.div`
 const SliderArrow = styled.div`
   width: 0;
   height: 0;
-  border-top: 21px solid transparent;
-  border-bottom: 21px solid transparent;
+  /* border-top: 21px solid transparent; */
+  /* border-bottom: 21px solid transparent; */
   display: inline-block;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  
+  @media (min-width: 768px) {
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+  }
 `
 export const SliderArrowLeft = styled(SliderArrow)`
-  border-right: 42px solid #ff0000;
+  /* border-right: 42px solid #ff0000; */
+  border-right: 16px solid #ff0000;
+  
+  @media (min-width: 768px) {
+    border-right: 30px solid #ff0000;
+  }
 `
 
 export const SliderArrowRight = styled(SliderArrow)`
-  border-left: 42px solid #ff0000;
-  margin-left: 20px;
+  /* border-left: 42px solid #ff0000; */
+  /* margin-left: 20px; */
+  border-left: 16px solid #ff0000;
+  margin-left: 5px;
+  
+  @media (min-width: 768px) {
+    border-left: 30px solid #ff0000;
+    margin-left: 10px;
+  }
 `
 
 export const TestimonialSlideInfo = styled.div`
-  width: 80%;
+  text-align: center;
   margin: auto;
-  padding: 2rem;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 2rem;
-    grid-row: 1;
-  }
+  width: 100%;
 
   p {
-    margin: 2rem 0;
+    margin: 2rem;
+  }
+
+  svg:not(:root) {
+    width: 7%;
+    max-width: fit-content;
+  }
+
+  @media (min-width: 768px) {
+    width: 80%;
+    text-align: left;
+
+    p {
+      margin: 2rem 0;
+    }
   }
 `
 
 export const TestimonialSlideImage = styled.div`
   width: 100%;
   height: 100%;
-  border: 1px solid #707070;
-
-  @media (max-width: 768px) {
-    height: auto;
-    border: none;
+  
+  @media (min-width: 768px) {
+    border: 1px solid #707070;
   }
 
   .gatsby-image-wrapper {
     width: 100%;
     height: 100%;
-
-    @media (max-width: 768px) {
-      width: 100%;
-      height: auto;
-    }
+    aspect-ratio: 1;
   }
 `

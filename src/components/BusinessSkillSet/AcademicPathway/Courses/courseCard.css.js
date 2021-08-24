@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components'
-import { ButtonPrimary } from '../../../../styles/ButtonStyles.css'
+import styled, { keyframes } from "styled-components"
+import { ButtonPrimary } from "../../../../styles/ButtonStyles.css"
 
 const fade = keyframes`
   from {
@@ -32,16 +32,19 @@ export const CardsWrapper = styled.div`
   width: 100%;
 `
 
+export const CourseCardContainer = styled.div`
+  width: 100%;
+`
+
 export const CourseCardWrapper = styled.div`
   display: grid;
-  grid-template-rows: 1fr auto;
-  /* flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center; */
+  grid-template-rows: 2fr 1fr;
   width: 100%;
+  max-width: 250px;
   height: 100%;
-  font-family: Futura Heavy;
   padding: 1rem;
+  margin: auto;
+  font-family: Futura Heavy;
   border-radius: 22px;
   border: 1px solid rgba(0, 0, 0, 7%);
   -webkit-box-shadow: 10px 0px 13px -7px rgba(0, 0, 0, 5%),
@@ -55,18 +58,34 @@ export const CourseCardWrapper = styled.div`
 
   .gatsby-image-wrapper {
     width: 90%;
+    aspect-ratio: 1;
+    justify-self: center;
+  }
+
+  @media (min-width: 768px) {
+    max-width: unset;
   }
 `
 
 export const CourseCardTitle = styled.div`
   margin: 0.5rem;
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 16px;
 
   h4 {
-    font-size: 23px;
-    line-height: 30px;
+    font-size: 19px;
+    line-height: 25px;
     margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 20px;
+
+    h4 {
+      font-size: 23px;
+      line-height: 30px;
+    }
   }
 `
 
@@ -77,11 +96,18 @@ export const CourseCardButtonContainer = styled.div`
 `
 
 export const CourseCardButton = styled(ButtonPrimary)`
-  font: 26px/34px Futura Heavy;
+  font-family: Futura Heavy;
+  font-size: 21px;
+  line-height: 27px;
   padding: 0.3rem 0;
   width: 100%;
   background-color: #cc4a28;
   border-radius: 10px;
+
+  @media (min-width: 768px) {
+    font-size: 26px;
+    line-height: 34px;
+  }
 `
 
 /* Course Card Modal */
@@ -129,6 +155,7 @@ export const InnerWrapper = styled.div`
   height: 100%;
   width: fit-content;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   padding: 4rem 2rem;
 
@@ -141,37 +168,52 @@ export const InnerWrapper = styled.div`
   a {
     text-decoration: none;
   }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `
 
 export const LeftContainer = styled.div`
   height: 100%;
-  width: 50%;
   display: flex;
   flex-direction: column;
 
   h3 {
     margin: 1rem 0;
   }
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `
 
 export const RightContainer = styled.div`
-  width: 40%;
   height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 2rem;
 
   div {
     height: auto;
   }
 
-  h3, a {
+  h3,
+  a {
     font-family: Futura Bold;
     color: #464343;
   }
 
+  h3 {
+    margin-top: 5px;
+  }
+
   a {
     text-decoration: none;
+  }
+
+  @media (min-width: 768px) {
+    width: 40%;
+    padding-top: 2rem;
   }
 `

@@ -2,15 +2,24 @@ import styled from "styled-components"
 
 export const FormIntroContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 43px;
+  grid-template-columns: 100%;
   margin-top: 41px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 43px;
+  }
+  
 `
 
 export const FormDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
+  * {
+    text-align: left;
+  }
 
   h4 {
     margin-bottom: 10px;
@@ -29,16 +38,25 @@ export const FormDescription = styled.div`
 `
 
 export const InputContainer = styled.div`
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
   display: flex;
-  margin-top: 40px;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 40px;
 `
 
 export const QuotedBoxLeft = styled.div`
-  width: 50%;
+  @media (min-width: 768px) {
+    width: 50%;
+    padding-right: 21px;
+  }
+
+  width: 100%;
   color: #535353;
-  padding-right: 21px;
 `
 
 export const InputForm = styled.input`
@@ -51,6 +69,12 @@ export const InputForm = styled.input`
 `
 
 export const InputLabel = styled.label`
+  @media (min-width: 768px) {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  font-family: Futura Medium;
   font-size: 21px;
   line-height: 26px;
   letter-spacing: 0px;
@@ -62,8 +86,12 @@ export const InputLabel = styled.label`
 `
 
 export const QuotedBoxRight = styled.div`
-  width: 50%;
-  padding-left: 21px;
+  @media (min-width: 768px) {
+    width: 50%;
+    padding-left: 21px;
+  }
+
+  width: 100%;
 `
 
 export const Textarea = styled.textarea`
@@ -74,20 +102,32 @@ export const Textarea = styled.textarea`
   padding-right: 9px;
 `
 export const FooterFormbuttonWrapper = styled.div`
+  @media (min-width: 768px) {
+    text-align: right;
+  }
+
   width: 100%;
-  text-align: right;
   margin-top: 50px;
 `
 
 export const FooterFormbutton = styled.button`
-  background: #cc4a28;
-  border: none;
-  border-radius: 2px;
-  font-size: 40px;
+  @media (min-width: 768px) {
+    font-size: 40px;
+    line-height: 51px;
+    padding: 10px 70px;
+    width: fit-content;
+  }
+
+  font-size: 30px;
+  line-height: 38px;
   font-family: Futura Heavy;
   letter-spacing: 0px;
   color: #ffffff;
   text-transform: uppercase;
-  padding: 20px 50px;
+  background: #cc4a28;
+  border: none;
+  border-radius: 2px;
+  padding: 10px;
+  width: 100%;
   cursor: pointer;
 `

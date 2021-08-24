@@ -6,7 +6,12 @@ import { H3 } from "../../styles/Typography.css"
 export const MainContainer = styled(Container)`
   margin: 1rem 0 0;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `
 
 export const HostHeadline = styled(H3)`
@@ -34,4 +39,12 @@ export const AvatarCard = styled.div`
   text-align: center;
   display: grid;
   grid-template-rows: 1fr auto 0.2fr;
+`
+
+export const WebinarDescription = styled.div`
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 65%;
+  }
 `

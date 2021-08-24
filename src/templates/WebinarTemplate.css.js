@@ -1,29 +1,46 @@
 import styled from "styled-components"
+import img from "../images/course-title-bg.png"
 
 export const TitleBanner = styled.div`
   position: relative;
-  /* height: 10rem; */
-  background: black;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   .gatsby-image-wrapper {
     width: 100%;
+    aspect-ratio: 4/3;
+
+    @media (min-width: 768px) {
+      aspect-ratio: 9;
+      position: relative;
+
+      ::after {
+        content: "";
+        background: url(${img});
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+    }
   }
 `
 export const CourseHeading = styled.div`
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
   padding: 2rem;
+  @media (min-width: 768px) {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
 `
 export const MainContainer = styled.div`
-  width: 99vw;
   height: 100%;
   margin: 0 auto;
   display: flex;
