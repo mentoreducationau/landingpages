@@ -26,9 +26,11 @@ const WebinarTemplate = () => {
   return (
     <>
       <TitleBanner>
-        <StaticImage src="../images/course-title-bg.png" alt="title background image" />
+        <StaticImage src="../images/banner_bg.png" alt="banner background" />
         <CourseHeading>
-          <BannerHeadline>FNS40217 Certificate IV in Accounting and Bookkeeping</BannerHeadline>
+          <BannerHeadline>
+            FNS40217 Certificate IV in Accounting and Bookkeeping
+          </BannerHeadline>
         </CourseHeading>
       </TitleBanner>
       <MainContainer>

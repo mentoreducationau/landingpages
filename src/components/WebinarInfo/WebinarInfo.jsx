@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticImage } from 'gatsby-plugin-image'
-import { MainContainer, HostHeadline, AvatarContainer, AvatarCard } from "./WebinarInfo.css"
+import { MainContainer, HostHeadline, AvatarContainer, AvatarCard, WebinarDescription } from "./WebinarInfo.css"
 import Tab from "../Tab/Tab"
 import { H4, H5, Headline, Paragraph } from "../../styles/Typography.css"
 import Registar from "../Forms/Register/Register"
@@ -33,7 +33,7 @@ const WebinarInfo = () => {
         <Registar />
       </MainContainer>
       <MainContainer>
-        <div style={{ width: '65%'}}>
+        <WebinarDescription>
           <Headline>
             Launch or enhance your career with the FNS40217 Certificate IV in
             Accounting and Bookkeeping.
@@ -58,7 +58,7 @@ const WebinarInfo = () => {
             bookkeeping, finance and business education provider.
           </Paragraph>
           <Tab />
-        </div>
+        </WebinarDescription>
         <CourseGuide />
       </MainContainer>
     </>
