@@ -6,14 +6,14 @@ import DualQualifications from "./Courses/DualQualifications"
 import { courses } from "../courses"
 
 import { Container, SectionWrapper } from "../../../styles/ContainerStyles.css"
-import { TitleWrapper, CardsHeader } from "./AcademicPathway.css"
+import { CardsHeaderWrapper, TitleWrapper, CardsHeader } from "./AcademicPathway.css"
 
 const AcademicPathways = () => {
   const [cards, setCards] = React.useState("single")
 
   return (
     <Container style={{ marginTop: 0 }}>
-      <SectionWrapper justifyContent="center">
+      <CardsHeaderWrapper>
         <TitleWrapper>
           <CardsHeader
             isActive={cards === "single"}
@@ -28,7 +28,7 @@ const AcademicPathways = () => {
             Dual Qualification Study
           </CardsHeader>
         </TitleWrapper>
-      </SectionWrapper>
+      </CardsHeaderWrapper>
       <SectionWrapper justifyContent="center" style={{ overflow: `visible` }}>
         {cards === "single" ? (
           <SingleQualification courses={courses} />
