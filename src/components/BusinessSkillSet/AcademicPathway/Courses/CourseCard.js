@@ -5,6 +5,7 @@ import CourseCardModal from "./CourseCardModal"
 import { useDisableBodyScroll } from "../../../../utils/bodyScroll"
 
 import {
+  CourseCardContainer,
   CourseCardWrapper,
   CourseCardTitle,
   CourseCardButton,
@@ -20,7 +21,7 @@ const CourseCard = ({ course, dualCourse = false }) => {
   if (course === []) return null
 
   return (
-    <div style={{ width: `100%`, height: `100%` }}>
+    <CourseCardContainer>
       <CourseCardWrapper>
         <StaticImage src="../../../../images/card-imgs/acc/eg.png" alt="course-image" />
         {!dualCourse && (
@@ -51,7 +52,7 @@ const CourseCard = ({ course, dualCourse = false }) => {
         course={course}
         setDisplayModal={setDisplayModal}
       />
-    </div>
+    </CourseCardContainer>
   )
 }
 
