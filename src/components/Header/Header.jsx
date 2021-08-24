@@ -1,9 +1,12 @@
 import * as React from "react"
-import { TitleContainer, LeftSideContainer, BlurbLeft, BlurbRight } from "./header.css"
+import { StyledHeader, TitleContainer, LeftSideContainer, BlurbLeft, BlurbRight, MobileContainer, MobileMenu } from "./header.css"
 import { StaticImage } from "gatsby-plugin-image"
 
+import headphoneIcon from '../../images/svg/header_headphone_icon.svg'
+import mailIcon from '../../images/svg/header_mail_icon.svg'
+
 const Header = ({ siteTitle }) => (
-  <header style={{ height: `7rem` }}>
+  <StyledHeader>
     <TitleContainer>
       <LeftSideContainer>
         <a href="https://www.mentor.edu.au">
@@ -31,8 +34,15 @@ const Header = ({ siteTitle }) => (
         </span>
         <span>International: +61 3 91 085 491</span>
       </BlurbRight>
+      <MobileContainer>
+        <div>
+          <img src={headphoneIcon} alt="call us" />
+          <img src={mailIcon} alt="email us" />
+        </div>
+        <MobileMenu />
+      </MobileContainer>
     </TitleContainer>
-  </header>
+  </StyledHeader>
 )
 
 export default Header
