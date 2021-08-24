@@ -1,5 +1,8 @@
 import React from "react"
 import { jobRoles } from "./JobArray"
+import JobOutcomesMobile from "./mobile"
+
+import { useWindowSize } from "../../hooks/useWindowSize"
 
 import {
   JobOutcomesContainer,
@@ -10,29 +13,33 @@ import {
   QualificationsList,
   QaulificationLink,
   JobTitle,
+  JobHeader,
 } from "./JobOutcomes.css"
 
 const JobOutcomes = () => {
+  const [size] = useWindowSize()
+  const breakpoint = size < 768
   const [displayJob, setDisplayJob] = React.useState(0)
 
-  return (
+  return breakpoint ? (
+    <JobOutcomesMobile displayJob={displayJob} setDisplayJob={setDisplayJob} />
+  ) : (
     <JobOutcomesContainer>
       <JobDetailWrapper>
         <JobTitleWrapper>
-          <JobTitle>Job Role</JobTitle>
+          <JobHeader>Job Role</JobHeader>
           <SeparatorLine width="100%" />
         </JobTitleWrapper>
         <QualificationsList>
           {jobRoles.map((role, i) => (
-            <JobListItem
-              key={i}
-              className={displayJob === i ? "underline font-bold" : ""}
-              onMouseEnter={() => setDisplayJob(i)}
-            >
-              <p>{role.role.charAt(0).toUpperCase() + role.role.slice(1)}</p>
+            <JobListItem key={i} onMouseEnter={() => setDisplayJob(i)}>
+              <JobTitle
+                className={displayJob === i ? "underline font-bold" : ""}
+              >
+                {role.role.charAt(0).toUpperCase() + role.role.slice(1)}
+              </JobTitle>
               <SeparatorLine
                 width="50%"
-                margin="0 1rem 0 0"
                 height="2px"
                 id={i}
                 displayJob={displayJob}
@@ -43,17 +50,17 @@ const JobOutcomes = () => {
       </JobDetailWrapper>
       <JobDetailWrapper>
         <JobTitleWrapper>
-          <JobTitle>Avg. Salary</JobTitle>
+          <JobHeader>Avg. Salary</JobHeader>
           <SeparatorLine width="50%" />
         </JobTitleWrapper>
         <QualificationsList>
           {jobRoles.map((role, i) => (
-            <JobListItem
-              key={i}
-              className={displayJob === i ? "font-bold" : ""}
-              onMouseEnter={() => setDisplayJob(i)}
-            >
-              <p>${(role.salary - (role.salary % 1000)) / 1000}k per year</p>
+            <JobListItem key={i} onMouseEnter={() => setDisplayJob(i)}>
+              <JobTitle
+                className={displayJob === i ? "font-bold" : ""}
+              >
+                ${(role.salary - (role.salary % 1000)) / 1000}k per year
+              </JobTitle>
               <SeparatorLine
                 width="50%"
                 margin="0 2rem"
@@ -67,7 +74,7 @@ const JobOutcomes = () => {
       </JobDetailWrapper>
       <JobDetailWrapper last>
         <JobTitleWrapper>
-          <JobTitle>Required Qualification/s</JobTitle>
+          <JobHeader>Required Qualification/s</JobHeader>
         </JobTitleWrapper>
         {jobRoles.map((role, i) => (
           <QualificationsList key={i} displayJob={displayJob} id={i}>
