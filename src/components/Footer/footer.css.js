@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import socialIcons from "../../../static/socialmediaicon.png"
 
 export const FooterContainer = styled.footer`
   background: #f1f1f1;
@@ -175,13 +176,37 @@ export const Connect = styled.div`
     margin: 20px 0 0;
   }
 
-  img {
-    margin-right: 0.5rem;
+  ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      float: left;
+      margin-right: 3px;
+    }
   }
 
   @media (min-width: 768px) {
     width: 24%;
     float: right;
+  }
+`
+
+export const SocialLink = styled.a`
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  background: url(${socialIcons});
+  background-repeat: no-repeat;
+  background-position-x: ${props => `-${props.icon}px`};
+  background-position-y: -2px;
+  width: 32px;
+  height: 32px;
+
+  :hover {
+    background-position-y: -37px;
   }
 `
 
