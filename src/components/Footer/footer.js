@@ -11,6 +11,7 @@ import {
   RowTwo,
   Connect,
   AboutMentor,
+  SocialLink,
 } from "./footer.css"
 
 import { footerData, socialLinks } from "./footer-data"
@@ -149,11 +150,18 @@ const FooterComponent = () => {
                 courseconsultant@mentor.edu.au
               </CustomLink>
             </p>
-            {socialLinks.map(({ id, name, link, svg }) => (
-              <a key={id} href={link} target="_blank" rel="noreferrer noopener">
-                <img src={svg} alt={name} width="24px" />
-              </a>
-            ))}
+            <ul>
+              {socialLinks.map(({ id, link, icon }) => (
+                <li key={id}>
+                  <SocialLink 
+                    href={link}
+                    icon={icon}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  />
+                </li>
+              ))}
+            </ul>
           </Connect>
           <AboutMentor>
             <br />
