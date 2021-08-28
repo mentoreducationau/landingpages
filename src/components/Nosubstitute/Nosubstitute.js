@@ -8,7 +8,7 @@ import {
 } from "./Nosubstitute.css"
 
 import { Container } from "../../styles/ContainerStyles.css"
-import { Paragraph, Title, H3 } from "../../styles/Typography.css"
+import { Paragraph, Title, Subtitle, SpanHeavy } from "../../styles/Typography.css"
 import { QuoteSvg } from '../../images/svg/quotations'
 
 const Nosubsitute = () => {
@@ -28,8 +28,8 @@ const Nosubsitute = () => {
         </QuotedPara>
         <StaticImage src="../../../static/mark-sinclair.jpg" alt="mark-sinclair" />
         <FounderDetails>
-          <H3>Mark Sinclair</H3>
-          <span>Founder of Mentor Education PTY LTD</span>
+          <Subtitle>Mark Sinclair</Subtitle>
+          <SpanHeavy>Founder of Mentor Education PTY LTD</SpanHeavy>
           <Paragraph>
             We concentrate on what we do best. We believe our quality training
             will provide you with the outcomes you desire, be it a better job,
