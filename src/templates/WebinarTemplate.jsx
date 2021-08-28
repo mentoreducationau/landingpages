@@ -20,17 +20,17 @@ import {
   StudentsWork,
 } from '../components'
 
-import { BannerHeadline } from "../styles/Typography.css"
+import { Headline } from "../styles/Typography.css"
 
 const WebinarTemplate = () => {
   return (
     <>
       <TitleBanner>
-        <StaticImage src="../images/banner_bg.png" alt="banner background" />
+        <StaticImage src="../images/banner_bg.png" alt="banner background" layout="fullWidth" />
         <CourseHeading>
-          <BannerHeadline>
+          <Headline banner>
             FNS40217 Certificate IV in Accounting and Bookkeeping
-          </BannerHeadline>
+          </Headline>
         </CourseHeading>
       </TitleBanner>
       <MainContainer>
