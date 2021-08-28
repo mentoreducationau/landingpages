@@ -2,11 +2,10 @@ import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import {
-  BusinessSkillSetcontainer,
   BusinessInfo,
 } from "./BusinessSkillSet.css"
 
-import { Container } from "../../styles/ContainerStyles.css"
+import { Container, SplitContainer } from "../../styles/ContainerStyles.css"
 import { Title, Subtitle, Paragraph } from "../../styles/Typography.css"
 
 const BusinessSkillSet = () => {
@@ -15,7 +14,7 @@ const BusinessSkillSet = () => {
       <Title>
         Find out what your education pathway could look like
       </Title>
-      <BusinessSkillSetcontainer>
+      <SplitContainer>
         <StaticImage src="../../images/bus.jpg" alt="Education pathway" />
         <BusinessInfo>
           <Subtitle>Business Qualification Pathway</Subtitle>
@@ -26,7 +25,7 @@ const BusinessSkillSet = () => {
             and scrambled it to make a type specimen book.
           </Paragraph>
         </BusinessInfo>
-      </BusinessSkillSetcontainer>
+      </SplitContainer>
     </Container>
   
   )

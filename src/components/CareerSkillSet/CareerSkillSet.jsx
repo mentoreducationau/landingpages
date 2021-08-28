@@ -2,11 +2,10 @@ import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import {
-  CareerSkillSetcontainer,
   CareerInfo,
 } from "./Careerskillset.css"
 
-import { Container } from "../../styles/ContainerStyles.css"
+import { Container, SplitContainer } from "../../styles/ContainerStyles.css"
 import { Title, Subtitle, Paragraph } from "../../styles/Typography.css"
 
 const CareerSkillSket = ({ title }) => {
@@ -15,7 +14,7 @@ const CareerSkillSket = ({ title }) => {
       <Title>
         {title}
       </Title>
-      <CareerSkillSetcontainer>
+      <SplitContainer>
         <StaticImage src="../../images/career.jpg" alt="career-img" />
         <CareerInfo>
           <Subtitle>Career Skillsets</Subtitle>
@@ -27,7 +26,7 @@ const CareerSkillSket = ({ title }) => {
             written skills.
           </Paragraph>
         </CareerInfo>
-      </CareerSkillSetcontainer>
+      </SplitContainer>
     </Container>
   )
 }
