@@ -8,7 +8,7 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
-import Theme from './src/constant/theme'
+import theme from './src/constant/theme'
 import GlobalStyles from './src/styles/GlobalStyles.css'
 import { useWindowSize } from './src/hooks/useWindowSize'
 import { Typography } from './src/styles/Typography.css'
@@ -24,7 +24,8 @@ const App = ({ element }) => {
   if(!isMounted) return null
 
   return (
-    <ThemeProvider theme={width < 1200 ? Theme.mobile : Theme.desktop}>
+    // <ThemeProvider theme={width < 1200 ? Theme.mobile : Theme.desktop}>
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Typography />
       {element}
