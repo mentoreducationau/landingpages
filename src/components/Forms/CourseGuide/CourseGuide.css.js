@@ -10,11 +10,7 @@ export const CourseGuideContainer = styled.div`
     text-transform: uppercase;
   }
 
-  @media (min-width: 768px) {
+  ${props => props.theme.desktop`
     width: 25vw;
-
-    h3 {
-      margin: 16px 0;
-    }
-  }
+  `}
 `

@@ -1,32 +1,32 @@
 import styled from "styled-components"
-import { Paragraph } from '../../styles/Typography.css'
+import { Paragraph, ParagraphMedium } from '../../styles/Typography.css'
 
 export const FoundersDetailGrid = styled.div`
   display: grid;
   grid-template-columns: 100%;
   row-gap: 40px;
 
-  @media (min-width: 768px) {
-    gap: 40px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .gatsby-image-wrapper {
     width: 100%;
     height: auto;
-    @media (min-width: 768px) {
-      aspect-ratio: 4/3;
-    }
-  }
-`
-export const QuotedPara = styled(Paragraph)`
-  @media (min-width: 768px) {
-    font-size: 28px;
-    line-height: 45px;
   }
 
-  font-size: 22px;
-  line-height: 27px;
+  ${props => props.theme.tablet`
+    .gatsby-image-wrapper {
+      aspect-ratio: 1.5;
+    }
+  `}
+
+  ${props => props.theme.widescreen`
+    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+
+    .gatsby-image-wrapper {
+      aspect-ratio: 4/3;
+    }
+  `}
+`
+export const QuotedPara = styled(ParagraphMedium)`
   grid-column: 1 / 3;
   letter-spacing: 0px;
   text-align: center;
@@ -38,32 +38,30 @@ export const QuotedPara = styled(Paragraph)`
     width: 7%;
     max-width: fit-content;
   }
+
+  ${props => props.theme.desktop`
+    font-size: 30px;
+    text-align: left;
+  `}
 `
 
 export const FounderDetails = styled.div`
-  @media (min-width: 768px) {
-    grid-row: 2;
-
-    span {
-      font-size: 32px;
-      line-height: 41px;
-      font-style: italic;
-    }
-  }
-
   grid-column: 1 / 2;
   color: #535353;
 
   span {
-    font-family: Futura Heavy;
-    font-size: 22px;
-    line-height: 27px;
-    color: #cc4a28;
-    letter-spacing: 0px;
     margin: 0;
   }
 
   p {
     margin-top: 17px;
   }
+
+  ${props => props.theme.desktop`
+    grid-row: 2;
+
+    span {
+      font-style: italic;
+    }
+  `}
 `

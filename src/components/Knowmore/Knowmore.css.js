@@ -6,13 +6,12 @@ export const KnowmoreContainer = styled(Container)`
   max-width: 84vw;
 
   h2 {
-    max-width: 90%;
     margin: 0 auto;
     text-align: center;
 
-    @media (min-width: 768px) {
+    ${props => props.theme.tablet`
       max-width: 70%;
-    }
+    `}
   }
 `
 export const KnowmoreBoxes = styled.div`
@@ -20,9 +19,9 @@ export const KnowmoreBoxes = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
+  ${props => props.theme.tablet`
+      flex-direction: row;
+  `}
 `
 
 export const KnowmoreBox = styled.div`
@@ -57,9 +56,12 @@ export const Percentage = styled(SpanHeavy)`
   margin-top: 16%;
   /* vertical-align: super; */
 
-  @media (min-width: 768px) {
+  ${props => props.theme.tablet`
     margin-top: 8%;
+  `}
+
+  ${props => props.theme.desktop`
     font-size: 94px;
     line-height: 122px;
-  }
+  `}
 `

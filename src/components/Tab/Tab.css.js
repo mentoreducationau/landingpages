@@ -6,16 +6,14 @@ export const TabWrapper = styled.div`
   align-items: stretch;
   justify-items: stretch;
   width: 100%;
+  margin: 2rem 0;
   padding: 0px 0.2%;
-  align-items: stretch;
 `
 
 export const TabButtonsWrapper = styled.div`
-  /* padding: 0px 0.2%; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /* max-width: 90%; */
   margin: 0 1rem;
 `
 

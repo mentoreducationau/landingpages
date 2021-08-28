@@ -9,9 +9,17 @@ export const MainContainer = styled(Container)`
   flex-direction: column;
   justify-content: space-between;
 
-  @media (min-width: 768px) {
+  ${props => props.theme.desktop`
     flex-direction: row;
-  }
+  `}
+`
+
+export const HostsContainer = styled.div`
+  width: 100%;
+
+  ${props => props.theme.desktop`
+    width: 65%;
+  `}
 `
 
 export const HostHeadline = styled(H3)`
@@ -35,16 +43,25 @@ export const AvatarContainer = styled.div`
   margin: 2rem 0;
 `
 export const AvatarCard = styled.div`
-  width: 25%;
+  width: 30%;
   text-align: center;
   display: grid;
-  grid-template-rows: 1fr auto 0.2fr;
+  row-gap: 8px;
+  align-content: baseline;
+
+  ${props => props.theme.desktop`
+    width: 25%;
+  `}
+
+  .gatsby-image-wrapper {
+    aspect-ratio: 1;
+  }
 `
 
 export const WebinarDescription = styled.div`
   width: 100%;
 
-  @media (min-width: 768px) {
+  ${props => props.theme.desktop`
     width: 65%;
-  }
+  `}
 `

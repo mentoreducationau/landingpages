@@ -26,15 +26,18 @@ export const FormDescription = styled.div`
   }
 
   p {
-    font: 20px/26px "Futura Medium";
     color: #535353;
-    letter-spacing: 0px;
   }
 
   div {
     color: #fc0000;
     margin: 6px 0;
+    text-align: left;
   }
+
+  ${props => props.theme.largeScreen`
+    max-width: 80%;
+  `}
 `
 
 export const InputContainer = styled.div`
@@ -61,21 +64,24 @@ export const QuotedBoxLeft = styled.div`
 
 export const InputForm = styled.input`
   border: 3px solid #707070;
-  height: 59px;
+  height: 50px;
   margin-bottom: 23px;
   width: 100%;
   padding-left: 9px;
   padding-right: 9px;
+
+  ${props => props.theme.desktop`
+    height: 59px;
+  `}
+
+  ${props => props.theme.largeScreen`
+    height: 79px;
+  `}
 `
 
 export const InputLabel = styled.label`
-  @media (min-width: 768px) {
-    font-size: 28px;
-    line-height: 35px;
-  }
-
   font-family: Futura Medium;
-  font-size: 21px;
+  font-size: 20px;
   line-height: 26px;
   letter-spacing: 0px;
   color: #464343;
@@ -83,6 +89,16 @@ export const InputLabel = styled.label`
   margin-left: 10px;
   display: inline-block;
   width: 100%;
+
+  ${props => props.theme.desktop`
+    font-size: 28px;
+    line-height: 35px;
+  `}
+
+  ${props => props.theme.largeScreen`
+    font-size: 36px;
+    line-height: 46px;
+  `}
 `
 
 export const QuotedBoxRight = styled.div`
@@ -95,11 +111,19 @@ export const QuotedBoxRight = styled.div`
 `
 
 export const Textarea = styled.textarea`
-  height: 200px;
+  height: 145px;
   border: 3px solid #707070;
   width: 100%;
   padding-left: 9px;
   padding-right: 9px;
+
+  ${props => props.theme.desktop`
+    height: 200px;
+  `}
+
+  ${props => props.theme.largeScreen`
+    height: 265px;
+  `}
 `
 export const FooterFormbuttonWrapper = styled.div`
   @media (min-width: 768px) {
@@ -111,16 +135,9 @@ export const FooterFormbuttonWrapper = styled.div`
 `
 
 export const FooterFormbutton = styled.button`
-  @media (min-width: 768px) {
-    font-size: 40px;
-    line-height: 51px;
-    padding: 10px 70px;
-    width: fit-content;
-  }
-
+  font-family: Futura Heavy;
   font-size: 30px;
   line-height: 38px;
-  font-family: Futura Heavy;
   letter-spacing: 0px;
   color: #ffffff;
   text-transform: uppercase;
@@ -130,4 +147,16 @@ export const FooterFormbutton = styled.button`
   padding: 10px;
   width: 100%;
   cursor: pointer;
+
+  ${props => props.theme.desktop`
+    font-size: 40px;
+    line-height: 51px;
+    padding: 10px 70px;
+    width: fit-content;
+  `}
+
+  ${props => props.theme.largeScreen`
+    font-size: 53px;
+    line-height: 68px;
+  `}
 `

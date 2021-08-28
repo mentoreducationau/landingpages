@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Title } from "../../../styles/Typography.css"
+import { SubtitleBold } from "../../../styles/Typography.css"
 import { SectionWrapper } from "../../../styles/ContainerStyles.css.js"
 
 export const CardsHeaderWrapper = styled(SectionWrapper)`
@@ -22,17 +22,14 @@ export const TitleWrapper = styled.div`
   }
 `
 
-export const CardsHeader = styled(Title)`
-  font-size: 22px;
-  line-height: 27px;
+export const CardsHeader = styled(SubtitleBold)`
   text-align: left;
   text-decoration: ${props => (props.isActive ? "underline" : "none")};
   margin: 5px 0;
   cursor: pointer;
+  color: #707070;
   
   @media (min-width: 768px) {
-    font-size: 36px;
-    line-height: 45px;
     padding: 0 2rem;
     margin: 0;
   }

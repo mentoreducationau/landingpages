@@ -27,9 +27,22 @@ export const CardsWrapper = styled.div`
     minmax(calc(250px * 1), 1fr)
   );
   grid-template-rows: auto;
-  row-gap: 27px;
-  column-gap: 74px;
+  gap: 27px;
   width: 100%;
+
+  ${props => props.theme.tablet`
+    width: 90%;
+  `}
+
+  ${props => props.theme.widescreen`
+    width: 100%;
+    row-gap: 37px;
+    column-gap: 74px;
+  `}
+
+  ${props => props.theme.largeScreen`
+    row-gap: 37px;
+  `}
 `
 
 export const CourseCardContainer = styled.div`
@@ -38,12 +51,12 @@ export const CourseCardContainer = styled.div`
 
 export const CourseCardWrapper = styled.div`
   display: grid;
-  grid-template-rows: 2fr 1fr;
   width: 100%;
   max-width: 250px;
   height: 100%;
   padding: 1rem;
   margin: auto;
+  align-content: space-between;
   font-family: Futura Heavy;
   border-radius: 22px;
   border: 1px solid rgba(0, 0, 0, 7%);
@@ -62,9 +75,9 @@ export const CourseCardWrapper = styled.div`
     justify-self: center;
   }
 
-  @media (min-width: 768px) {
+  ${props => props.theme.tablet`
     max-width: unset;
-  }
+  `}
 `
 
 export const CourseCardTitle = styled.div`
@@ -72,21 +85,14 @@ export const CourseCardTitle = styled.div`
   font-size: 14px;
   line-height: 16px;
 
-  h4 {
-    font-size: 19px;
-    line-height: 25px;
-    margin: 0;
-  }
-
-  @media (min-width: 768px) {
+  ${props => props.theme.desktop`
     font-size: 18px;
     line-height: 20px;
-
-    h4 {
-      font-size: 23px;
-      line-height: 30px;
-    }
-  }
+  `}
+  ${props => props.theme.largeScreen`
+    font-size: 24px;
+    line-height: 27px;
+  `}
 `
 
 export const CourseCardButtonContainer = styled.div`
@@ -99,15 +105,19 @@ export const CourseCardButton = styled(ButtonPrimary)`
   font-family: Futura Heavy;
   font-size: 21px;
   line-height: 27px;
-  padding: 0.3rem 0;
   width: 100%;
   background-color: #cc4a28;
   border-radius: 10px;
 
-  @media (min-width: 768px) {
+  ${props => props.theme.desktop`
     font-size: 26px;
     line-height: 34px;
-  }
+  `}
+
+  ${props => props.theme.largeScreen`
+    font-size: 34px;
+    line-height: 43px;
+  `}
 `
 
 /* Course Card Modal */

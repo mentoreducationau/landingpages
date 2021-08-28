@@ -5,6 +5,10 @@ export const CompanyLogosWrapper = styled.div`
   flex-wrap: wrap;
   overflow: hidden;
 
+  ${props => props.theme.tablet`
+    justify-content: center;
+  `}
+
   a {
     display: flex;
     align-items: center;

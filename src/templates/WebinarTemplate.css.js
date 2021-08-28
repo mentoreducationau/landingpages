@@ -9,24 +9,27 @@ export const TitleBanner = styled.div`
   justify-content: center;
   align-items: center;
 
+  width: 100%;
+  aspect-ratio: 0;
+
+  @media (min-width: 768px) {
+    aspect-ratio: 7;
+    position: relative;
+    max-height: 218px;
+
+    ::after {
+      content: "";
+      background: url(${img}) no-repeat;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: 0;
+    }
+  }
   .gatsby-image-wrapper {
     width: 100%;
-    aspect-ratio: 4/3;
-
-    @media (min-width: 768px) {
-      aspect-ratio: 9;
-      position: relative;
-
-      ::after {
-        content: "";
-        background: url(${img});
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-      }
-    }
   }
 `
 export const CourseHeading = styled.div`
@@ -38,6 +41,7 @@ export const CourseHeading = styled.div`
     justify-content: center;
     width: 100%;
     height: 100%;
+    z-index: 1;
   }
 `
 export const MainContainer = styled.div`

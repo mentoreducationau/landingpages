@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import socialIcons from "../../../static/socialmediaicon.png"
+import { Container } from "../../styles/ContainerStyles.css"
 
 export const FooterContainer = styled.footer`
   background: #f1f1f1;
@@ -7,9 +8,10 @@ export const FooterContainer = styled.footer`
   clear: both;
 `
 
-export const Footer = styled.div`
+export const Footer = styled(Container)`
   line-height: 20px;
   margin: auto;
+  padding: 0;
   font-family: "Open Sans";
 
   h1,
@@ -63,10 +65,10 @@ export const RowOne = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 768px) {
+  ${props => props.theme.tablet`
     flex-direction: row;
     flex-wrap: wrap;
-  }
+  `}
 `
 
 export const FooterColumns = styled.div`
