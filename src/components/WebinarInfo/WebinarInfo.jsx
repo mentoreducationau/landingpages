@@ -1,6 +1,15 @@
 import React from "react"
 import { StaticImage } from 'gatsby-plugin-image'
-import { MainContainer, HostHeadline, AvatarContainer, AvatarCard, WebinarDescription } from "./WebinarInfo.css"
+
+import { 
+  MainContainer,
+  HostsContainer,
+  HostHeadline,
+  AvatarContainer,
+  AvatarCard,
+  WebinarDescription 
+} from "./WebinarInfo.css"
+
 import Tab from "../Tab/Tab"
 import { H4, H5, Headline, Paragraph } from "../../styles/Typography.css"
 import Registar from "../Forms/Register/Register"
@@ -10,7 +19,7 @@ const WebinarInfo = () => {
   return (
     <>
       <MainContainer>
-        <div>
+        <HostsContainer>
           <HostHeadline>Your hosts</HostHeadline>
           <AvatarContainer>
             <AvatarCard>
@@ -29,7 +38,7 @@ const WebinarInfo = () => {
               <H5>Education Advice Team Leader</H5>
             </AvatarCard>
           </AvatarContainer>
-        </div>
+        </HostsContainer>
         <Registar />
       </MainContainer>
       <MainContainer>
