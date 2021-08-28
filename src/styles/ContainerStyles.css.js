@@ -8,10 +8,33 @@ const SectionWrapper = styled.div`
   margin-top: ${props => (props.marginTop ? props.marginTop : "")};
 `
 
+const SplitContainer = styled.div`
+  display: grid;
+  grid-template-columns: 100%;
+
+  ${props => props.theme.tablet`
+    grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
+    column-gap: 30px
+  `}
+
+  ${props => props.theme.desktop`
+    grid-template-columns: 60% 40%;
+    column-gap: 35px
+  `}
+
+  ${props => props.theme.largeScreen`
+    grid-template-columns: repeat(2, 1fr);
+  `}
+`
+
 const Container = styled.div`
   /* border: 2px solid tomato; */
   margin: 2rem auto;
   padding: 0 2rem;
+
+  ${props => props.theme.largeScreen`
+    padding: 0 4rem;
+  `}
 
   width: 100%;
   max-width: 100%;
@@ -116,10 +139,10 @@ const Container = styled.div`
         case "fluid":
           return "100%"
         default:
-          return "1320px"
+          return "90vw"
       }
     }};
   }
 `
 
-export { Container, SectionWrapper }
+export { Container, SectionWrapper, SplitContainer }
