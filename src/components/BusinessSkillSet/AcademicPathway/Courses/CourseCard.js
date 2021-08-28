@@ -11,6 +11,7 @@ import {
   CourseCardButton,
   CourseCardButtonContainer,
 } from "./courseCard.css"
+import { H4 } from "../../../../styles/Typography.css"
 
 const CourseCard = ({ course, dualCourse = false }) => {
 //   console.log(`course`, course)
@@ -26,7 +27,7 @@ const CourseCard = ({ course, dualCourse = false }) => {
         <StaticImage src="../../../../images/card-imgs/acc/eg.png" alt="course-image" />
         {!dualCourse && (
           <CourseCardTitle>
-            <h4>{course.courseCode} —</h4> {course.courseName}
+            <H4 card>{course.courseCode} —</H4> {course.courseName}
           </CourseCardTitle>
         )}
         {dualCourse && (
