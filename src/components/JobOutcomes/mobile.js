@@ -16,6 +16,18 @@ import {
 } from "./JobOutcomes.css"
 
 const JobOutcomesMobile = ({ displayJob, setDisplayJob }) => {
+  const [isOpen, setOpen] = React.useState(displayJob === 0)
+
+  const handleOpen = (i) => {
+    setDisplayJob(i)
+    
+    if (displayJob === i && isOpen) {
+      setOpen(false)
+    } else {
+      setOpen(true)
+    }
+  }
+
   return (
     <JobOutcomesContainer>
       <JobDetailWrapper>
@@ -32,27 +44,28 @@ const JobOutcomesMobile = ({ displayJob, setDisplayJob }) => {
                   alignItems: "center",
                   margin: "1rem 1rem 0 0",
                 }}
-                onClick={() => setDisplayJob(i)}
-                onKeyDown={() => setDisplayJob(i)}
+                onClick={() => handleOpen(i)}
+                onKeyDown={() => handleOpen(i)}
                 role="button"
                 tabIndex="0"
               >
                 <JobTitle light size="sm">
                   {role.role.charAt(0).toUpperCase() + role.role.slice(1)}
                 </JobTitle>
-                <DropdownArrow isOpen={displayJob === i} />
+                <DropdownArrow isOpen={displayJob === i && isOpen} />
               </div>
               <SeparatorLine
                 margin="1rem 0"
                 height="2px"
-                id={i}
-                displayJob={displayJob}
+                style={{
+                  display: displayJob === i && isOpen ? "initial" : "none",
+                }}
               />
               <div
                 style={{
                   padding: "0 0.3rem",
                   flexDirection: "column",
-                  display: displayJob === i ? "flex" : "none",
+                  display: displayJob === i && isOpen ? "flex" : "none",
                 }}
               >
                 <JobTitleWrapper>
