@@ -3,33 +3,38 @@ import TestimonialSlide from "../TestimonialSlide/TestimonialSlide"
 import { testimonialarray }  from '../../utils/slider';
 import { Container } from "../../styles/ContainerStyles.css";
 
-let interval
-
 const Testimonials = () => {
   const [ activeSlide , setActiveSlide] = useState(0)
+  const timeoutRef = React.useRef(null)
 
-  const nextSlide = useCallback(() => {
-    if(activeSlide < testimonialarray.length - 1) {
-      setActiveSlide((prev) => prev + 1)
-    } else {
-      setActiveSlide(0)
-    }
-  },[activeSlide, setActiveSlide])
-  
-  const prevSlide = () => {
-    if(activeSlide === 0) {
-      setActiveSlide(testimonialarray.length - 1);
-    } else {
-      setActiveSlide((prev) => prev - 1)
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
     }
   }
 
+  const nextSlide = useCallback(() => {
+    setActiveSlide(prevSlide =>
+      prevSlide === testimonialarray.length - 1 ? 0 : prevSlide + 1
+    )
+  },[setActiveSlide])
+  
+  const prevSlide = () => {
+    setActiveSlide(prevSlide =>
+      prevSlide === 0 ? (testimonialarray.length - 1) : prevSlide - 1
+    )
+  }
+
   useEffect(() => {
-    interval = setInterval(() => {
-      nextSlide()
-    }, 5000)
-    return () => clearInterval(interval)
-  },[nextSlide])
+    resetTimeout()
+    timeoutRef.current = setTimeout(
+      () =>
+        nextSlide(),
+      5000
+    )
+
+    return () => resetTimeout()
+  },[activeSlide, nextSlide])
 
   return (
     <Container>
