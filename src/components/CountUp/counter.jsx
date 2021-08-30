@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import useScrollTrigger from '../../hooks/useScrollTrigger';
 import { CounterText } from './counter.css'
 
 const easeOutSine = t => -(Math.cos(Math.PI * t) - 1) / 2; // from easings.net
@@ -6,33 +7,24 @@ const frameDuration = 1000 / 60;
 
 /*
     contains optional props from styled-comp:
-        font    =>  @font-family (default = Fututra)
+        font    =>  @font-family (default = Futura)
         color   =>  @color (default = #ff0808)
         size    =>  @font-size (default = 18vw)
         weight  =>  @font-weight (default = 900)
 */
 
-const CountUp = ({ children, duration = 5000, offset = 300, ...props }) => {
+const CountUp = ({ children, duration = 5000, ...props }) => {
 
-    let textRef = useRef(null)
+    let ref = useRef()
     const targetNumber = parseInt(children, 10)
     const [hasScrolled, setScrolled] = useState(false)
     const [displayNumber, setDisplayNumber] = useState(0)
 
-    useLayoutEffect(() => {
-        const element = textRef.current
-        const elementPos = element.getBoundingClientRect().top
-
-        const onScroll = () => {
-            const scrollPos = window.scrollY + window.innerHeight - offset
-            if (elementPos < scrollPos) {
-                setScrolled(true)
-            }
-        }
-
-        window.addEventListener('scroll', onScroll)
-        return () => window.removeEventListener('scroll', onScroll)
-    },[offset])
+    useScrollTrigger(
+        ref,
+        triggered => setScrolled(triggered),
+        { offset: -300 }
+    )
 
     useEffect(() => {
         let frame = 0;
@@ -52,7 +44,7 @@ const CountUp = ({ children, duration = 5000, offset = 300, ...props }) => {
     },[hasScrolled, duration, targetNumber])
     
     return (
-        <CounterText ref={textRef} {...props}>
+        <CounterText ref={ref} {...props}>
             {Math.floor(displayNumber)}
         </CounterText>
     )
