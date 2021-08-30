@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Paragraph, ParagraphMedium } from '../../styles/Typography.css'
+import { ParagraphMedium } from '../../styles/Typography.css'
 
 export const FoundersDetailGrid = styled.div`
   display: grid;
