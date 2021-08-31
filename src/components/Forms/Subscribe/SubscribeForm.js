@@ -1,4 +1,5 @@
 import React from "react"
+import useForm from "../../../hooks/useForm"
 
 import {
   SubscribeFormStyled,
@@ -11,10 +12,16 @@ import {
 import { FormFieldComponent } from "../FormFieldComponent"
 
 const SubscribeForm = () => {
+  const handleSubmit = e => {
+    console.log(e)
+  }
+
+  const { values, handleChange } = useForm(handleSubmit)
+
   return (
     <>
       <div>
-        <SubscribeFormStyled action="">
+        <SubscribeFormStyled onSubmit={handleSubmit}>
           <div style={{ display: "block" }}>
             <SubscribeFormField>
               <FormFieldComponent
@@ -22,6 +29,8 @@ const SubscribeForm = () => {
                 name="email"
                 type="email"
                 required={true}
+                value={values.email || ""}
+                onChange={handleChange}
               >
                 <RequiredIndicator>*</RequiredIndicator>
               </FormFieldComponent>
@@ -30,14 +39,16 @@ const SubscribeForm = () => {
               <FormFieldComponent
                 label="First Name"
                 name="firstname"
-                type="text"
+                value={values.firstname || ""}
+                onChange={handleChange}
               />
             </SubscribeFormField>
             <SubscribeFormField>
               <FormFieldComponent
                 label="Last Name"
                 name="lastname"
-                type="text"
+                value={values.lastname || ""}
+                onChange={handleChange}
               />
             </SubscribeFormField>
             <SubscribeButton value="Subscribe" type="submit" name="subscribe" />
