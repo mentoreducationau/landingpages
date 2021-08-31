@@ -19,7 +19,7 @@ const SubscribeForm = () => {
     console.log(values)
 
     try {
-      const result = await addToMailchimp(values.email, {...values})
+      const result = await addToMailchimp(values.email, { ...values })
       console.log(result)
     } catch (error) {
       console.log(error)
