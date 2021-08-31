@@ -1,17 +1,28 @@
 import React from "react"
 import { CustomForm } from "../FormFieldComponent"
-import addToMailchimp from 'gatsby-plugin-mailchimp'
 import { RegisterContainer } from "./register.css"
 import { H3 } from "../../../styles/Typography.css"
 
 const Registar = () => {
 
+  //  Todo: add oAuth 2.0 access token
   const handleSubmit = async values => {
     console.log(values)
+    const { email, name, phone } = values
 
     try {
-      const result = await addToMailchimp(values.email, ...values)
-      console.log(result)
+      const response = await fetch("https://us02web.zoom.us/webinar/84567950781", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer <ACCESS_TOKEN>`,
+        },
+        body: {
+          email: email,
+          first_name: name,
+          phone: phone,
+        },
+      })
+      console.log(response)
     } catch (error) {
       console.log(error)
     }
