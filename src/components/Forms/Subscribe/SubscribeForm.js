@@ -1,5 +1,6 @@
 import React from "react"
 import useForm from "../../../hooks/useForm"
+import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 import {
   SubscribeFormStyled,
@@ -12,8 +13,17 @@ import {
 import { FormFieldComponent } from "../FormFieldComponent"
 
 const SubscribeForm = () => {
-  const handleSubmit = e => {
-    console.log(e)
+  
+  // Todo: add mailchimp endpoint in gatsby-config
+  const handleSubmit = async () => {
+    console.log(values)
+
+    try {
+      const result = await addToMailchimp(values.email, {...values})
+      console.log(result)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const { values, handleChange } = useForm(handleSubmit)
