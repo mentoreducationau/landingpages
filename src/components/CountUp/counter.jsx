@@ -23,7 +23,7 @@ const CountUp = ({ children, duration = 5000, ...props }) => {
     useScrollTrigger(
         ref,
         triggered => setScrolled(triggered),
-        { offset: -300 }
+        { offset: 30 }
     )
 
     useEffect(() => {
