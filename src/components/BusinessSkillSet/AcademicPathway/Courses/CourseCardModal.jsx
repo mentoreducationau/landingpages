@@ -16,7 +16,7 @@ import {
 const CourseCardModal = ({ display, setDisplayModal, course }) => {
   //   console.log(course.introduction)
   return (
-    <CourseCardModalWrapper display={display}>
+    <CourseCardModalWrapper display={display ? display.toString() : undefined}>
       <CourseCardModalContainer>
         <CloseButton onClick={() => setDisplayModal(false)}>X</CloseButton>
 
