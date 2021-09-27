@@ -1,5 +1,11 @@
 import styled from "styled-components"
 
+export const CourseContainer = styled.div`
+  margin-top: 41px;
+  h2 {
+    text-align: center;
+  }
+`
 export const FormIntroContainer = styled.div`
   display: grid;
   grid-template-columns: 100%;
