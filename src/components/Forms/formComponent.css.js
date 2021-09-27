@@ -25,14 +25,14 @@ export const FormField = styled(GlobalFormField)`
 
   ${props => props.theme.desktop`
     label {
-      font-size: 28px;
-      line-height: 35px;
+      font-size: ${props.course ? "14px" : "28px"};
+      line-height: ${props.course ? "16px" : "35px"};
     }
   `}
 
   ${props => props.theme.largeScreen`
     input {
-      height: 70px;
+      height:  ${props.course ? "33px" : "70px"};
     }
   `}
 `
@@ -55,13 +55,15 @@ export const FormButton = styled.button`
   justify-content: center;
 
   ${props => props.theme.desktop`
-    font-size: 40px;
-    line-height: 51px;
+    margin: ${props.course ? "2% auto 0" : "6% auto 0"};
+    font-size: ${props.course ? "18px" : "40px"};
+    line-height: ${props.course ? "23px" : "51px"};
+    height: ${props.course ? "50px" : "70px"};
   `}
 
-${props => props.theme.largeScreen`
-    font-size: 48px;
-    line-height: 61px;
-    height: 70px;
+  ${props => props.theme.largeScreen`
+    font-size: ${props.course ? "18px" : "48px"};
+    line-height: ${props.course ? "23px" : "56px"};
+    height: ${props.course ? "50px" : "70px"};
   `}
 `

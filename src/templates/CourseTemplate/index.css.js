@@ -31,14 +31,14 @@ export const MainContainer = styled(Container)`
 `
 
 export const StickySideBar = styled.div`
-  width: 30%;
+  width: 28%;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  height: 70vh; // experiment with this value, try changing to 110vh
+  height: 90vh; // experiment with this value, try changing to 110vh
 `
 export const CourseContainer = styled.div`
-  width: 65%;
+  width: 70%;
   display: flex;
   flex-direction: column;
 `

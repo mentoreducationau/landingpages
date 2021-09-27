@@ -155,12 +155,12 @@ const H3 = styled.h3`
   margin: 0;
 
   ${props => props.theme.desktop`
-    font-size: 36px;
-    line-height: 45px;
+    font-size: ${props.course ? "25px" : "36px"};
+    line-height: ${props.course ? "30px" : "45px"};
   `}
   ${props => props.theme.largeScreen`
-    font-size: 56px;
-    line-height: 72px;
+    font-size: ${props.course ? "25px" : "56px"};
+    line-height: ${props.course ? "30px" : "72px"};
   `}
 `
 

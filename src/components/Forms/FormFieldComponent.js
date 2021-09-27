@@ -48,11 +48,11 @@ FormFieldComponent.propTypes = {
   onChange: PropTypes.func.isRequired,
 }
 
-export const CustomForm = ({ buttonText, handleSubmit }) => {
+export const CustomForm = ({ course, buttonText, handleSubmit }) => {
   const { values, onSubmit, handleChange } = useForm(() => handleSubmit(values))
   return (
     <CustomFormStyled onSubmit={onSubmit}>
-      <FormField>
+      <FormField course={course}>
         <FormFieldComponent
           label="Name"
           name="name"
@@ -60,7 +60,7 @@ export const CustomForm = ({ buttonText, handleSubmit }) => {
           onChange={handleChange}
         />
       </FormField>
-      <FormField>
+      <FormField course={course}>
         <FormFieldComponent
           label="Email"
           name="email"
@@ -69,7 +69,7 @@ export const CustomForm = ({ buttonText, handleSubmit }) => {
           onChange={handleChange}
         />
       </FormField>
-      <FormField>
+      <FormField course={course}>
         <FormFieldComponent
           label="Phone"
           name="phone"
@@ -77,7 +77,7 @@ export const CustomForm = ({ buttonText, handleSubmit }) => {
           onChange={handleChange}
         />
       </FormField>
-      <FormButton>{buttonText}</FormButton>
+      <FormButton course={course}>{buttonText}</FormButton>
     </CustomFormStyled>
   )
 }

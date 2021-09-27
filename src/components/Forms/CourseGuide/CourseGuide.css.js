@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 export const CourseGuideContainer = styled.div`
   width: 100%;
-  height: 100%;
 
   h3 {
     margin: 30px;
@@ -11,6 +10,11 @@ export const CourseGuideContainer = styled.div`
   }
 
   ${props => props.theme.desktop`
-    width: 25vw;
+    width: ${props.course ? "100%" : "25vw"};
+    h3 {
+      margin: ${props.course ? "10px" : "30px"};
+      text-align: center;
+      text-transform: uppercase;
+    }
   `}
 `

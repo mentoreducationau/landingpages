@@ -3,15 +3,15 @@ import { CourseGuideContainer } from "./CourseGuide.css"
 import { CustomForm } from "../FormFieldComponent"
 import { H3 } from "../../../styles/Typography.css"
 
-const CourseGuide = () => {
+const CourseGuide = ({course}) => {
   const handleSubmit = v => {
     console.log(v)
   }
   return (
-    <CourseGuideContainer>
-      <H3>Download a Course Guide</H3>
+    <CourseGuideContainer course={course}>
+      <H3 course={course}>Download a Course Guide</H3>
       {/* <h3>Fill out your details to download now!</h3> */}
-      <CustomForm buttonText="Download" handleSubmit={handleSubmit} />
+      <CustomForm course={course} buttonText="Download" handleSubmit={handleSubmit} />
     </CourseGuideContainer>
   )
 }

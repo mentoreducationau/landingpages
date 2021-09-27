@@ -22,6 +22,7 @@ import {
   JourneyStarted,
   LiveTutorials,
   Faq,
+  EnrolNow
 } from "../../components"
 import CourseGuide from "../../components/Forms/CourseGuide/CourseGuide"
 import { Container } from "../../styles/ContainerStyles.css"
@@ -57,16 +58,13 @@ const CourseTemplate = () => {
             course
             title="Where will this course take your career?"
           />
-          <Paragraph style={{ marginTop: "2rem" }}>
-            - Average salaries for those employed with qualifications from this
-            faculty
-          </Paragraph>
           <JobOutcomes course />
           <StudentsWork course />
           <FooterForm course />
         </CourseContainer>
         <StickySideBar>
-          <CourseGuide />
+          <CourseGuide course />
+          <EnrolNow />
         </StickySideBar>
       </MainContainer>
     </>
