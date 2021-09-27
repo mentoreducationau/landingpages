@@ -4,14 +4,11 @@ import Layout from "../components/Layout/Layout"
 import Seo from "../components/Seo/Seo"
 import WebinarTemplate from "../templates/WebinarTemplate"
 
-
-const SecondPage = () => (
-  <Layout>
+const SecondPage = ({ location }) => (
+  <Layout location={location} crumbLabel="Page 2">
     <Seo title="Page two" />
-  <WebinarTemplate/>
+    <WebinarTemplate />
   </Layout>
 )
 
 export default SecondPage
-
-

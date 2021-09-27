@@ -5,7 +5,7 @@ import {
   TitleBanner,
   CourseHeading,
   MainContainer,
-} from "./WebinarTemplate.css"
+} from "./index.css"
 
 import {
   WebinarInfo,
@@ -18,15 +18,15 @@ import {
   Nosubsitute,
   FooterForm,
   StudentsWork,
-} from '../components'
+} from '../../components'
 
-import { Headline } from "../styles/Typography.css"
+import { Headline } from "../../styles/Typography.css"
 
 const WebinarTemplate = () => {
   return (
     <>
       <TitleBanner>
-        <StaticImage src="../images/banner_bg.png" alt="banner background" layout="fullWidth" />
+        <StaticImage src="../../images/banner_bg.png" alt="banner background" layout="fullWidth" />
         <CourseHeading>
           <Headline banner>
             FNS40217 Certificate IV in Accounting and Bookkeeping

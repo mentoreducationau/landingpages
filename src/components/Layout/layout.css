@@ -595,3 +595,25 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+nav.breadcrumb {
+  margin: 36px 2rem 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: normal;
+}
+
+.breadcrumb a {
+  color: #707070 !important;
+}
+.breadcrumb__separator {
+  margin-right: 5px;
+} 
+
+@media only screen and (max-width: 480px) {
+  nav.breadcrumb {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: normal;
+  }
+}

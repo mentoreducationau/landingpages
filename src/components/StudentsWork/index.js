@@ -7,7 +7,7 @@ import { CompanyLogosWrapper } from "./studentswork.css"
 import { Container } from '../../styles/ContainerStyles.css'
 import { Title } from '../../styles/Typography.css'
 
-const StudentsWork = () => {
+const StudentsWork = (props) => {
     const {
       allFile: { nodes: logos },
     } = useStaticQuery(graphql`
@@ -25,7 +25,7 @@ const StudentsWork = () => {
     `)
     return (
       <Container>
-        <Title>Where our graduates are now employed</Title>
+        <Title course={props.course}>Where our graduates are now employed</Title>
         <CompanyLogosWrapper>
           {studentsData.map(({ id, companyName, link, imgSrc }) => {
             const img = logos.filter(

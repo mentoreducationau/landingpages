@@ -3,8 +3,8 @@ import Layout from "../components/Layout/Layout"
 import Seo from "../components/Seo/Seo"
 import WebinarTemplate from "../templates/WebinarTemplate"
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = ({ location }) => (
+  <Layout location={location} crumbLabel="Home">
     <Seo title="Page two" />
     <WebinarTemplate />
   </Layout>

@@ -11,6 +11,7 @@ import theme from './src/constant/theme'
 import GlobalStyles from './src/styles/GlobalStyles.css'
 import { useWindowSize } from './src/hooks/useWindowSize'
 import { Typography } from './src/styles/Typography.css'
+import "gatsby-plugin-breadcrumb/gatsby-plugin-breadcrumb.css"
 
 const App = ({ element }) => {
   const [width] = useWindowSize()

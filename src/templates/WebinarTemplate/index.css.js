@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import img from "../images/course-title-bg.png"
+import img from "../../images/course-title-bg.png"
 
 export const TitleBanner = styled.div`
   position: relative;

@@ -17,10 +17,10 @@ import {
 import { DivHeavy, Paragraph, Subtitle, Title } from '../../styles/Typography.css'
 import { Container } from "../../styles/ContainerStyles.css"
 
-const FooterForm = () => {
+const FooterForm = (props) => {
   return (
     <Container>
-      <Title>
+      <Title course={props.course}>
         Need more <span style={{ color: "#FF1010" }}>assistance</span> or to
         talk to an expert?
       </Title>

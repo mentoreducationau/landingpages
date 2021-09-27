@@ -56,7 +56,7 @@ const Headline = styled.h1`
   font-family: ${props => (props.banner ? "Futura Medium" : "Futura Heavy")};
   /* font-family: Futura Medium; */
   color: #464343;
-  margin: ${props => props.banner ? 0 : ""};
+  margin: ${props => (props.banner ? 0 : "")};
 
   ${props => props.theme.mobile`
     font-size: 30px;
@@ -89,13 +89,13 @@ const Title = styled.h2`
   text-align: center;
 
   ${props => props.theme.desktop`
-    font-size: 50px;
-    line-height: 60px;
+    font-size: ${props.course ? "36px" : "50px"};
+    line-height: ${props.course ? "40px" : "60px"};
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: 65px;
-    line-height: 84px;
+    font-size: ${props.course ? "36px" : "65px"};
+    line-height: ${props.course ? "40px" : "84px"};
   `}
 `
 
