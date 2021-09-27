@@ -35,7 +35,7 @@ export const StickySideBar = styled.div`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  height: 90vh; // experiment with this value, try changing to 110vh
+  height: 100vh; // experiment with this value, try changing to 110vh
 `
 export const CourseContainer = styled.div`
   width: 70%;
