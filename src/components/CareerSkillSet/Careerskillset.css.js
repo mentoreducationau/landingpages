@@ -11,3 +11,6 @@ export const CareerInfo = styled.div`
     padding: 40px;
   `}
 `
+export const CourseContainer = styled.div`
+  margin-top: 4rem;
+`

@@ -86,14 +86,15 @@ const Title = styled.h2`
   margin: 0 auto;
   margin-bottom: 40px;
   color: #707070;
-  text-align: center;
 
   ${props => props.theme.desktop`
+    text-align: ${props.course ? "left" : "center"};
     font-size: ${props.course ? "36px" : "50px"};
     line-height: ${props.course ? "40px" : "60px"};
   `}
 
   ${props => props.theme.largeScreen`
+    text-align: ${props.course ? "left" : "center"};
     font-size: ${props.course ? "36px" : "65px"};
     line-height: ${props.course ? "40px" : "84px"};
   `}

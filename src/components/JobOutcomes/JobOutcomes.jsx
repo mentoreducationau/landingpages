@@ -6,6 +6,7 @@ import { useWindowSize } from "../../hooks/useWindowSize"
 
 import {
   JobOutcomesContainer,
+  JobOutcomesCourseContainer,
   JobDetailWrapper,
   JobTitleWrapper,
   SeparatorLine,
@@ -16,7 +17,7 @@ import {
   JobHeader,
 } from "./JobOutcomes.css"
 
-const JobOutcomes = () => {
+const JobOutcomes = ({ course }) => {
   const [size] = useWindowSize()
   const breakpoint = size < 1024
   const [displayJob, setDisplayJob] = React.useState(0)
@@ -24,73 +25,141 @@ const JobOutcomes = () => {
   return breakpoint ? (
     <JobOutcomesMobile displayJob={displayJob} setDisplayJob={setDisplayJob} />
   ) : (
-    <JobOutcomesContainer>
-      <JobDetailWrapper>
-        <JobTitleWrapper>
-          <JobHeader>Job Role</JobHeader>
-          <SeparatorLine width="50%" />
-        </JobTitleWrapper>
-        <QualificationsList>
-          {jobRoles.map((role, i) => (
-            <JobListItem key={i} onMouseEnter={() => setDisplayJob(i)}>
-              <JobTitle
-                className={displayJob === i ? "underline font-bold" : ""}
-              >
-                {role.role.charAt(0).toUpperCase() + role.role.slice(1)}
-              </JobTitle>
-              <SeparatorLine
-                width="30%"
-                height="2px"
-                id={i}
-                displayJob={displayJob}
-              />
-            </JobListItem>
-          ))}
-        </QualificationsList>
-      </JobDetailWrapper>
-      <JobDetailWrapper>
-        <JobTitleWrapper>
-          <JobHeader>Avg. Salary</JobHeader>
-          <SeparatorLine width="30%" />
-        </JobTitleWrapper>
-        <QualificationsList>
-          {jobRoles.map((role, i) => (
-            <JobListItem key={i} onMouseEnter={() => setDisplayJob(i)}>
-              <JobTitle
-                className={displayJob === i ? "font-bold" : ""}
-              >
-                ${(role.salary - (role.salary % 1000)) / 1000}k per year
-              </JobTitle>
-              <SeparatorLine
-                width="25%"
-                height="2px"
-                id={i}
-                displayJob={displayJob}
-              />
-            </JobListItem>
-          ))}
-        </QualificationsList>
-      </JobDetailWrapper>
-      <JobDetailWrapper last>
-        <JobTitleWrapper>
-          <JobHeader>Required Qualification/s</JobHeader>
-        </JobTitleWrapper>
-        {jobRoles.map((role, i) => (
-          <QualificationsList key={i} displayJob={displayJob} id={i}>
-            {role.requiredQaulifications.map((qualification, i) => (
-              <JobListItem key={i}>
-                <QaulificationLink
-                  href={`https://www.mentor.edu.au/courses/${qualification.link}`}
-                  target="_blank"
-                >
-                  {qualification.name}
-                </QaulificationLink>
-              </JobListItem>
+    <>
+      {course ? (
+        <JobOutcomesCourseContainer>
+          <JobDetailWrapper>
+            <JobTitleWrapper>
+              <JobHeader>Job Role</JobHeader>
+              <SeparatorLine width="50%" />
+            </JobTitleWrapper>
+            <QualificationsList>
+              {jobRoles.map((role, i) => (
+                <JobListItem key={i} onMouseEnter={() => setDisplayJob(i)}>
+                  <JobTitle
+                    className={displayJob === i ? "underline font-bold" : ""}
+                  >
+                    {role.role.charAt(0).toUpperCase() + role.role.slice(1)}
+                  </JobTitle>
+                  <SeparatorLine
+                    width="30%"
+                    height="2px"
+                    id={i}
+                    displayJob={displayJob}
+                  />
+                </JobListItem>
+              ))}
+            </QualificationsList>
+          </JobDetailWrapper>
+          <JobDetailWrapper>
+            <JobTitleWrapper>
+              <JobHeader>Avg. Salary</JobHeader>
+              <SeparatorLine width="30%" />
+            </JobTitleWrapper>
+            <QualificationsList>
+              {jobRoles.map((role, i) => (
+                <JobListItem key={i} onMouseEnter={() => setDisplayJob(i)}>
+                  <JobTitle className={displayJob === i ? "font-bold" : ""}>
+                    ${(role.salary - (role.salary % 1000)) / 1000}k per year
+                  </JobTitle>
+                  <SeparatorLine
+                    width="25%"
+                    height="2px"
+                    id={i}
+                    displayJob={displayJob}
+                  />
+                </JobListItem>
+              ))}
+            </QualificationsList>
+          </JobDetailWrapper>
+          <JobDetailWrapper last>
+            <JobTitleWrapper>
+              <JobHeader>Required Qualification/s</JobHeader>
+            </JobTitleWrapper>
+            {jobRoles.map((role, i) => (
+              <QualificationsList key={i} displayJob={displayJob} id={i}>
+                {role.requiredQaulifications.map((qualification, i) => (
+                  <JobListItem key={i}>
+                    <QaulificationLink
+                      href={`https://www.mentor.edu.au/courses/${qualification.link}`}
+                      target="_blank"
+                    >
+                      {qualification.name}
+                    </QaulificationLink>
+                  </JobListItem>
+                ))}
+              </QualificationsList>
             ))}
-          </QualificationsList>
-        ))}
-      </JobDetailWrapper>
-    </JobOutcomesContainer>
+          </JobDetailWrapper>
+        </JobOutcomesCourseContainer>
+      ) : (
+        <JobOutcomesContainer course={course}>
+          <JobDetailWrapper>
+            <JobTitleWrapper>
+              <JobHeader>Job Role</JobHeader>
+              <SeparatorLine width="50%" />
+            </JobTitleWrapper>
+            <QualificationsList>
+              {jobRoles.map((role, i) => (
+                <JobListItem key={i} onMouseEnter={() => setDisplayJob(i)}>
+                  <JobTitle
+                    className={displayJob === i ? "underline font-bold" : ""}
+                  >
+                    {role.role.charAt(0).toUpperCase() + role.role.slice(1)}
+                  </JobTitle>
+                  <SeparatorLine
+                    width="30%"
+                    height="2px"
+                    id={i}
+                    displayJob={displayJob}
+                  />
+                </JobListItem>
+              ))}
+            </QualificationsList>
+          </JobDetailWrapper>
+          <JobDetailWrapper>
+            <JobTitleWrapper>
+              <JobHeader>Avg. Salary</JobHeader>
+              <SeparatorLine width="30%" />
+            </JobTitleWrapper>
+            <QualificationsList>
+              {jobRoles.map((role, i) => (
+                <JobListItem key={i} onMouseEnter={() => setDisplayJob(i)}>
+                  <JobTitle className={displayJob === i ? "font-bold" : ""}>
+                    ${(role.salary - (role.salary % 1000)) / 1000}k per year
+                  </JobTitle>
+                  <SeparatorLine
+                    width="25%"
+                    height="2px"
+                    id={i}
+                    displayJob={displayJob}
+                  />
+                </JobListItem>
+              ))}
+            </QualificationsList>
+          </JobDetailWrapper>
+          <JobDetailWrapper last>
+            <JobTitleWrapper>
+              <JobHeader>Required Qualification/s</JobHeader>
+            </JobTitleWrapper>
+            {jobRoles.map((role, i) => (
+              <QualificationsList key={i} displayJob={displayJob} id={i}>
+                {role.requiredQaulifications.map((qualification, i) => (
+                  <JobListItem key={i}>
+                    <QaulificationLink
+                      href={`https://www.mentor.edu.au/courses/${qualification.link}`}
+                      target="_blank"
+                    >
+                      {qualification.name}
+                    </QaulificationLink>
+                  </JobListItem>
+                ))}
+              </QualificationsList>
+            ))}
+          </JobDetailWrapper>
+        </JobOutcomesContainer>
+      )}
+    </>
   )
 }
 

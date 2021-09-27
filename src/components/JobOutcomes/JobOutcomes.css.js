@@ -30,6 +30,22 @@ export const JobOutcomesContainer = styled(Container)`
     max-width: 1600px;
   `}
 `
+export const JobOutcomesCourseContainer = styled.div`
+  display: grid;
+  grid-template-columns: 100%;
+  font: 33px/40px Futura;
+  color: #707070;
+  margin-top: 0;
+
+  ${props => props.theme.desktop`
+    grid-template-columns: 33% 33% 34%;
+    margin-top: 2rem;
+  `}
+
+  ${props => props.theme.largeScreen`
+    max-width: 1600px;
+  `}
+`
 
 export const JobDetailWrapper = styled.div`
   display: flex;
@@ -48,10 +64,9 @@ export const JobTitleWrapper = styled.div`
 
 export const JobHeader = styled(SubtitleBold)`
   width: 100%;
-  margin: ${props => props.margin ? props.margin : 0};
+  margin: ${props => (props.margin ? props.margin : 0)};
   color: ${props => (props.light ? "#707070" : "")};
-  font-size: ${props =>
-    props.size === "sm" ? "20px" : ""};
+  font-size: ${props => (props.size === "sm" ? "20px" : "")};
 
   ${props => props.theme.desktop`
       max-width: fit-content;
@@ -96,7 +111,7 @@ const QualificationsUL = styled.ul`
   display: ${props => (props.displayJob === props.id ? "inline" : "none ")};
   line-height: 2rem;
   margin: 0;
-  
+
   ${props => props.theme.desktop`
     padding: 1rem 0;
   `}
@@ -162,7 +177,7 @@ export const DropdownArrow = styled.div`
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   ${({ isOpen }) => {
-    if (isOpen === true) return "border-bottom: 10px solid #707070;";
+    if (isOpen === true) return "border-bottom: 10px solid #707070;"
     return "border-top: 10px solid #707070;"
   }}
 
