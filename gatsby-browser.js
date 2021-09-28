@@ -5,13 +5,14 @@
  */
 
 // You can delete this file if you're not using it
-import * as React from 'react'
-import { ThemeProvider } from 'styled-components'
-import theme from './src/constant/theme'
-import GlobalStyles from './src/styles/GlobalStyles.css'
+import * as React from "react"
+import { ThemeProvider } from "styled-components"
+import theme from "./src/constant/theme"
+import GlobalStyles from "./src/styles/GlobalStyles.css"
 // import { useWindowSize } from './src/hooks/useWindowSize'
-import { Typography } from './src/styles/Typography.css'
+import { Typography } from "./src/styles/Typography.css"
 import "gatsby-plugin-breadcrumb/gatsby-plugin-breadcrumb.css"
+import "react-accessible-accordion/dist/fancy-example.css"
 
 const App = ({ element }) => {
   // const [width] = useWindowSize()

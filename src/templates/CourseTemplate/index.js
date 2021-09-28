@@ -10,7 +10,7 @@ import {
 
 import {
   CareerSkillSket,
-  JobOutcomes,
+  CareerAccordion,
   Knowmore,
   FooterForm,
   StudentsWork,
@@ -55,7 +55,7 @@ const CourseTemplate = () => {
             course
             title="Where will this course take your career?"
           />
-          <JobOutcomes course />
+          <CareerAccordion />
           <Knowmore course />
           <Mission />
           <StudentsWork course />
