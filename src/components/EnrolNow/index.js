@@ -14,7 +14,7 @@ const EnrolNow = () => {
       <StaticImage
         src="../../images/support.png"
         alt="support"
-        width="340"
+        width={340}
       />
       <Paragraph style={{ marginTop: 18, fontSize: 20 }}>
         Need help? <Link to="#">Click here</Link> to speak with an expert

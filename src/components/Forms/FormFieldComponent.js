@@ -41,7 +41,6 @@ FormFieldComponent.defaultProps = {
 
 FormFieldComponent.propTypes = {
   name: PropTypes.string.isRequired,
-  type: PropTypes.string,
   placeholder: PropTypes.string,
   type: PropTypes.oneOf(["text", "email", "number", "password"]),
   value: PropTypes.any,

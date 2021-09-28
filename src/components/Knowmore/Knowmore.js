@@ -7,7 +7,6 @@ import {
   KnowmoreBoxes,
   KnowmoreBox,
   Percentage,
-  KnowmoreCourseContainer,
   KnowmoreCourseBox,
   MentorEducationContainer,
 } from "./Knowmore.css"

@@ -9,13 +9,9 @@ import {
 } from "./index.css"
 
 import {
-  Testimonials,
   CareerSkillSket,
   JobOutcomes,
-  BusinessSkillSet,
-  AcademicPathways,
   Knowmore,
-  Nosubsitute,
   FooterForm,
   StudentsWork,
   CourseInfo,

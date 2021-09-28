@@ -17,7 +17,7 @@ const Tab = () => {
 
   useEffect(() => {
     const newCourseItems = []
-    for (let [key, value] of Object.entries(courses[0])) {
+    for (let [value] of Object.entries(courses[0])) {
       newCourseItems.push(`${value}`)
       setCourseItems(newCourseItems)
       setActiveTab(Object.keys(courses[0])[0])
