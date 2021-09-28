@@ -28,6 +28,9 @@ export const FormField = styled(GlobalFormField)`
       font-size: ${props.course ? "14px" : "28px"};
       line-height: ${props.course ? "16px" : "35px"};
     }
+    input {
+      height:  ${props.course ? "33px" : "70px"};
+    }
   `}
 
   ${props => props.theme.largeScreen`
@@ -58,7 +61,7 @@ export const FormButton = styled.button`
     margin: ${props.course ? "2% auto 0" : "6% auto 0"};
     font-size: ${props.course ? "18px" : "40px"};
     line-height: ${props.course ? "23px" : "51px"};
-    height: ${props.course ? "50px" : "70px"};
+    height: ${props.course ? "45px" : "70px"};
   `}
 
   ${props => props.theme.largeScreen`

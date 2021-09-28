@@ -149,14 +149,14 @@ const TabTitle = styled.h3`
 
 const H3 = styled.h3`
   font-family: Futura Heavy;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 23px;
+  line-height: 28px;
   color: #707070;
   margin: 0;
 
   ${props => props.theme.desktop`
-    font-size: ${props.course ? "25px" : "36px"};
-    line-height: ${props.course ? "30px" : "45px"};
+    font-size: ${props.course ? "23px" : "36px"};
+    line-height: ${props.course ? "28px" : "45px"};
   `}
   ${props => props.theme.largeScreen`
     font-size: ${props.course ? "25px" : "56px"};
@@ -213,12 +213,13 @@ const ParagraphMedium = styled.p`
   letter-spacing: 0px;
 
   ${props => props.theme.desktop`
-    font-size: 32px;
-    line-height: 45px;
+    font-size: ${props.course ? "25px" : "32px"};
+    line-height: ${props.course ? "30px" : "45px"};
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: 36px;
+    font-size: ${props.course ? "25px" : "36px"};
+    line-height: ${props.course ? "30px" : "45px"};
   `}
 `
 

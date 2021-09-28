@@ -16,7 +16,7 @@ const EnrolNow = () => {
         alt="support"
         width={340}
       />
-      <Paragraph style={{ marginTop: 18, fontSize: 20 }}>
+      <Paragraph style={{ fontSize: 18 }}>
         Need help? <Link to="#">Click here</Link> to speak with an expert
       </Paragraph>
       <PriceContainer>
@@ -56,8 +56,8 @@ const EnrolNow = () => {
         </Prices>
       </PriceContainer>
       <PriceButton>ENROL NOW</PriceButton>
-      <ParagraphMedium style={{ margin: "8px"}}>Payment Plans also available</ParagraphMedium>
-      <ParagraphMedium style={{color: "#CC4A28"}}>Click Here</ParagraphMedium>
+      <ParagraphMedium course style={{ margin: "8px"}}>Payment Plans also available</ParagraphMedium>
+      <ParagraphMedium course style={{color: "#CC4A28"}}>Click Here</ParagraphMedium>
     </EnrolContainer>
   )
 }

@@ -22,6 +22,7 @@ export const Prices = styled.div`
   width: 50%;
 `
 export const PriceButton = styled.button`
+  margin-top: 0.5rem;
   font-family: Futura Heavy;
   font-size: 30px;
   line-height: 38px;
@@ -33,4 +34,16 @@ export const PriceButton = styled.button`
   height: 50px;
   text-transform: uppercase;
   cursor: pointer;
+
+  ${props => props.theme.desktop`
+    font-size: 18px;
+    line-height: 23px;
+    height:45px ;
+  `}
+
+  ${props => props.theme.largeScreen`
+    font-size: 30px;
+    line-height: 38px;
+    height:50px;
+  `}
 `
