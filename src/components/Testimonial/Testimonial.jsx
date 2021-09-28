@@ -1,10 +1,10 @@
-import React , { useState, useEffect, useCallback } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 import TestimonialSlide from "../TestimonialSlide/TestimonialSlide"
-import { testimonialarray }  from '../../utils/slider';
-import { Container } from "../../styles/ContainerStyles.css";
+import { testimonialarray } from "../../utils/slider"
+import { Container } from "../../styles/ContainerStyles.css"
 
-const Testimonials = () => {
-  const [ activeSlide , setActiveSlide] = useState(0)
+const Testimonials = ({ course }) => {
+  const [activeSlide, setActiveSlide] = useState(0)
   const timeoutRef = React.useRef(null)
 
   function resetTimeout() {
@@ -17,33 +17,45 @@ const Testimonials = () => {
     setActiveSlide(prevSlide =>
       prevSlide === testimonialarray.length - 1 ? 0 : prevSlide + 1
     )
-  },[setActiveSlide])
-  
+  }, [setActiveSlide])
+
   const prevSlide = () => {
     setActiveSlide(prevSlide =>
-      prevSlide === 0 ? (testimonialarray.length - 1) : prevSlide - 1
+      prevSlide === 0 ? testimonialarray.length - 1 : prevSlide - 1
     )
   }
 
   useEffect(() => {
     resetTimeout()
-    timeoutRef.current = setTimeout(
-      () =>
-        nextSlide(),
-      5000
-    )
+    timeoutRef.current = setTimeout(() => nextSlide(), 5000)
 
     return () => resetTimeout()
-  },[activeSlide, nextSlide])
+  }, [activeSlide, nextSlide])
 
-  return (
+  return course ? (
+    <>
+      {testimonialarray &&
+        testimonialarray.map((item, index) => (
+          <TestimonialSlide
+            course
+            key={index}
+            active={index === activeSlide}
+            nextSlide={nextSlide}
+            prevSlide={prevSlide}
+            data={item}
+            index={index}
+          />
+        ))}
+    </>
+  ) : (
     <Container>
-        {testimonialarray && testimonialarray.map((item , index) => (     
+      {testimonialarray &&
+        testimonialarray.map((item, index) => (
           <TestimonialSlide
             key={index}
-            active={index === activeSlide} 
-            nextSlide={nextSlide} 
-            prevSlide={prevSlide} 
+            active={index === activeSlide}
+            nextSlide={nextSlide}
+            prevSlide={prevSlide}
             data={item}
             index={index}
           />
@@ -53,4 +65,3 @@ const Testimonials = () => {
 }
 
 export default Testimonials
-

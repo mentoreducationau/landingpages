@@ -169,17 +169,17 @@ const H4 = styled.h4`
   margin: 0;
 
   ${props => props.theme.mobile`
-    font-size: ${props.card ? "19px" : ""};
-    line-height: ${props.card ? "25px" : ""};
+    font-size: ${props.card ? "19px" : "14px"};
+    line-height: ${props.card ? "25px" : "19px"};
   `}
 
   ${props => props.theme.desktop`
-    font-size: ${props.card ? "23px" : "24px"};
-    line-height: ${props.card ? "30px" : "31px"};
+    font-size: ${props.card ? "23px" : "14px"};
+    line-height: ${props.card ? "30px" : "19px"};
   `}
   ${props => props.theme.largeScreen`
-    font-size: ${props.card ? "31px" : ""};
-    line-height: ${props.card ? "39px" : ""};
+    font-size: ${props.card ? "31px" : "14px"};
+    line-height: ${props.card ? "39px" : "19px"};
   `}
 `
 const H5 = styled.h5`

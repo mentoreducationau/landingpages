@@ -34,7 +34,21 @@ const TestimonialSlide = props => {
 
   const img = images.filter(image => image.relativePath === props.data.imageurl)
 
-  return (
+  return props.course ? (
+    <TestimonialSlideWrapper activeTab={props.active}>
+        <TestimonialSlideInfo>
+          <Subtitle>{props.data.name}</Subtitle>
+          <SpanHeavy>{props.data.jobtitle}</SpanHeavy>
+          <ParagraphMedium>
+            <QuoteSvg left />
+            {props.data.info}
+            <QuoteSvg right />
+          </ParagraphMedium>
+          <SliderArrowLeft onClick={() => props.prevSlide()} />
+          <SliderArrowRight onClick={() => props.nextSlide()} />
+        </TestimonialSlideInfo>
+    </TestimonialSlideWrapper>
+  ) : (
     <TestimonialSlideWrapper activeTab={props.active}>
       <TestimonialSlideContainer>
         <TestimonialSlideImage>

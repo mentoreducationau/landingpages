@@ -22,7 +22,8 @@ import {
   JourneyStarted,
   LiveTutorials,
   Faq,
-  EnrolNow
+  EnrolNow,
+  Mission
 } from "../../components"
 import CourseGuide from "../../components/Forms/CourseGuide/CourseGuide"
 import { Container } from "../../styles/ContainerStyles.css"
@@ -59,6 +60,8 @@ const CourseTemplate = () => {
             title="Where will this course take your career?"
           />
           <JobOutcomes course />
+          <Knowmore course />
+          <Mission />
           <StudentsWork course />
           <FooterForm course />
         </CourseContainer>

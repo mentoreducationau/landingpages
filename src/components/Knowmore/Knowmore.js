@@ -1,17 +1,50 @@
 import React from "react"
 import CountUp from "../CountUp/counter"
+import Testimonials from "../Testimonial/Testimonial"
 
 import {
   KnowmoreContainer,
   KnowmoreBoxes,
   KnowmoreBox,
   Percentage,
+  KnowmoreCourseContainer,
+  KnowmoreCourseBox,
+  MentorEducationContainer,
 } from "./Knowmore.css"
 
-import { DivHeavy, Title } from "../../styles/Typography.css"
+import { DivHeavy, Subtitle, Title, H4 } from "../../styles/Typography.css"
 
-const Knowmore = () => {
-  return (
+const Knowmore = ({ course }) => {
+  return course ? (
+    <>
+      <Subtitle>
+        Want to know more about our{" "}
+        <span style={{ color: "#FF0000" }}>Mentor Education</span> graduates?
+      </Subtitle>
+      <MentorEducationContainer>
+        <KnowmoreBoxes course>
+          <KnowmoreCourseBox>
+            <div>
+              <CountUp size="172px">92</CountUp>
+              <Percentage course>%</Percentage>
+            </div>
+            <H4>
+              Of graduates were employed or enrolled in further study after
+              training.
+            </H4>
+          </KnowmoreCourseBox>
+          <KnowmoreCourseBox>
+            <div>
+              <CountUp size="172px">91</CountUp>
+              <Percentage course>%</Percentage>
+            </div>
+            <H4>Of students were overall quality of training</H4>
+          </KnowmoreCourseBox>
+        </KnowmoreBoxes>
+        <Testimonials course />
+      </MentorEducationContainer>
+    </>
+  ) : (
     <KnowmoreContainer>
       <Title>
         Want to know more about our{" "}
