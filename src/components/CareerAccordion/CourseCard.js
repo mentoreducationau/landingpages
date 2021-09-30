@@ -17,7 +17,7 @@ const CourseCard = ({ course }) => {
         <StaticImage
           src="../../images/card-imgs/acc/courseImage.png"
           alt="course-image"
-          width={250}
+          layout="fullWidth"
         />
         <CourseCardTitle>
           <H4 card>{course.courseCode} — {course.courseName}</H4>

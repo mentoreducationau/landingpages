@@ -1,20 +1,6 @@
 import styled from "styled-components"
 import { Container } from "../../styles/ContainerStyles.css"
-import img from "../../images/course-banner.jpg"
 
-export const TitleBanner = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url(${img}) no-repeat;
-  background-size: cover;
-  background-position: 50% 45%;
-  width: 100%;
-  h1 {
-    color: #fff;
-  }
-`
 export const HeroVideo = styled.div`
   position: relative;
   .playbutton {

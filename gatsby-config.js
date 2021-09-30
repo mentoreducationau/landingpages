@@ -42,17 +42,33 @@ module.exports = {
     {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
-        defaultCrumb: {
-          // location: required and must include the pathname property
-          location: {
-            pathname: "/",
-          },
-          // crumbLabel: required label for the default crumb
-          crumbLabel: "Home",
-          // all other properties optional
-          crumbSeparator: " / ",
+        // useAutoGen: required 'true' to use autogen
+        useAutoGen: true,
+        // autoGenHomeLabel: optional 'Home' is default
+        autoGenHomeLabel: `Home`,
+        // exclude: optional, include this array to exclude paths you don't want to
+        // generate breadcrumbs for (see below for details).
+        exclude: [
+          `**/dev-404-page/**`,
+          `**/404/**`,
+          `**/404.html`,
+          `**/offline-plugin-app-shell-fallback/**`
+        ],
+        // isMatchOptions: optional, include this object to configure the wildcard-match library.
+        excludeOptions: {
+          separator: ' / '
         },
-      },
+        // crumbLabelUpdates: optional, update specific crumbLabels in the path
+        crumbLabelUpdates: [
+          {
+            pathname: '/courses',
+            crumbLabel: 'Courses'
+          },
+        ],
+        // trailingSlashes: optional, will add trailing slashes to the end
+        // of crumb pathnames. default is false
+        trailingSlashes: false,
+     },
     }
   ],
 }

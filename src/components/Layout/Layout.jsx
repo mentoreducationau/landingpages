@@ -5,7 +5,10 @@ import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import Header from "../Header/Header"
 import "./layout.css"
 import Footer from "../Footer/footer"
-const Layout = ({ children, location, crumbLabel }) => {
+const Layout = ({ children, pageContext, location, crumbLabel }) => {
+  const { breadcrumb : { crumbs } } = pageContext;
+  const customCrumbLabel = crumbLabel ? crumbLabel : location.pathname.toLowerCase().replace('-', ' ');
+  console.log(location)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,8 +29,9 @@ const Layout = ({ children, location, crumbLabel }) => {
       >
         <main>
           <Breadcrumb
+            crumbs={crumbs}
             location={location}
-            crumbLabel={crumbLabel}
+            crumbLabel={customCrumbLabel}
           />
           {children}
         </main>

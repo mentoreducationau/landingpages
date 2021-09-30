@@ -1,63 +1,35 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
 
 import {
-  HeroVideo,
+  TitleBanner,
   MainContainer,
   CourseContainer,
   StickySideBar,
 } from "./index.css"
 
 import {
-  CareerSkillSket,
-  CareerAccordion,
-  Knowmore,
+  FreeConsultBanner,
   FooterForm,
   StudentsWork,
-  CourseInfo,
-  JourneyStarted,
-  LiveTutorials,
-  Faq,
   EnrolNow,
-  Mission
 } from "../../components"
 import CourseGuide from "../../components/Forms/CourseGuide/CourseGuide"
 import { Container } from "../../styles/ContainerStyles.css"
-import { Headline, Paragraph } from "../../styles/Typography.css"
-import playbutton from "../../images/svg/playbutton.svg"
+import { Headline } from "../../styles/Typography.css"
 
 const CourseTemplate = () => {
   return (
     <>
-      <HeroVideo>
-        <StaticImage
-          src="../../images/placeholder.png"
-          alt="banner background"
-          layout="fullWidth"
-        />
-        <img className="playbutton" src={playbutton} alt="play" />
-        <Paragraph>
-          Watch video for comprehensive overview of this course
-        </Paragraph>
-      </HeroVideo>
-      <Container>
-        <Headline banner>
-          ABC123456 - Certificate IV in Account and Bookkeeping
-        </Headline>
-      </Container>
+      <TitleBanner>
+        <Container>
+          <Headline banner>
+            FNS40217 - Certificate IV in Accounting and Bookkeeping
+          </Headline>
+        </Container>
+      </TitleBanner>
       <MainContainer>
         <CourseContainer>
-          <CourseInfo />
-          <JourneyStarted />
-          <LiveTutorials />
-          <Faq />
-          <CareerSkillSket
-            course
-            title="Where will this course take your career?"
-          />
-          <CareerAccordion />
-          <Knowmore course />
-          <Mission />
+          <FreeConsultBanner />
           <StudentsWork course />
           <FooterForm course />
         </CourseContainer>
