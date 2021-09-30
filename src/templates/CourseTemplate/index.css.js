@@ -42,6 +42,10 @@ export const HeroVideo = styled.div`
 export const MainContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export const StickySideBar = styled.div`
@@ -51,8 +55,22 @@ export const StickySideBar = styled.div`
   top: 0;
   height: 100vh; // experiment with this value, try changing to 110vh
 `
+export const SideBar = styled.div`
+  width: 28%;
+  height: 100%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
 export const CourseContainer = styled.div`
   width: 70%;
   display: flex;
   flex-direction: column;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
+export const Terms = styled(Container)`
+  margin-top: 4rem;
+ 
 `

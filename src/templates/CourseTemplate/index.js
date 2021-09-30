@@ -4,18 +4,19 @@ import {
   TitleBanner,
   MainContainer,
   CourseContainer,
-  StickySideBar,
+  SideBar,
+  Terms,
 } from "./index.css"
 
 import {
   FreeConsultBanner,
-  FooterForm,
+  StudyOptions,
   StudentsWork,
   EnrolNow,
 } from "../../components"
 import CourseGuide from "../../components/Forms/CourseGuide/CourseGuide"
 import { Container } from "../../styles/ContainerStyles.css"
-import { Headline } from "../../styles/Typography.css"
+import { Headline, Paragraph } from "../../styles/Typography.css"
 
 const CourseTemplate = () => {
   return (
@@ -30,14 +31,34 @@ const CourseTemplate = () => {
       <MainContainer>
         <CourseContainer>
           <FreeConsultBanner />
-          <StudentsWork course />
-          <FooterForm course />
+          <StudyOptions />
         </CourseContainer>
-        <StickySideBar>
-          <CourseGuide course />
+        <SideBar>
+          <CourseGuide course imgContained />
           <EnrolNow />
-        </StickySideBar>
+        </SideBar>
       </MainContainer>
+      <MainContainer>
+        <StudentsWork course />
+      </MainContainer>
+      <Terms>
+        <Paragraph>* Terms and conditions.</Paragraph>
+        <Paragraph>
+          For further information regarding tuition fees and study options
+          related to the FNS40217 - Certificate IV in Accounting and Bookkeeping
+          Australian Government nationally recognised qualification listed on
+          this web page delivered by Mentor Education Pty Ltd (RTO 21683),
+          please visit the Terms and Conditions section of the Mentor Education
+          Website located at https://www.mentor.edu.au/terms-and-conditions or
+          call us on 1300 306 146.
+        </Paragraph>
+        <Paragraph>
+          The FNS40217 - Certificate IV in Accounting and Bookkeeping alongside
+          additional assessment requirements as outlined by the Tax
+          Practitioners Board (TPB) meet requirements for a course in basic
+          GST/BAS taxation principles that is approved by the TPB.
+        </Paragraph>
+      </Terms>
     </>
   )
 }

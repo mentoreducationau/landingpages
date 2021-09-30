@@ -18,3 +18,8 @@ export const CourseGuideContainer = styled.div`
     }
   `}
 `
+
+export const ImageContainer = styled.div`
+  margin: 10px auto;
+  width: fit-content;
+`
