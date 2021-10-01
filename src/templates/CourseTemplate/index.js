@@ -1,66 +1,73 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 
 import {
-  TitleBanner,
+  HeroVideo,
   MainContainer,
   CourseContainer,
-  SideBar,
-  Terms,
+  StickySideBar,
 } from "./index.css"
 
 import {
-  FreeConsultBanner,
-  StudyOptions,
+  Testimonials,
+  CareerSkillSket,
+  JobOutcomes,
+  BusinessSkillSet,
+  AcademicPathways,
+  Knowmore,
+  Nosubsitute,
+  FooterForm,
   StudentsWork,
-  EnrolNow,
-  MentorEducation
+  CourseInfo,
+  JourneyStarted,
+  LiveTutorials,
+  Faq,
+  EnrolNow
 } from "../../components"
 import CourseGuide from "../../components/Forms/CourseGuide/CourseGuide"
 import { Container } from "../../styles/ContainerStyles.css"
 import { Headline, Paragraph } from "../../styles/Typography.css"
+import playbutton from "../../images/svg/playbutton.svg"
 
 const CourseTemplate = () => {
   return (
     <>
-      <TitleBanner>
-        <Container>
-          <Headline banner>
-            FNS40217 - Certificate IV in Accounting and Bookkeeping
-          </Headline>
-        </Container>
-      </TitleBanner>
+      <HeroVideo>
+        <StaticImage
+          src="../../images/placeholder.png"
+          alt="banner background"
+          layout="fullWidth"
+        />
+        <img className="playbutton" src={playbutton} alt="play" />
+        <Paragraph>
+          Watch video for comprehensive overview of this course
+        </Paragraph>
+      </HeroVideo>
+      <Container>
+        <Headline banner>
+          ABC123456 - Certificate IV in Account and Bookkeeping
+        </Headline>
+      </Container>
       <MainContainer>
         <CourseContainer>
-          <FreeConsultBanner />
-          <StudyOptions />
-          <MentorEducation />
+          <CourseInfo />
+          <JourneyStarted />
+          <LiveTutorials />
+          <Faq />
+          <CareerSkillSket
+            course
+            title="Where will this course take your career?"
+          />
+          <JobOutcomes course />
+          <StudentsWork course />
+          <FooterForm course />
         </CourseContainer>
-        <SideBar>
-          <CourseGuide course imgContained />
+        <StickySideBar>
+          
           <EnrolNow />
-        </SideBar>
+          <CourseGuide course />
+        </StickySideBar>
       </MainContainer>
-      <MainContainer>
-        <StudentsWork course />
-      </MainContainer>
-      <Terms>
-        <Paragraph>* Terms and conditions.</Paragraph>
-        <Paragraph>
-          For further information regarding tuition fees and study options
-          related to the FNS40217 - Certificate IV in Accounting and Bookkeeping
-          Australian Government nationally recognised qualification listed on
-          this web page delivered by Mentor Education Pty Ltd (RTO 21683),
-          please visit the Terms and Conditions section of the Mentor Education
-          Website located at https://www.mentor.edu.au/terms-and-conditions or
-          call us on 1300 306 146.
-        </Paragraph>
-        <Paragraph>
-          The FNS40217 - Certificate IV in Accounting and Bookkeeping alongside
-          additional assessment requirements as outlined by the Tax
-          Practitioners Board (TPB) meet requirements for a course in basic
-          GST/BAS taxation principles that is approved by the TPB.
-        </Paragraph>
-      </Terms>
     </>
   )
 }
