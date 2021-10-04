@@ -26,8 +26,10 @@ export const CourseOptionTable = styled.table`
   margin-right: 10px;
   margin-bottom: 2rem;
   height: 100%;
-  padding: 20px 0;
+  padding: 40px;
   float: left;
+  font-family: "Futura Medium";
+  color: #707070;
 
   tr,
   th {
@@ -36,16 +38,17 @@ export const CourseOptionTable = styled.table`
   }
 
   th {
+    padding-top: 2rem;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 24px;
     padding-bottom: 10px;
     text-transform: uppercase;
     text-align: center;
   }
   td {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.5em;
-    padding: 0 5px;
+    padding: 0 1rem;
     vertical-align: top;
   }
   ul {
@@ -54,7 +57,7 @@ export const CourseOptionTable = styled.table`
 
     & li {
       display: list-item;
-      font-size: 13.5px;
+      font-size: 16px;
     }
   }
 

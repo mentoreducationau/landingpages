@@ -7,11 +7,8 @@ export const CustomFormStyled = styled.form`
 `
 
 export const FormField = styled(GlobalFormField)`
-  width: 70%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
+  width: 100%;
+
   label {
     font-family: Futura Medium;
     font-size: 18px;
@@ -23,13 +20,16 @@ export const FormField = styled(GlobalFormField)`
 
   input {
     border: 2px solid #707070;
-    height: 30px;
+    height: 50px;
   }
 
   ${props => props.theme.desktop`
     label {
       font-size: ${props.course ? "14px" : "28px"};
       line-height: ${props.course ? "16px" : "35px"};
+    }
+    input {
+      height:  ${props.course ? "33px" : "70px"};
     }
   `}
 
@@ -48,20 +48,20 @@ export const FormButton = styled.button`
   color: white;
   border: 0;
   border-radius: 2px;
-  width: 70%;
-  height: 30px;
+  width: 100%;
+  height: 50px;
   text-transform: uppercase;
   margin: 6% auto 0;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-    align-self: 
+
   ${props => props.theme.desktop`
     margin: ${props.course ? "2% auto 0" : "6% auto 0"};
     font-size: ${props.course ? "18px" : "40px"};
     line-height: ${props.course ? "23px" : "51px"};
-    height: ${props.course ? "50px" : "70px"};
+    height: ${props.course ? "45px" : "70px"};
   `}
 
   ${props => props.theme.largeScreen`
