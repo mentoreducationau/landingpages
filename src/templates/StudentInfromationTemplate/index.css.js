@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import img from "../../images/student-information-imgs/banner1.jpg"
+import { Container } from "../../styles/ContainerStyles.css"
 
 export const TitleBanner = styled.div`
   position: relative;
@@ -26,10 +27,8 @@ export const CourseHeading = styled.div`
     z-index: 1;
   }
 `
-export const MainContainer = styled.div`
-  height: 100%;
-  margin: 2rem auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+export const MainContainer = styled(Container)`
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
